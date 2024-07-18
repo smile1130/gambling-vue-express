@@ -1,0 +1,23 @@
+{
+	"manifest_version": 2,
+	"name": "BIGMUMBAI",
+	"version": "1.2",
+	"display": "standalone",
+	"background_color": "#fff",
+	"description": "game for Thailand",
+	"icons": [
+		{
+			"src": "/bigMumbai@192.png",
+			"sizes": "192x192"
+		},
+		{
+			"src": "/bigMumbai@512.png",
+			"sizes": "512x512"
+		}
+	],
+	"start_url": "/",
+	"safari_specific": {
+		"safari_extension_version": 2,
+		"permissions": ["cross-origin-content", "web-page"]
+	}
+}

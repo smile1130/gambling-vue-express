@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Recharge</title>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <link rel="stylesheet" href="/plugins/fontawesome-free/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="//cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
+  <link rel="stylesheet" href="/dist/css/adminlte.min.css">
+  <link rel="stylesheet" href="/css/admin.css">
+</head>
+
+<body class="hold-transition sidebar-mini">
+  <div class="wrapper">
+    <%- include('nav') %>
+      <div class="content-wrapper">
+        <section class="content-header">
+          <div class="container-fluid">
+            <div class="row mb-2">
+              <div class="col-sm-6">
+                <h1>Levels Setting</h1>
+              </div>
+            </div>
+          </div>
+          <!-- /.container-fluid -->
+        </section>
+
+        <!-- Main content -->
+        <section class="content">
+
+          <!-- Default box -->
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">Levels Setting</h3>
+
+              <div class="card-tools">
+                <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                  <i class="fas fa-minus"></i>
+                </button>
+                <button type="button" class="btn btn-tool" data-card-widget="remove" title="Remove">
+                  <i class="fas fa-times"></i>
+                </button>
+              </div>
+            </div>
+            <div class="card-body p-0" style="overflow-y: hidden;">
+              <table class="table table-striped projects" id="tableget">
+                <thead>
+                  <tr>
+                    <th class="text-center">Levels</th>
+                    <th class="text-center">F1</th>
+                    <th class="text-center">F2</th>
+                    <th class="text-center">F3</th>
+                    <th class="text-center">F4</th>
+                    <th class="text-center">Update</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td><input type="text" value="0"></td>
+                    <td><input type="text" value="0"></td>
+                    <td><input type="text" value="0"></td>
+                    <td><input type="text" value="0"></td>
+                    <td><a class="btn btn-success btn-sm confirm-btn" href="" data="id"><i
+                          class="fa-solid fa-arrows-rotate"></i></a></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+        </section>
+      </div>
+  </div>
+  <script src="/plugins/jquery/jquery.min.js"></script>
+  <script src="/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/dist/js/adminlte.min.js"></script>
+  <script src="/js/admin/admin.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+  <script>
+    //  $.ajax({
+    //         type: "GET",
+    //         url: "/api/webapi/admin/getLevelInfo",
+    //         data: "data",
+    //         dataType: "json",
+    //         success: function (response) {
+    //           docum
+    //         }
+    // })
+    $.ajax({
+      type: "GET",
+      url: "/api/webapi/admin/getLevelInfo",
+      dataType: "json", // Set dataType to "json" to automatically parse the JSON response
+      success: function (response) {
+        // Assuming response is an array of objects with data
+        if (Array.isArray(response.rows) && response.rows.length > 0) {
+          // Get the table body element where you want to display the data
+          var tableBody = $('#tableget').find('tbody'); // Replace 'yourTableId' with the actual ID of your table
+
+          // Clear any existing content in the table body
+          tableBody.empty();
+
+          // Loop through the response data and append rows to the table body
+          response.rows.forEach(function (item) {
+            var row = '<tr>' +
+              // '<td>' + item.id + '</td>' + // Replace item.property1, item.property2, etc., with actual properties from your JSON response
+              '<td class="text-center">' + item.level + '</td>' +
+              '<td class="text-center"><input type="text" name = "f1" value="' + item.f1 + '"></td>' +
+              '<td class="text-center"><input type="text" name = "f2" value="' + item.f2 + '"></td>' +
+              '<td class="text-center"><input type="text" name = "f3" value="' + item.f3 + '"></td>' +
+              '<td class="text-center"><input type="text" name = "f4" value="' + item.f4 + '"></td>' +
+              '<td class="text-center"><a class="btn btn-success btn-sm confirm-btn" href="" data-id="' + item.id + '"><i class="fa-solid fa-arrows-rotate"></i></a></td>' +
+              // Add more columns as needed
+              '</tr>';
+            tableBody.append(row);
+          });
+        } else {
+          console.log('No data found or invalid response format');
+        }
+      },
+      error: function (xhr, status, error) {
+        console.log('Error fetching data:', error);
+      }
+    });
+    // Assuming the button has the class "confirm-btn"
+    $('#tableget').on('click', '.confirm-btn', function (event) {
+      event.preventDefault();
+
+      // Get the row containing the clicked button
+      var row = $(this).closest('tr');
+
+      // Extract data from the input fields in that row
+      var id = $(this).data('id'); // Retrieve the 'id' from the data attribute
+
+      var f1 = row.find('input[name="f1"]').val();
+      var f2 = row.find('input[name="f2"]').val();
+      var f3 = row.find('input[name="f3"]').val();
+      var f4 = row.find('input[name="f4"]').val();
+
+      // Perform the update by making a POST request to the server
+      $.ajax({
+        type: "POST",
+        url: "/api/webapi/admin/updateLevel",
+        dataType: "json",
+        data: {
+          id: id,
+          f1: f1,
+          f2: f2,
+          f3: f3,
+          f4: f4
+        },
+        success: function (response) {
+          // Handle success, for example, show a success message to the user
+          console.log('Update successful:', response.message);
+          Swal.fire(
+            'UPDATED SUCCESSFULLY',
+            'success'
+          )
+        },
+        error: function (xhr, status, error) {
+          // Handle error, for example, show an error message to the user
+          console.log('Error updating data:', error);
+          Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "Something went wrong!",
+          });
+        }
+      });
+    });
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,63 @@
+html,
+body {
+	height: 100%;
+	width: 100%;
+	padding: 0;
+	margin: 0;
+	display: flex;
+	justify-content: center;
+	background-color: #9195a3;
+}
+
+#app {
+	width: 10rem;
+	height: fit-content;
+	min-height: 100vh;
+}
+
+.norem-app {
+	width: 375px;
+}
+/*
+.van-popup.van-popup--bottom {
+	max-width: 750px;
+	left: 50%;
+	transform: translateX(-50%);
+} */
+
+/* @media screen and (min-width: 500px) {
+
+} */
+@media screen and (max-width: 500px) {
+	#app {
+		width: 100%;
+		min-height: 100vh;
+	}
+
+	/* 滚动条展示 */
+	#app::-webkit-scrollbar {
+		width: 0;
+		background: transparent;
+	}
+
+	.van-popup.van-popup--bottom {
+		max-width: none;
+	}
+}
+
+@media (min-width: 501px) {
+	.van-popup.van-popup--bottom {
+		max-width:10rem;
+		left: 50%;
+		transform: translateX(-50%);
+	}
+	.van-popup.van-popup--center{
+		max-width: 10rem;
+	}
+}
+
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}

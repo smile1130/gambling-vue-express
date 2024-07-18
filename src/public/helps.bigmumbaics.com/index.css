@@ -1,0 +1,134 @@
+body{
+	 margin:0px;
+	 padding:0px;
+	 }
+ #container{
+	 width:100%;
+	 margin:0px auto;
+	 }
+   #header {
+	   width:100%;
+	   height:180px;
+	   /* 背景渐变色控制*/
+	   background: linear-gradient(to top left, #eed3b4,#f3d5b2,#dbb790);
+	   line-height: 100%;
+	   /* 文字 */
+	   font-size:40px;
+	   color:#ffffff;
+	   text-align: center;
+	   font-family: Microsoft JhengHei;
+	 }	
+.left,.right,.maincen{
+			float:left;
+			width:10%;
+			height:100%;
+	 }
+		.right{
+			width:10%;
+	 }
+.maincen{
+	width: 80%;
+	position: relative;
+	align : center;
+}
+.maincen{
+	width: 80%;
+	position: relative;
+}
+ 
+    .img{
+		height: auto;
+		width: auto; 
+		width:100%;
+	border-spacing: 0;
+	border-radius: 10px;
+}
+.topwz{
+	text-align:center;
+	color: #ffffff;
+	font-size: 35px;
+	font-family: Microsoft JhengHei;
+}
+.yzan{
+	border-spacing: 0;
+	border-radius: 15px;
+	height: 35px;
+	border: none;
+	width:60px;
+	color: #ffffff;
+	font-size: 15px;
+	background: linear-gradient(to right, #efd2ae,#dcb790);
+}
+ .div-box{
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .box-line{
+      min-width: 50%;
+      display: flex;
+      justify-content: space-around;
+    }
+    .box{
+      width: 240px;
+      height: 115px;
+		margin-left:20px;
+		margin-top:7px;
+		margin-right:20px;
+		margin-bottom:7px;
+      background: linear-gradient(to right, #efd2ae,#dcb790);/*ebecf5*/
+		padding-left:15px;
+		align: center;		
+	border-spacing: 0;
+	border-radius: 10px;
+    }
+/* 超链接字体颜色设置 */
+.a:link,.a:visited,.a:hover,.a:active {
+color:#000000;
+text-decoration:none;
+}
+/*外框*/
+.kuang-w{
+	align:center;
+	margin-top: 30px; 
+	height: 60%;
+	font-family: Microsoft JhengHei;
+}
+/*框内左，框内右*/
+.kuang-nz{
+	height:100%;
+	margin: 5px;
+	float:left;
+	font-family: Microsoft JhengHei;
+}
+.kuang-ny{
+	height: 40%;
+	display: grid;
+	font-family: Microsoft JhengHei;
+}
+/*导航文字div*/
+.dhdiv{
+	color: #7D7D7D;
+	font-size: 15px;
+	font-family: Microsoft JhengHei;
+}
+.bgbg{
+	background: linear-gradient(to right, #efd2ae,#dcb790);	
+	width: 100%;
+	border-spacing: 0;
+	border-radius: 10px;
+	font-family: Microsoft JhengHei;
+}
+.bgdiv{
+	margin : 5px;
+	padding: 10px;
+	font-family: Microsoft JhengHei;
+}
+.bgjh{
+	color: #FFFFFF;
+}
+.biaoti{
+	font-family: Microsoft JhengHei;
+	text-align: center;
+	font-size: 18px;
+	color: #FFFFFF;
+}

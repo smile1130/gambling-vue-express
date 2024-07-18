@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="en" translate="no" data-dpr="1" style="font-size: 39px;">
+
+<head>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <link rel="shortcut icon" href="/images/bitbug_favicon.ico" type="image/x-icon">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="google" content="notranslate">
+		<meta name="robots" content="noindex,nofollow">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<title>BigMumbai</title>
+		<link rel="stylesheet" href="./index_files/index-96409872.css">
+		<link rel="stylesheet" href="./index_files/modules-96c1e775.css">
+		<link rel="stylesheet" href="./index_files/page-activity-d48e62db.css">
+    	<link rel="stylesheet" href="./index_files/page-home-58543d87.css">
+    	<link rel="stylesheet" href="./index_files/page-login-ef3d1f88.css">
+    	<link rel="stylesheet" href="./index_files/page-main-ff2e7571.css">
+    	<link rel="stylesheet" href="./index_files/index-98687087.css">
+    <style>
+
+.login__container .login_container-tab .tab .font30[data-v-8752c961] {
+    font-size: .4rem;
+ 
+    /* text-align: center; */
+    /* -webkit-box-flex: 0; */
+    /* -webkit-flex: none; */
+    /* flex: none; */
+    /* word-break: break-all; */
+    white-space: inherit !important;
+    margin-top: .21333rem;
+}
+
+.tab.active {
+    background: linear-gradient(131deg, #2979F2 15.85%, #2AAAF3 77.07%);
+}
+
+
+.tab.inactive {
+background: #F7F8FF;
+border-bottom: .05333rem solid #E1E1E1 !important;
+    
+}
+
+
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+            background-color: #090909;
+            padding: 0;
+            margin: 0;
+        }
+
+        .msg-content {
+            animation: zoom-in 0.45s ease reverse;
+        }
+
+        @keyframes zoom-in {
+            0% {
+                opacity: 1;
+                transform: scale(1, 1);
+            }
+
+            50% {
+                transform: scale(0.6, 0.6);
+            }
+
+            100% {
+                opacity: 0;
+                transform: scale(1, 1);
+            }
+        }
+        .btn {
+          border: 1px solid red;
+          background-color: white;
+          color: black;
+          padding: 14px 28px;
+          font-size: 20px;
+          height: 43px;
+          cursor: pointer;
+          box-shadow: 1px 1px 10px #888888;
+          width: 90%;
+          margin-left: 16px;
+        }
+        
+        .success {
+          font-weight: 600 ;
+          color: red;
+        }
+        .footer{
+        	margin-top: 1vw;
+        	display: flex;
+        	width: 100%;
+        }
+        .footer .footer_data{
+            width: 50%;
+        }
+        .footer .footer_data img{
+            width: 4vw; 
+            margin-left: 4.2vw;
+        }
+        .footer .footer_data p{
+            text-align:center;
+        }
+         @media (max-width:600px) {
+         .footer {
+                margin-top: 5vw;
+                display: flex;
+                width: 100%;
+            }
+            .footer .footer_data img {
+                width: 10vw;
+                margin-left: 15vw;
+            }
+         }
+         .tab.active {
+    background: #F7F8FF;
+    color: #B1835A;
+    border-bottom: .05333rem solid #B1835A !important;
+}
+.font30 phonefont30active{
+  color: #B1835A;
+}
+
+          .font30.phonefont30inactive {
+    color: #768096 !important;
+}
+       
+    </style>
+</head>
+
+<body style="font-size: 12px">
+    <div id="app" data-v-app="" style="background: #F7F8FF">
+      <div data-v-1690b988="" class="ar-loading-view" style="display: none; --7688837a: &#39;Roboto&#39;, &#39;Inter&#39;, sans-serif;">
+        <div data-v-1690b988="" class="loading-wrapper">
+          <div data-v-1690b988="" class="loading-animat">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+            viewBox="0 0 200 200" width="200" height="200" preserveAspectRatio="xMidYMid meet"
+            style="width: 100%; height: 100%; transform: translate3d(0px, 0px, 0px); content-visibility: visible;">
+              <defs>
+                <clippath id="__lottie_element_2">
+                  <rect width="200" height="200" x="0" y="0">
+                  </rect>
+                </clippath>
+                <image href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKgAAAAsBAMAAAADRO5JAAAAJHpUWHRDcmVhdG9yAAAImXNMyU9KVXBMK0ktUnBNS0tNLikGAEF6Bs5qehXFAAAACXBIWXMAAAABAAAAAQBPJcTWAAAAJFBMVEXzwwBHcEzzwgDzwwD0wwDzwwD0xADzwwDzwwDxwQDzwwD0wwDcY0swAAAADHRSTlP/AD+/In+jY9wQT49dhnwkAAADuUlEQVRIx+WXz08TQRTHh/4GLky7tAUutNaq4QKCJtxaKFh7ag2NopdWSJVwKYJoPLWxAY0XNiTG6EUuJN6oF/8934+Z2S22tCQ1MXEOzM7uzGfevPd9r4OQA7fT7KAzxaATZ0p3d/alPVTox0ih/TQvW8OEXmxUzsql2e3iwkDQG4t9W8kKHK/lWrcPlta/1lrRvvOXRF30bb7p3XZeri6/zJ4mnj3tv8AnVpJ9W0pOHb0Prm5vFUL3m7L/gsSAPn1gn21nUjs/CvZQJSW3X7Srw9apXN3Lnw0deo32r0Ffl8tljtvNcvkxd9Q2RbqG7QDqBer2wFkztXJ+5Gbkbn1QFeW8RN08SNI8haArGp0qLe/IDPXHGnkIA6+DnGvAWEEbHgNt4oMlekBDNkOFKhk0wYGu0jeGhkXAQAkf6wUVVQXllXnRAY25PsmIELaGjuNDtCfUo6E+dSA3tOiGZpQrEUr4k27Q0CLuqaEhWyr/Guik+xCyIsSogWI+1B1okHMf3gTxtAEABbZwXhtCgf2vcw2dxeG9VwzFUwQNdIF30VAf65SgYbAqg6/W6PzoQm9CWu8UFPfYlPKNrT3oNVC0WXSHTrGlPjqKX8bZXt0soWebGCY01C/ldA8omBZk6Ax+z/Ak6XLpnhnV9annldujLugY+pShOfjTZOgURrSuBKhapGOPhpYIQcHmCXEp+tJIKsFQXJO9EGJE7kPWsn1x1CNmcdVI1m+gbfm9J3RMKiiEMlFBaMWk9gRCMiopYQcv65OhozSxOzSgofMa+g12sjU0gNEKZFleniJtBzMb6KcG9t2P33Ydn8I4aRwbp3gITnlANU/IaHiCk3tBjqHin9DxJPzxMRRdxrpyoFE6LkNRXj/T9AmgczBah0gb6DjWUyUpAPgZmleeELYDjVE8GBoVJoMBmlLJXrxS/FYDYwYaEssOlBOTobpCgJSU97HCdYVanKaeQoVijDkSOnTEinF+ztCKhlYJyntku0I/s6XaBqUWA81ohdBJhJISQqPsii5Qb01wmhpdf+mExgw0Zi5MfoJS4Q3KzuiPGEm1NBQriTLI05HvCI071zB7XjkW/NULupdxDNW/SQY63VBQnP0omUzjAoLOUrHpAQ0qx3kTjHnbAZXrCqp+U7FuLRA0Qi+6Q4FF0E8JXUOfdEBlmqBhRlPvIWiYXlyG0nUzBUlu5XK5h66CB6/vuIYreE+16LYKBRL7w1oti/eUDbhe1HbxklHjVv0vLmhXQAf4R+K6zfdXoL8B/7cyv853sCEAAAAASUVORK5CYII=">
+                </image>
+                <image href="data:image/png;base64,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">
+                </image>
+              </defs>
+              <g clip-path="url(#__lottie_element_2)">
+                <g class="ai" transform="matrix(0.21814323961734772,-0.9759167432785034,0.9759167432785034,0.21814323961734772,-19.40599822998047,175.77734375)"
+                opacity="1" style="display: block;">
+                  <image width="200px" height="200px" preserveAspectRatio="xMidYMid slice"
+                  href="data:image/png;base64,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">
+                  </image>
+                </g>
+                <g class="png" transform="matrix(0.8859999775886536,0,0,0.8859999775886536,25.576004028320312,80.50800323486328)"
+                opacity="1" style="display: block;">
+                  <image width="168px" height="44px" preserveAspectRatio="xMidYMid slice"
+                  href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKgAAAAsBAMAAAADRO5JAAAAJHpUWHRDcmVhdG9yAAAImXNMyU9KVXBMK0ktUnBNS0tNLikGAEF6Bs5qehXFAAAACXBIWXMAAAABAAAAAQBPJcTWAAAAJFBMVEXzwwBHcEzzwgDzwwD0wwDzwwD0xADzwwDzwwDxwQDzwwD0wwDcY0swAAAADHRSTlP/AD+/In+jY9wQT49dhnwkAAADuUlEQVRIx+WXz08TQRTHh/4GLky7tAUutNaq4QKCJtxaKFh7ag2NopdWSJVwKYJoPLWxAY0XNiTG6EUuJN6oF/8934+Z2S22tCQ1MXEOzM7uzGfevPd9r4OQA7fT7KAzxaATZ0p3d/alPVTox0ih/TQvW8OEXmxUzsql2e3iwkDQG4t9W8kKHK/lWrcPlta/1lrRvvOXRF30bb7p3XZeri6/zJ4mnj3tv8AnVpJ9W0pOHb0Prm5vFUL3m7L/gsSAPn1gn21nUjs/CvZQJSW3X7Srw9apXN3Lnw0deo32r0Ffl8tljtvNcvkxd9Q2RbqG7QDqBer2wFkztXJ+5Gbkbn1QFeW8RN08SNI8haArGp0qLe/IDPXHGnkIA6+DnGvAWEEbHgNt4oMlekBDNkOFKhk0wYGu0jeGhkXAQAkf6wUVVQXllXnRAY25PsmIELaGjuNDtCfUo6E+dSA3tOiGZpQrEUr4k27Q0CLuqaEhWyr/Guik+xCyIsSogWI+1B1okHMf3gTxtAEABbZwXhtCgf2vcw2dxeG9VwzFUwQNdIF30VAf65SgYbAqg6/W6PzoQm9CWu8UFPfYlPKNrT3oNVC0WXSHTrGlPjqKX8bZXt0soWebGCY01C/ldA8omBZk6Ax+z/Ak6XLpnhnV9annldujLugY+pShOfjTZOgURrSuBKhapGOPhpYIQcHmCXEp+tJIKsFQXJO9EGJE7kPWsn1x1CNmcdVI1m+gbfm9J3RMKiiEMlFBaMWk9gRCMiopYQcv65OhozSxOzSgofMa+g12sjU0gNEKZFleniJtBzMb6KcG9t2P33Ydn8I4aRwbp3gITnlANU/IaHiCk3tBjqHin9DxJPzxMRRdxrpyoFE6LkNRXj/T9AmgczBah0gb6DjWUyUpAPgZmleeELYDjVE8GBoVJoMBmlLJXrxS/FYDYwYaEssOlBOTobpCgJSU97HCdYVanKaeQoVijDkSOnTEinF+ztCKhlYJyntku0I/s6XaBqUWA81ohdBJhJISQqPsii5Qb01wmhpdf+mExgw0Zi5MfoJS4Q3KzuiPGEm1NBQriTLI05HvCI071zB7XjkW/NULupdxDNW/SQY63VBQnP0omUzjAoLOUrHpAQ0qx3kTjHnbAZXrCqp+U7FuLRA0Qi+6Q4FF0E8JXUOfdEBlmqBhRlPvIWiYXlyG0nUzBUlu5XK5h66CB6/vuIYreE+16LYKBRL7w1oti/eUDbhe1HbxklHjVv0vLmhXQAf4R+K6zfdXoL8B/7cyv853sCEAAAAASUVORK5CYII=">
+                  </image>
+                </g>
+              </g>
+            </svg>
+          </div>
+          <div data-v-1690b988="" class="com__box" style="display: none;">
+            <div class="loading" data-v-1690b988="">
+              <div class="shape shape-1" data-v-1690b988="">
+              </div>
+              <div class="shape shape-2" data-v-1690b988="">
+              </div>
+              <div class="shape shape-3" data-v-1690b988="">
+              </div>
+              <div class="shape shape-4" data-v-1690b988="">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div data-v-1690b988="" class="skeleton-wrapper" style="display: none;">
+          <div data-v-1690b988="" class="van-skeleton van-skeleton--animate">
+            <div class="van-skeleton__content">
+              <div class="van-skeleton-paragraph" style="width: 100%;">
+              </div>
+              <div class="van-skeleton-paragraph" style="width: 100%;">
+              </div>
+              <div class="van-skeleton-paragraph" style="width: 100%;">
+              </div>
+              <div class="van-skeleton-paragraph" style="width: 100%;">
+              </div>
+              <div class="van-skeleton-paragraph" style="width: 100%;">
+              </div>
+              <div class="van-skeleton-paragraph" style="width: 100%;">
+              </div>
+              <div class="van-skeleton-paragraph" style="width: 100%;">
+              </div>
+              <div class="van-skeleton-paragraph" style="width: 100%;">
+              </div>
+              <div class="van-skeleton-paragraph" style="width: 100%;">
+              </div>
+              <div class="van-skeleton-paragraph" style="width: 60%;">
+              </div>
+            </div>
+          </div>
+          <div data-v-1690b988="" class="van-skeleton van-skeleton--animate">
+            <div class="van-skeleton-avatar van-skeleton-avatar--round">
+            </div>
+            <div class="van-skeleton__content">
+              <h3 class="van-skeleton-title">
+              </h3>
+              <div class="van-skeleton-paragraph" style="width: 100%;">
+              </div>
+              <div class="van-skeleton-paragraph" style="width: 100%;">
+              </div>
+              <div class="van-skeleton-paragraph" style="width: 100%;">
+              </div>
+              <div class="van-skeleton-paragraph" style="width: 100%;">
+              </div>
+              <div class="van-skeleton-paragraph" style="width: 60%;">
+              </div>
+            </div>
+          </div>
+          <div data-v-1690b988="" class="van-skeleton van-skeleton--animate">
+            <div class="van-skeleton__content">
+              <h3 class="van-skeleton-title">
+              </h3>
+              <div class="van-skeleton-paragraph" style="width: 100%;">
+              </div>
+              <div class="van-skeleton-paragraph" style="width: 100%;">
+              </div>
+              <div class="van-skeleton-paragraph" style="width: 100%;">
+              </div>
+              <div class="van-skeleton-paragraph" style="width: 100%;">
+              </div>
+              <div class="van-skeleton-paragraph" style="width: 60%;">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-v-8752c961="" class="login__container" style="--7688837a: &#39;Roboto&#39;, &#39;Inter&#39;, sans-serif;">
+        <div data-v-58c5e826="" data-v-8752c961="" class="navbar">
+          <div data-v-58c5e826="" class="navbar-fixed" style="background: linear-gradient(90deg, #D9AD82 0%, #B1835A 100%) !important;">
+            <div data-v-58c5e826="" class="navbar__content">
+              <div data-v-58c5e826="" class="navbar__content-left" onclick="location.href='/home'">
+                <i data-v-58c5e826="" class="van-badge__wrapper van-icon van-icon-arrow-left">
+                </i>
+              </div>
+              <div data-v-58c5e826="" class="navbar__content-center">
+                <div data-v-58c5e826="" class="headLogo" style="background-image: url(./index_files/h5setting_202401100608011fs2.png);">
+                </div>
+                <div data-v-58c5e826="" class="navbar__content-title">
+                </div>
+              </div>
+              <div data-v-58c5e826="" class="navbar__content-right">
+                <div data-v-187d09fa="" data-v-8752c961="">
+                  <div data-v-187d09fa="" class="right">
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div data-v-8752c961="" class="login__container-heading">
+          <h1 data-v-8752c961="" class="login__container-heading__title">
+            Log in
+          </h1>
+          <div data-v-8752c961="" class="login__container-heading__subTitle">
+            <div data-v-8752c961="">
+              Please log in with your phone number or email
+            </div>
+            <div data-v-8752c961="">
+              If you forget your password, please contact customer service
+            </div>
+          </div>
+        </div>
+        <div data-v-8752c961="" class="login_container-tab">
+          <div data-v-8752c961="" class="tab active">
+            <img data-v-93f53084="" src="./svg/phone.svg"
+                  class="phoneInput__container-label__icon">
+            <div data-v-8752c961="" class="font30 phonefont30active">
+            Log in with phone
+            </div>
+          </div>
+
+          <div data-v-8752c961="" class="tab inactive">
+            <img data-v-93f53084="" src="./SVG/MAIL.SVG"
+                  class="phoneInput__container-label__icon">
+            <div data-v-8752c961="" class="font30 phonefont30inactive">
+            Email Login
+            </div>
+          </div>
+        </div>
+       
+        
+        <div data-v-8752c961="" class="login__container-form">
+          <div data-v-8752c961="" class="tab-content activecontent">
+            <div data-v-0ce8d964="" data-v-8752c961="" class="signIn__container">
+              <div data-v-93f53084="" data-v-0ce8d964="" class="phoneInput__container">
+                <div data-v-93f53084="" class="phoneInput__container-label">
+                  <img data-v-93f53084="" src="./svg/phone.svg"
+                  class="phoneInput__container-label__icon">
+                  <span data-v-93f53084="">
+                    Phone number
+                  </span>
+                </div>
+                <div data-v-93f53084="" class="phoneInput__container-input">
+                  <div data-v-6f85c91a="" data-v-93f53084="" class="dropdown">
+                    <div data-v-6f85c91a="" class="dropdown__value">
+                      <span data-v-6f85c91a="">
+                        +91
+                      </span>
+                      <i data-v-6f85c91a="" class="van-badge__wrapper van-icon van-icon-arrow-down">
+                      </i>
+                    </div>
+                    
+                  </div>
+                  <input data-v-93f53084="" style="background: #fff" type="text" name="username" placeholder="Please enter the phone number"
+                  autocomplete="on" required>
+                </div>
+              </div>
+              <div data-v-57d49070="" data-v-0ce8d964="" class="passwordInput__container">
+                <div data-v-57d49070="" class="passwordInput__container-label">
+                  <img data-v-57d49070="" class="passwordInput__container-label__icon" data-origin="https://www.bigdaddygame2.com/assets/png/password-b827c2b3.png"
+                  src="./png/password.png">
+                  <span data-v-57d49070="">
+                    Password
+                  </span>
+                </div>
+                <div data-v-57d49070="" class="passwordInput__container-input">
+                  <input data-v-57d49070="" id="passwordfield" type="password" placeholder="Password"
+                  maxlength="32" autocomplete="on" required>
+                  <img data-v-57d49070="" id="eyeicon" src="https://bigmumbai4.com/assets/png/eyeInvisible-821d9d16.png"
+                  class="eye" onclick="showPass()">
+                </div>
+              </div>
+              <div data-v-0ce8d964="" class="signIn__container-remember">
+                <div data-v-0ce8d964="" role="checkbox" class="van-checkbox" tabindex="0"
+                aria-checked="true">
+                  <div class="van-checkbox__icon van-checkbox__icon--round van-checkbox__icon--checked">
+                    <i class="van-badge__wrapper van-icon van-icon-success" style="border-color: rgb(94 173 245); background-color: rgb(94 173 245);">
+                    </i>
+                  </div>
+                  <span class="van-checkbox__label">
+                    Remember password
+                  </span>
+                </div>
+              </div>
+              <div class="alert-toast" style="color:red">
+              </div>
+              <div data-v-0ce8d964="" class="signIn__container-button">
+                <button data-v-0ce8d964="" class="active">
+                  Log in
+                </button>
+                <button data-v-0ce8d964="" class="register" onclick="window.location='/register'">
+                  Register
+                </button>
+              </div>
+              <div data-v-0ce8d964="" class="signIn_footer">
+                <div data-v-0ce8d964="" class="forgetcon" onclick="window.location='/keFuMenu'">
+                  <div data-v-0ce8d964="" class="forgetbg">
+                  </div>
+                  <div data-v-0ce8d964="" class="font24">
+                    Forgot password
+                  </div>
+                </div>
+                <div data-v-0ce8d964="" class="customcon" onclick="window.location='/keFuMenu'">
+                  <div data-v-0ce8d964="" class="custombg">
+                  </div>
+                  <div data-v-0ce8d964="" class="font24">
+                    Customer Service
+                  </div>
+                </div>
+              </div>
+              <div data-v-b9e16d43="" data-v-0ce8d964="" class="dialog inactive">
+                <div data-v-b9e16d43="" class="dialog__container" role="dialog" tabindex="0">
+                  <div data-v-b9e16d43="" class="dialog__container-img">
+                    <img data-v-b9e16d43="" alt="" class="" data-origin="https://www.bigdaddygame2.com/assets/png/orderCancelWarn-93894f35.png"
+                    src="./index_files/orderCancelWarn-93894f35.png">
+                  </div>
+                  <div data-v-b9e16d43="" class="dialog__container-title">
+                    <h1 data-v-b9e16d43="">
+                      Account has been locked
+                    </h1>
+                  </div>
+                  <div data-v-b9e16d43="" class="dialog__container-content">
+                    <div data-v-0ce8d964="" class="idlockTip">
+                      You have entered the wrong password 10 times in a row
+                      <br data-v-0ce8d964="">
+                      Contact customer service to unlock
+                    </div>
+                  </div>
+                  <div data-v-b9e16d43="" class="dialog__container-footer">
+                    <button data-v-0ce8d964="" class="dialogBtn">
+                      Cancel
+                    </button>
+                    <button data-v-0ce8d964="" class="dialogBtn">
+                      <img data-v-0ce8d964="" src="./index_files/iconservr-248f27d9.png">
+                      Contact customer service
+                    </button>
+                    <div data-v-0ce8d964="" class="dialogClose">
+                      <img data-v-0ce8d964="" class="dialogBtnClose" data-origin="https://www.bigdaddygame2.com/assets/png/close-7b93ef94.png"
+                      src="./index_files/close-7b93ef94.png">
+                    </div>
+                  </div>
+                </div>
+                <div data-v-b9e16d43="" class="dialog__outside">
+                </div>
+              </div>
+              <div data-v-5acdbb67="" data-v-0ce8d964="" class="popups">
+              </div>
+            </div>
+          </div>
+          <div data-v-8752c961="" class="tab-content">
+            <div data-v-5d3a4ff1="" data-v-8752c961="" class="signIn__container">
+              <div data-v-144f0059="" data-v-5d3a4ff1="" class="emailcontainer">
+                <div data-v-144f0059="" class="emailinput__container">
+                  <div data-v-144f0059="" class="emailinput__container-label">
+                    <img data-v-144f0059="" src="./index_files/emailnumber-2c31d006.png" class="emailinput__container-label__icon">
+                    <span data-v-144f0059="">
+                      Email / Account Log in
+                    </span>
+                  </div>
+                  <div data-v-144f0059="" class="emailinput__container-input">
+                    <input data-v-144f0059="" type="text" name="userEmail" maxlength="250"
+                    placeholder="please input your email">
+                  </div>
+                </div>
+              </div>
+              <div data-v-57d49070="" data-v-5d3a4ff1="" class="passwordInput__container">
+                <div data-v-57d49070="" class="passwordInput__container-label">
+                  <img data-v-57d49070="" class="passwordInput__container-label__icon" data-origin="https://www.bigdaddygame2.com/assets/png/password-b827c2b3.png"
+                  src="./index_files/password-b827c2b3.png">
+                  <span data-v-57d49070="">
+                    Password
+                  </span>
+                </div>
+                <div data-v-57d49070="" class="passwordInput__container-input">
+                  <input data-v-57d49070="" type="password" placeholder="Please enterPassword"
+                  maxlength="32" autocomplete="on">
+                  <img data-v-57d49070="" src="./index_files/eyeInvisible-2fa5c152.png"
+                  class="eye">
+                </div>
+              </div>
+              <div data-v-5d3a4ff1="" class="signIn__container-remember">
+                <div data-v-5d3a4ff1="" role="checkbox" class="van-checkbox" tabindex="0"
+                aria-checked="false">
+                  <div class="van-checkbox__icon van-checkbox__icon--round">
+                    <i class="van-badge__wrapper van-icon van-icon-success">
+                    </i>
+                  </div>
+                  <span class="van-checkbox__label">
+                    Remember password
+                  </span>
+                </div>
+              </div>
+              <div data-v-5d3a4ff1="" class="signIn__container-button">
+                <button data-v-5d3a4ff1="" class="">
+                  Log in
+                </button>
+                <button data-v-5d3a4ff1="" class="register">
+                  Register
+                </button>
+              </div>
+              <div data-v-5d3a4ff1="" class="signIn_footer">
+                <div data-v-5d3a4ff1="" class="forgetcon">
+                  <div data-v-5d3a4ff1="" class="forgetbg">
+                  </div>
+                  <div data-v-5d3a4ff1="" class="font24">
+                    Forgot password
+                  </div>
+                </div>
+                <div data-v-5d3a4ff1="" class="customcon">
+                  <div data-v-5d3a4ff1="" class="custombg">
+                  </div>
+                  <div data-v-5d3a4ff1="" class="font24">
+                    Customer Service
+                  </div>
+                </div>
+              </div>
+              <div data-v-b9e16d43="" data-v-5d3a4ff1="" class="dialog inactive">
+                <div data-v-b9e16d43="" class="dialog__container" role="dialog" tabindex="0">
+                  <div data-v-b9e16d43="" class="dialog__container-img">
+                    <img data-v-b9e16d43="" alt="" class="" data-origin="https://www.bigdaddygame2.com/assets/png/orderCancelWarn-93894f35.png"
+                    src="./index_files/orderCancelWarn-93894f35.png">
+                  </div>
+                  <div data-v-b9e16d43="" class="dialog__container-title">
+                    <h1 data-v-b9e16d43="">
+                      Account has been locked
+                    </h1>
+                  </div>
+                  <div data-v-b9e16d43="" class="dialog__container-content">
+                    <div data-v-5d3a4ff1="" class="idlockTip">
+                      You have entered the wrong password 10 times in a row
+                      <br data-v-5d3a4ff1="">
+                      Contact customer service to unlock
+                    </div>
+                  </div>
+                  <div data-v-b9e16d43="" class="dialog__container-footer">
+                    <button data-v-5d3a4ff1="" class="dialogBtn">
+                      Cancel
+                    </button>
+                    <button data-v-5d3a4ff1="" class="dialogBtn">
+                      <img data-v-5d3a4ff1="" src="./index_files/iconservr-248f27d9.png">
+                      Contact customer service
+                    </button>
+                  </div>
+                </div>
+                <div data-v-b9e16d43="" class="dialog__outside">
+                </div>
+              </div>
+              <div data-v-5acdbb67="" data-v-5d3a4ff1="" class="popups">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+    
+
+    <script>
+        $(document).ready(function() {
+      // Select the overlay element
+      $('.van-overlay').fadeIn(10);
+    });
+        $(window).on('load', function() {
+      // Select the overlay element
+      $('.van-overlay').fadeIn(10);
+      setTimeout(function() {
+        $('.van-overlay').fadeOut(300);
+      }, 600);
+    });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        function setCookie(cname, cvalue, exdays) {
+            const d = new Date();
+            d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+            let expires = "expires=" + d.toUTCString();
+            document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+        }
+        function getCookie(cname) {
+            let name = cname + "=";
+            let decodedCookie = decodeURIComponent(document.cookie);
+            let ca = decodedCookie.split(';');
+            for (let i = 0; i < ca.length; i++) {
+                let c = ca[i];
+                while (c.charAt(0) == ' ') {
+                    c = c.substring(1);
+                }
+                if (c.indexOf(name) == 0) {
+                    return c.substring(name.length, c.length);
+                }
+            }
+            return "";
+        }
+
+        function unsetCookie() {
+            setCookie('token', '', 0);
+            setCookie('auth', '', 0);
+        }
+        // $.ajax({
+        //     type: "GET",
+        //     url: "/api/webapi/GetUserInfo",
+        //     data: {
+                
+        //     },
+        //     dataType: "json",
+        //     success: function (response) {
+        //         if (data.status === false) {
+        //             unsetCookie();
+        //             return false;
+        //         };
+        //         location.href = "/";
+        //     }
+        // });
+        // fetch('/api/webapi/GetUserInfo')
+        //     .then(response => response.json())
+        //     .then(data => {
+        //         console.log(data);
+        //         if (data.status === false) {
+        //             unsetCookie();
+        //             return false;
+        //         };
+        //         location.href = "/";
+        //     });
+    </script>
+    <script>
+        function setCookie(cname, cvalue, exdays) {
+            const d = new Date();
+            d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+            let expires = "expires=" + d.toUTCString();
+            document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+        }
+
+        function alertMess(text) {
+            let length = $('.alert-toast .msg').length;
+            if (length == 0) {
+                $('.alert-toast').append(
+                    `
+                    <div data-v-1dcba851="" class="msg">
+                        <div data-v-1dcba851="" class="msg-content" style=""> ${text} </div>
+                    </div>
+                    `
+                );
+                setTimeout(() => {
+                    $('.msg').fadeOut();
+                    setTimeout(() => {
+                        $('.alert-toast .msg').remove();
+                    }, 100);
+                }, 1500);
+            }
+        }
+
+        function validateForm(username, password, text) {
+            if (!username || !password) {
+                alertMess(text);
+                return false;
+            } else {
+                return true;
+            }
+        }
+
+        $('button').click(async (e) => {
+            e.preventDefault();
+            let username = $('input:eq(0)').val().trim();
+            let password = $('input:eq(1)').val().trim();
+
+            {
+                $('.van-overlay').fadeIn(10);
+                $.ajax({
+                    type: "POST",
+                    url: "/api/webapi/login",
+                    data: {
+                        username: username,
+                        pwd: password,
+                    },
+                    dataType: "json",
+                    success: function (response) {
+                        if (response.status === true) {
+                            $('.van-overlay').fadeOut(300);
+                            $('.Loading').fadeIn(10);
+                            setCookie('token', response.token, 1);
+                            setCookie('auth', response.value, 1);
+                            // alertMess(response.message);
+                            setTimeout(() => {
+                                location.href = '/home';
+                            }, 500);
+                        } else {
+                            $('.van-overlay').fadeOut(300);
+                            alertMess(response.message);
+                        }
+                    }
+                });
+            }
+
+        });
+    </script>
+    <script>
+        let getWBody = $('.mian').width();
+
+        $('html').css('font-size', `${getWBody / 10}px`);
+        $('.van-tabbar .van-tabbar-item').css({
+            'transform': 'scale(0.9)',
+        });
+        $(window).resize(() => {
+            let getWBody = $('.mian').width();
+            $('html').css('font-size', `${getWBody / 10}px`);
+            $('.van-tabbar .van-tabbar-item').css({
+                'transform': 'scale(0.9)',
+            });
+        });
+        function showPass() {
+          var x = document.getElementById("passwordfield");
+          var y = document.getElementById("eyeicon");
+          if (x.type === "password") {
+            x.type = "text";
+            y.src="https://bigmumbai4.com/assets/png/eyeVisible-09720f5f.png";
+          } else {
+            x.type = "password";
+            y.src="https://bigmumbai4.com/assets/png/eyeInvisible-821d9d16.png";
+          }
+        }
+    </script>
+    <style>
+      .phoneInput__container-input {
+  display: flex;
+  width: 100%;
+}
+
+.phoneInput__container-input input {
+  flex-grow: 1;
+  width: 100%;
+}
+    </style>
+    <script>
+document.addEventListener('DOMContentLoaded', () => {
+  const phoneTab = document.querySelector('.tab.active');
+  const emailTab = document.querySelector('.tab.inactive');
+  const phoneLabel = document.querySelector('.phoneInput__container-label span');
+  const phoneInput = document.querySelector('.phoneInput__container-input input');
+  const dropdown = document.querySelector('.dropdown');
+  
+   // Get image elements
+  const phoneTabImage = phoneTab.querySelector('.phoneInput__container-label__icon');
+  const emailTabImage = emailTab.querySelector('.phoneInput__container-label__icon');
+  const phoneInputIcon = document.querySelector('.phoneInput__container-label .phoneInput__container-label__icon');
+
+  function toggleTabClasses() {
+    // Toggle active/inactive classes
+    phoneTab.classList.toggle('active');
+    phoneTab.classList.toggle('inactive');
+    emailTab.classList.toggle('active');
+    emailTab.classList.toggle('inactive');
+
+    // Toggle font classes
+    phoneTab.querySelector('.font30').classList.toggle('phonefont30active');
+    phoneTab.querySelector('.font30').classList.toggle('phonefont30inactive');
+    emailTab.querySelector('.font30').classList.toggle('phonefont30active');
+    emailTab.querySelector('.font30').classList.toggle('phonefont30inactive');
+
+    // Update label, input, dropdown visibility, and images
+    if (emailTab.classList.contains('active')) {
+      phoneLabel.textContent = 'Email address';
+      dropdown.style.display = 'none'; 
+      phoneInput.placeholder = 'Please enter the email address';
+      phoneInput.style.width = '100%';
+      phoneInput.style.marginLeft = '0';
+
+      // Change image sources
+      phoneTabImage.src = './svg/phonelogin.svg';
+      emailTabImage.src = './svg/mailloginactive.svg';  
+      phoneInputIcon.src = './svg/mailloginactive.svg';
+    } else { // Phone tab is active
+      phoneLabel.textContent = 'Phone Number'; 
+      dropdown.style.display = 'flex'; 
+      phoneInput.placeholder = 'Please enter the phone number'; 
+      phoneInput.style.width = 'calc(100% - 60px)';
+      phoneInput.style.marginLeft = '2.66667rem';
+
+      // Change image sources
+      phoneTabImage.src = './svg/phone.svg';
+      emailTabImage.src = './svg/mail.svg';
+      phoneInputIcon.src = './svg/phone.svg';
+    }
+  }
+
+  // Event listeners for tabs
+  phoneTab.addEventListener('click', toggleTabClasses);
+  emailTab.addEventListener('click', toggleTabClasses);
+});
+
+
+    </script>
+</body>
+
+</html>

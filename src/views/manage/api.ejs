@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Settings</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <link rel="stylesheet" href="/plugins/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/dist/css/adminlte.min.css">
+    <link rel="stylesheet" href="/css/admin.css">
+    <link href="//cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
+    <style>
+        .form-group {
+            margin-top: 20px;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 5px #2ecc71;
+        }
+        
+        .form-group button {
+            margin-top: 30px;
+        }
+    </style>
+</head>
+
+<body class="hold-transition sidebar-mini">
+    <div class="wrapper">
+        <%- include('nav') %>
+            <div class="content-wrapper">
+                <section class="content-header">
+                    <div class="container-fluid">
+                        <div class="row mb-2">
+                            <div class="col-sm-6">
+                                <h1>API V1</h1>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.container-fluid -->
+                </section>
+
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div style="padding: 10px 20px;margin-bottom: 200px;">
+                                <div class="form-group">
+                                    <div class="text-center">
+                                        <label for="quantity">Modify API details.</label>
+                                    </div>
+                                    <label for="quantity" style="color: #3498db;">BANKING</label>
+                                    <input type="text" class="form-control" placeholder="Enter bank API link" id="linkbank" value="<%=temp[0].apibank%>"><br>
+                                    <input type="text" class="form-control" placeholder="Enter the link to get lsgd Banking" id="lsgdbank" value="<%=temp[0].callbackbank%>"><br>
+                                    <button type="submit" class="btn btn-primary edit-banking" style="width: 100%;margin-bottom: 20px;">Submit</button>
+                                    <!---------------------------------------------------------------->
+                                    <label for="quantity" style="color: #a50064;">MOMO</label>
+                                    <input type="text" class="form-control" placeholder="Enter bank API link" id="linkmomo" value="<%=temp[0].apimomo%>"><br>
+                                    <input type="text" class="form-control" placeholder="Enter the link to get lsgd Banking" id="lsgdmomo" value="<%=temp[0].callbackmomo%>"><br>
+                                    <button type="submit" class="btn btn-primary edit-momo" style="width: 100%;">Submit</button>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+    <script src="/plugins/jquery/jquery.min.js"></script>
+    <script src="/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/dist/js/adminlte.min.js"></script>
+    <script src="/js/admin.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+
+    <script>
+        function sendRequestBank(link, lsgd, typer) {
+            $.ajax({
+                type: "POST",
+                url: "/manage/admin/api",
+                data: {
+                    link: link,
+                    lsgd: lsgd,
+                    typer: typer
+                },
+                dataType: "json",
+                success: function(response) {
+                    if (response.message == 1) {
+                        Swal.fire(
+                            'Good job!',
+                            'You clicked the button!',
+                            'success'
+                        )
+                    } else if (response.message == 2) {
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'This deposit method does not exist',
+                        })
+                    } else {
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Error !',
+                        })
+                    }
+                }
+            });
+        }
+        $('.edit-momo').click(function(e) {
+            e.preventDefault();
+            const link = $('#linkmomo').val();
+            const lsgd = $('#lsgdmomo').val();
+            sendRequestBank(link, lsgd, "momo");
+        });
+        $('.edit-banking').click(function(e) {
+            e.preventDefault();
+            const link = $('#linkbank').val();
+            const lsgd = $('#lsgdbank').val();
+            sendRequestBank(link, lsgd, "bank");
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Manual USDT</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.7/axios.min.js"
+        integrity="sha512-NQfB/bDaB8kaSXF8E77JjhHG5PM6XVRxvHzkZiwl3ddWCEPBa23T76MuWSwAJdMGJnmQqM0VeY9kFszsrBEFrQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+        </script>
+</head>
+
+<body>
+    <style>
+        html {
+            height: 100%;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #22275b;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            height: 100%;
+            max-width: 550px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: #f2f2f2;
+            padding: 6px;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 12px;
+            margin: 15px 10px;
+        }
+
+        footer {
+            background-color: #f2f2f2;
+            padding: 6px;
+            text-align: center;
+            border-top-left-radius: 12px;
+            border-top-right-radius: 12px;
+            margin: 0px 10px;
+            margin-top: auto;
+        }
+
+        .tutorial_root {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: #f2f2f2;
+            padding: 0px 25px 20px;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 12px;
+            margin: 15px 10px;
+        }
+
+        .tutorial_content p {
+            display: flex;
+            gap: 6px;
+        }
+
+        .tutorial_content p strong {
+            white-space: nowrap;
+        }
+
+        @media (min-width: 500px) {
+            .tutorial_root {
+                padding: 0px 20px 20px;
+            }
+        }
+
+        .upi_display_root {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: #f2f2f2;
+            padding: 0px 25px 20px;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 12px;
+            margin: 15px 10px;
+        }
+
+        .upi_display_root h2 {
+            margin: 20px 0px 5px;
+            font-weight: 600;
+        }
+
+        .upi_display_content {
+            margin-top: 10px;
+            padding: 0px 13px;
+            border-radius: 9px;
+            border: 1px solid #ccc;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        .upi_display_content p {
+            display: flex;
+            gap: 6px;
+        }
+
+        .upi_display_content p strong {
+            white-space: nowrap;
+        }
+
+        .upi_display_content__img {
+            width: 15px;
+            height: 15px;
+            cursor: pointer;
+            margin-left: 5px;
+        }
+
+        .verification_form__root {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            /* align-items: center; */
+            background: #f2f2f2;
+            padding: 10px 25px 25px;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 12px;
+            margin: 15px 10px;
+        }
+
+        .verification_form__root label {
+            margin-top: 10px;
+            font-weight: 600;
+        }
+
+        .verification_form__root input {
+            margin-top: 10px;
+            padding: 10px 13px;
+            border-radius: 9px;
+            border: 1px solid #ccc;
+            font-size: 14px;
+        }
+
+        .verification_form__root input::placeholder {
+            font-size: 14px;
+        }
+
+        .verification_form__root button {
+            margin-top: 10px;
+            padding: 10px;
+            border-radius: 9px;
+            border: 1px solid #ccc;
+            background-color: #1c4ff7;
+            background: #22275b;
+
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .upi_pay_now {
+            margin-top: 10px;
+            padding: 10px 15px;
+            border-radius: 9px;
+            border: 1px solid #ccc;
+            background-color: #1c4ff7;
+            background: #22275b;
+            font-weight: 500;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+        }
+    </style>
+
+    <main>
+        <header>
+            <h2>USDT</h2>
+        </header>
+
+        <div class="upi_display_root">
+            <h2 class="upi_display_title">Send <%=Amount%> USDT on</h2>
+            <button class="upi_display_content" id="copy_wallet_address_btn">
+                <p>
+                    <strong>Wallet Address: </strong>
+                    <span id="wallet_address_field">
+                        <%=UsdtWalletAddress%>
+                    </span>
+
+                    <img class="upi_display_content__img"
+                        src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgMTE1Ljc3IDEyMi44OCIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgMTE1Ljc3IDEyMi44OCIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+PHN0eWxlIHR5cGU9InRleHQvY3NzIj4uc3Qwe2ZpbGwtcnVsZTpldmVub2RkO2NsaXAtcnVsZTpldmVub2RkO308L3N0eWxlPjxnPjxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik04OS42MiwxMy45NnY3LjczaDEyLjE5aDAuMDF2MC4wMmMzLjg1LDAuMDEsNy4zNCwxLjU3LDkuODYsNC4xYzIuNSwyLjUxLDQuMDYsNS45OCw0LjA3LDkuODJoMC4wMnYwLjAyIHY3My4yN3YwLjAxaC0wLjAyYy0wLjAxLDMuODQtMS41Nyw3LjMzLTQuMSw5Ljg2Yy0yLjUxLDIuNS01Ljk4LDQuMDYtOS44Miw0LjA3djAuMDJoLTAuMDJoLTYxLjdINDAuMXYtMC4wMiBjLTMuODQtMC4wMS03LjM0LTEuNTctOS44Ni00LjFjLTIuNS0yLjUxLTQuMDYtNS45OC00LjA3LTkuODJoLTAuMDJ2LTAuMDJWOTIuNTFIMTMuOTZoLTAuMDF2LTAuMDJjLTMuODQtMC4wMS03LjM0LTEuNTctOS44Ni00LjEgYy0yLjUtMi41MS00LjA2LTUuOTgtNC4wNy05LjgySDB2LTAuMDJWMTMuOTZ2LTAuMDFoMC4wMmMwLjAxLTMuODUsMS41OC03LjM0LDQuMS05Ljg2YzIuNTEtMi41LDUuOTgtNC4wNiw5LjgyLTQuMDdWMGgwLjAyaDYxLjcgaDAuMDF2MC4wMmMzLjg1LDAuMDEsNy4zNCwxLjU3LDkuODYsNC4xYzIuNSwyLjUxLDQuMDYsNS45OCw0LjA3LDkuODJoMC4wMlYxMy45Nkw4OS42MiwxMy45NnogTTc5LjA0LDIxLjY5di03Ljczdi0wLjAyaDAuMDIgYzAtMC45MS0wLjM5LTEuNzUtMS4wMS0yLjM3Yy0wLjYxLTAuNjEtMS40Ni0xLTIuMzctMXYwLjAyaC0wLjAxaC02MS43aC0wLjAydi0wLjAyYy0wLjkxLDAtMS43NSwwLjM5LTIuMzcsMS4wMSBjLTAuNjEsMC42MS0xLDEuNDYtMSwyLjM3aDAuMDJ2MC4wMXY2NC41OXYwLjAyaC0wLjAyYzAsMC45MSwwLjM5LDEuNzUsMS4wMSwyLjM3YzAuNjEsMC42MSwxLjQ2LDEsMi4zNywxdi0wLjAyaDAuMDFoMTIuMTlWMzUuNjUgdi0wLjAxaDAuMDJjMC4wMS0zLjg1LDEuNTgtNy4zNCw0LjEtOS44NmMyLjUxLTIuNSw1Ljk4LTQuMDYsOS44Mi00LjA3di0wLjAyaDAuMDJINzkuMDRMNzkuMDQsMjEuNjl6IE0xMDUuMTgsMTA4LjkyVjM1LjY1di0wLjAyIGgwLjAyYzAtMC45MS0wLjM5LTEuNzUtMS4wMS0yLjM3Yy0wLjYxLTAuNjEtMS40Ni0xLTIuMzctMXYwLjAyaC0wLjAxaC02MS43aC0wLjAydi0wLjAyYy0wLjkxLDAtMS43NSwwLjM5LTIuMzcsMS4wMSBjLTAuNjEsMC42MS0xLDEuNDYtMSwyLjM3aDAuMDJ2MC4wMXY3My4yN3YwLjAyaC0wLjAyYzAsMC45MSwwLjM5LDEuNzUsMS4wMSwyLjM3YzAuNjEsMC42MSwxLjQ2LDEsMi4zNywxdi0wLjAyaDAuMDFoNjEuN2gwLjAyIHYwLjAyYzAuOTEsMCwxLjc1LTAuMzksMi4zNy0xLjAxYzAuNjEtMC42MSwxLTEuNDYsMS0yLjM3aC0wLjAyVjEwOC45MkwxMDUuMTgsMTA4LjkyeiIvPjwvZz48L3N2Zz4="
+                        alt="copy upi id" />
+                </p>
+            </button>
+        </div>
+
+        <form class="verification_form__root" action="submit.php" method="post">
+            <label for="ref_no">Reference No.</label>
+            <input type="text" id="ref_no" name="ref_no" required placeholder="Enter Your Reference No here..." />
+            <button id="submit_button" type="submit">Submit</button>
+        </form>
+
+        <div class="tutorial_root">
+            <h3 class="tutorial_title">Step by Step Process</h3>
+            <div class="tutorial_content">
+                <p>
+                    <strong>Step 1: </strong>
+                    <span>
+                        Open your USDT Wallet app and click on the "Send USDT" option.
+                    </span>
+                </p>
+                <p>
+                    <strong>Step 2:</strong>
+                    <span>
+                        Enter our Wallet address as a receiver and the amount you want to
+                        send.
+                    </span>
+                </p>
+                <p>
+                    <strong>Step 3:</strong>
+                    <span>
+                        Click on the "Send" button to complete the transaction.
+                    </span>
+                </p>
+                <p>
+                    <strong>Step 4:</strong>
+                    <span>
+                        Copy the Reference No. and paste it in our Reference No field
+                    </span>
+                </p>
+                <p>
+                    <strong>Step 5:</strong>
+                    <span> Click on the "Submit" button to complete the process. </span>
+                </p>
+            </div>
+        </div>
+
+        <footer>
+            <p></p>
+        </footer>
+    </main>
+
+    <script>
+
+        const alertMessage = (text) => {
+            const msg = document.createElement('div');
+            msg.setAttribute('data-v-1dcba851', '');
+            msg.className = 'msg';
+
+            const msgContent = document.createElement('div');
+            msgContent.setAttribute('data-v-1dcba851', '');
+            msgContent.className = 'msg-content v-enter-active v-enter-to';
+            msgContent.style = '';
+            msgContent.textContent = text;
+
+            msg.appendChild(msgContent);
+            document.body.appendChild(msg);
+
+            setTimeout(() => {
+                msgContent.classList.remove('v-enter-active', 'v-enter-to');
+                msgContent.classList.add('v-leave-active', 'v-leave-to');
+
+                setTimeout(() => {
+                    document.body.removeChild(msg);
+                }, 100);
+            }, 1000);
+        }
+
+        const copyUpiId = document.getElementById("copy_wallet_address_btn");
+
+        copyUpiId.addEventListener("click", function () {
+            let upi_id = document.getElementById("wallet_address_field").innerText;
+            console.log(upi_id);
+            navigator.clipboard.writeText(upi_id);
+        });
+
+        const submitButton = document.getElementById("submit_button");
+        submitButton.addEventListener("click", async (event) => {
+            try {
+                event.preventDefault();
+                const refNo = document.getElementById("ref_no").value;
+                const amount = '<%=Amount%>';
+                console.log(amount)
+                const response = await axios.post("/wallet/paynow/manual_usdt_request", {
+                    money: amount,
+                    utr: refNo,
+                })
+
+                if (!response?.data) {
+                    alertMessage("Something went Wrong!")
+                    return
+                }
+
+                if (response?.data?.status === false) {
+                    alertMessage(response?.data?.message)
+                    return
+                }
+
+                alertMessage(response?.data?.message)
+
+                window.location.href = "/wallet/rechargerecord"
+            } catch (error) {
+                console.log(error);
+                alertMessage("Something went Wrong!")
+            }
+        });
+    </script>
+</body>
+
+</html>

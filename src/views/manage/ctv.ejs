@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>List of collaborators</title>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback" />
+  <link rel="stylesheet" href="/plugins/fontawesome-free/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link href="//cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet" />
+  <link rel="stylesheet" href="/dist/css/adminlte.min.css" />
+  <link rel="stylesheet" href="/css/admin.css" />
+</head>
+
+<body class="hold-transition sidebar-mini">
+  <div class="wrapper">
+    <%- include('nav') %>
+      <div class="content-wrapper">
+        <section class="content-header">
+          <div class="container-fluid">
+            <div class="row mb-2">
+              <div class="col-sm-6">
+                <h1>List of collaborators</h1>
+              </div>
+            </div>
+          </div>
+          <!-- /.container-fluid -->
+        </section>
+
+        <div class="form-group" style="text-align: center">
+          <input type="text" id="search" placeholder="Enter the member you are looking for" />
+        </div>
+
+        <!-- Main content -->
+        <section class="content">
+          <!-- Default box -->
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">List of collaborators</h3>
+              <div class="card-tools">
+                <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                  <i class="fas fa-minus"></i>
+                </button>
+                <button type="button" class="btn btn-tool" data-card-widget="remove" title="Remove">
+                  <i class="fas fa-times"></i>
+                </button>
+              </div>
+            </div>
+            <div class="card-body p-0" style="overflow-y: hidden">
+              <table class="table table-striped projects" id="table1">
+                <thead>
+                  <tr>
+                    <th class="text-center">#</th>
+                    <th class="text-center">Account</th>
+                    <th class="text-center">Level</th>
+                    <th class="text-center">Balance</th>
+                    <th class="text-center">Status</th>
+                    <th class="text-center">Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <!-- #region -->
+                </tbody>
+              </table>
+            </div>
+            <nav aria-label="Page navigation example" style="margin-top: 20px; display: flex; justify-content: center">
+              <ul class="pagination table1">
+                <li class="page-item previous">
+                  <a class="page-link" href="#" tabindex="-1">Previous</a>
+                </li>
+                <div id="numbers" style="display: flex"></div>
+                <li class="page-item next">
+                  <a class="page-link" href="#">Next</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </section>
+      </div>
+  </div>
+  <script src="/plugins/jquery/jquery.min.js"></script>
+  <script src="/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/dist/js/adminlte.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+  <script src="/js/admin/admin.js"></script>
+  <script>
+    $("#search").on("keyup", function() {
+        var value = $(this).val().toLowerCase();
+        $("tbody tr").filter(function() {
+            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
+        });
+    });
+  </script>
+  <script>
+    var pageno = 0;
+    var pageto = 30;
+    var page = 1;
+
+    const Render = (datas) => {
+      let html = '';
+      datas.map((data) => {
+        html += `
+        <tr class="text-center" style="">
+          <td>${data.id_user}</td>
+          <td>
+            <b style="color: #2003db">${data.phone}</b>
+          </td>
+          <td>
+            <b>${(data.level == 1) ? 'ADMIN' : (data.level == 2) ? 'CTV' : 'USER'}</b>
+          </td>
+          <td>
+            <b>${data.money}</b>
+          </td>
+          <td class="project-state">
+            ${(data.status == 1) ? '<span class="badge badge-success">Online</span>' : '<span class="badge badge-warning">Banned</span>'}
+          </td>
+          <!--<td class="project-state">
+            <span class="badge badge-warning">Offline</span>
+          </td>
+          <td class="project-state">
+            <span class="badge badge-success">Online</span>
+          </td> -->
+          <td class="project-actions text-center" style="min-width: 100px">
+            <a class="btn btn-primary btn-sm confirm-btn" href="/admin/manager/ctv/profile/${data.phone}">
+              <i class="fas fa-folder"></i> Profile
+            </a>
+            ${(data.status == 1) ? `<a class="btn btn-info btn-sm btn-danger" id="${data.id}" href="#">
+              <i class="fas fa-pencil-alt"></i> lock Up
+            </a>` : ''}
+            ${(data.status == 2) ? `<a class="btn btn-info btn-sm btn-info1" id="${data.id}" href="#">
+              <i class="fas fa-pencil-alt"></i> Open
+            </a>` : ''}
+            <!--<a class="btn btn-danger btn-sm delete-btn" href="#">
+              <i class="fas fa-trash"></i> 删除
+            </a>-->
+          </td>
+        </tr>`;
+        $("tbody").html(html);
+      });
+      $('.btn-danger').click(function (e) { 
+        e.preventDefault();
+        let check = confirm("Are you sure you want to lock this account ?");
+        let id = $(this).attr('id');
+        if (check) {
+          $.ajax({
+            type: "POST",
+            url: "/api/webapi/admin/banned",
+            data: {
+              id: id,
+              type: 'close'
+            },
+            dataType: "json",
+            success: function (response) {
+              alert(response.message);
+              location.reload();
+            }
+          });
+        }
+      });
+
+      $('.btn-info1').click(function (e) { 
+        e.preventDefault();
+        let check = confirm("Are you sure you want to unlock this account ?");
+        let id = $(this).attr('id');
+        if (check) {
+          $.ajax({
+            type: "POST",
+            url: "/api/webapi/admin/banned",
+            data: {
+              id: id,
+              type: 'open'
+            },
+            dataType: "json",
+            success: function (response) {
+              alert(response.message);
+              location.reload();
+            }
+          });
+        }
+      });
+
+    }
+
+    $('#search').keypress(function(event){
+      var keycode = (event.keyCode ? event.keyCode : event.which);
+      var value = $('#search').val().trim();
+      if(keycode == '13'){
+        $.ajax({
+          type: "POST",
+          url: "/api/webapi/search",
+          data: {
+            phone: value,
+          },
+          dataType: "json",
+          success: function (response) {
+            if (response.status === true) return Render(response.datas);
+          }
+        });
+      }
+
+    });
+    $.ajax({
+      type: "POST",
+      url: "/api/webapi/admin/listctv",
+      data: {
+        typeid: "1",
+        pageno: pageno,
+        pageto: pageto,
+        language: "vi",
+      },
+      dataType: "json",
+      success: function (response) {
+        if (response.status === true) return Render(response.datas);
+      },
+    });
+  </script>
+  <script src="/js/admin/tables.js"></script>
+</body>
+
+</html>

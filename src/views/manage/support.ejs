@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Withdrawal list</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <link rel="stylesheet" href="/plugins/fontawesome-free/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="//cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
+  <link rel="stylesheet" href="/dist/css/adminlte.min.css">
+  <link rel="stylesheet" href="/css/admin.css">
+</head>
+
+<body class="hold-transition sidebar-mini">
+  <div class="wrapper">
+    <%- include('nav') %>
+    <div class="content-wrapper">
+      <section class="content-header">
+        <div class="container-fluid">
+          <div class="row mb-2">
+            <div class="col-sm-6">
+              <h1>Withdrawal list</h1>
+            </div>
+          </div>
+        </div>
+        <!-- /.container-fluid -->
+      </section>
+
+      <div class="form-group" style="text-align: center;">
+        <input type="text" id="search" placeholder="Enter the account you are looking for">
+      </div>
+
+      <!-- Main content -->
+      <section class="content">
+        <!-- Default box -->
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title">Support</h3>
+            <div class="card-tools">
+              <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                <i class="fas fa-minus"></i>
+              </button>
+              <button type="button" class="btn btn-tool" data-card-widget="remove" title="Remove">
+                <i class="fas fa-times"></i>
+              </button>
+            </div>
+          </div>
+          <div class="card-body p-0" style="overflow-y: hidden;">
+            <table class="table table-striped projects" id="table1">
+              <thead>
+                <tr>
+                  <th class="text-center">ID</th>
+                  <th class="text-center">Member Id</th>
+                  <th class="text-center">Message</th>
+                   <th class="text-center">Admin Message</th>
+          
+                  <th class="text-center">Time</th>
+    
+                  <!-- <th class="text-center"></th> -->
+                </tr>
+              </thead>
+              <tbody id="tdata">
+                
+              </tbody>
+            </table>
+          </div>
+          <nav aria-label="Page navigation example" style="margin-top: 20px;display: flex;justify-content: center;">
+            <ul class="pagination table1">
+              <li class="page-item previous">
+                <a class="page-link" href="#" tabindex="-1">Previous</a>
+              </li>
+              <div id="numbers" style="display: flex;"></div>
+              <li class="page-item next">
+                <a class="page-link" href="#">Next</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+
+      </section>
+    </div>
+  <script src="/plugins/jquery/jquery.min.js"></script>
+  <script src="/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/dist/js/adminlte.min.js"></script>
+  <script src="/js/admin/admin.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+  <script src="/js/admin/tables.js"></script>
+<script>
+  
+    $( document ).ready(function() {
+        fetch('/admin/supportData')
+                .then(response => response.json())
+                .then(data => {
+                    if (data.status === false) {
+                        unsetCookie();
+                        return false;
+                    }
+                    $.each(data.data, function(index, item) {
+                var row = '<tr>' +
+                            '<td>' + item.id + '</td>' +
+                            '<td>' + item.member_id + '</td>' +
+                            '<td>' + item.message + '</td>' +
+                            '<td><input id="'+item.member_id+'" value="' + item.admin_msg + '"/><button onclick="sendAdmin(\''+item.member_id+'\')">send</button></td>' +
+                            '<td>' + item.time + '</td>' +
+                          '</tr>';
+                $('#table1 tbody').append(row);
+            });
+                });
+    
+    });
+
+</script>
+<script>
+
+
+
+  function sendAdmin(params) {
+
+    fetch('/admin/adminmsg', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json' // Set the content type to JSON
+        },
+        body: JSON.stringify({"member_id":params, "adm_msg": document.getElementById(params).value})
+    })
+    .then(response => response.json()) // Parse the response as JSON
+    .then(data =>alert("Message Send SuccessFully")) // Log the response data
+    .catch((error) => {
+        console.error('Error:', error); // Log any errors
+    });
+  }
+</script>
+</body>
+
+</html>

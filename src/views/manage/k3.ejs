@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en" data-change="1">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>k3 | Management</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <link rel="stylesheet" href="/plugins/fontawesome-free/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+  <link rel="stylesheet" href="/dist/css/adminlte.min.css">
+  <link rel="stylesheet" href="/css/pages__parity.css">
+  <link rel="stylesheet" href="/css/vantjs.css">
+  <link href="//cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
+  <script src="https://cdn.socket.io/4.4.1/socket.io.min.js" integrity="sha384-fKnu0iswBIqkjxrhQCTZ7qlLHOFEgNkRmK2vaO/LbTZSXdJfAu6ewRBdwHPhBo/H" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="/css/admin.css">
+  
+  <style>
+    .box-xs {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      width: 18px!important;
+      height: 18px;
+      border: 1px solid #bbb;
+      border-radius: 18px;
+      margin-right: 4px;
+      color: #bbb;
+      background-color: #fff;
+    }
+    .active {
+      background-color: #007bff !important;
+    }
+
+    /* Chrome, Safari, Edge, Opera */
+
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    /* Firefox */
+
+    input[type=number] {
+      -moz-appearance: textfield;
+    }
+
+    #list-orders .item {
+      padding: 5px 0;
+      text-align: center;
+    }
+
+    .box .li[data-v-a9660e98] {
+      display: block;
+      height: 13px;
+      width: 13px;
+      border-radius: 50%;
+      margin: 0 0.13333rem;
+    }
+
+    .block-click {
+      pointer-events: none;
+    }
+
+    .van-col .goItem .c-tc .green {
+      background-color: #5cba47;
+    }
+
+    .van-col .goItem .c-tc .red {
+      background-color: #fb4e4e;
+    }
+
+    .van-col .goItem .c-tc .violet {
+      background-color: #fff;
+    }
+
+    .van-col .c-tc .green {
+      color: #5cba47;
+    }
+
+    .van-col .c-tc .red {
+      color: #fb4e4e;
+    }
+
+    .van-col .c-tc .violet {
+      color: #fff;
+    }
+
+    .goItem .c-row-center {
+      display: flex;
+      justify-content: center;
+    }
+
+    .game {
+      background-color: #e67e22 !important;
+      cursor: pointer;
+    }
+
+    .cursor-pointer {
+      cursor: pointer;
+    }
+
+    .active-game {
+      color: rgb(230, 126, 34);
+      font-weight: 600;
+    }
+  </style>
+</head>
+
+<body class="hold-transition dark-mode sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
+  <div class="wrapper">
+    <%- include('nav') %>
+    <div class="content-wrapper">
+      <div class="content-header">
+        <div class="container-fluid">
+          <div class="row mb-2">
+            <div class="col-sm-6">
+              <h1 class="m-0">Dashboard V5</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+      <section class="content">
+        <div class="container-fluid">
+          <div class="row info-box" id="manage">
+            <div class="col-12 col-sm-6 col-md-3 cursor-pointer block-click" data="1">
+              <div class="info-box mb-3">
+                <span class="info-box-icon elevation-1 bg-primary game">1M</span>
+
+                <div class="info-box-content active-game">
+                  <span class="info-box-text">K3 1 min</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-3 cursor-pointer" data="3">
+              <div class="info-box mb-3">
+                <span class="info-box-icon elevation-1 bg-primary game">3M</span>
+
+                <div class="info-box-content">
+                  <span class="info-box-text">K3 3 min</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-3 cursor-pointer" data="5">
+              <div class="info-box mb-3">
+                <span class="info-box-icon elevation-1 bg-primary game">5M</span>
+
+                <div class="info-box-content">
+                  <span class="info-box-text">K3 5 min</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-3 cursor-pointer" data="10">
+              <div class="info-box">
+                <span class="info-box-icon elevation-1 bg-primary game">10M</span>
+                <div class="info-box-content">
+                  <span class="info-box-text">K3 10 min</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12 col-sm-6 col-md-3">
+              <div class="info-box mb-3">
+                <span class="info-box-icon bg-danger elevation-1">
+                  <i class="fas fa-shopping-cart"></i>
+                </span>
+ 
+                <div class="info-box-content">
+                  <span class="info-box-text">Total number</span>
+                  <span totalMoney="0" class="info-box-number" id="total">0</span>
+                </div>
+              </div>
+            </div>
+            <div class="clearfix hidden-md-up"></div>
+
+            <div class="col-12 col-sm-6 col-md-3">
+              <div class="info-box mb-3">
+                <span class="info-box-icon elevation-1" style="background-color: #8e44ad;"><i class="fas fa-shopping-cart"></i></span>
+                <div class="info-box-content">
+                  <span class="info-box-text">2 Matching Numbers</span>
+                  <span totalMoney="0" class="info-box-number"id="2-so-trung">0</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-3">
+              <div class="info-box mb-3">
+                <span class="info-box-icon bg-success elevation-1">
+                  <i class="fas fa-shopping-cart"></i>
+                </span>
+
+                <div class="info-box-content">
+                  <span class="info-box-text">3 Matching Numbers</span>
+                  <span totalMoney="0" class="info-box-number" id="3-so-trung">0</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-3">
+              <div class="info-box">
+                <span class="info-box-icon bg-info elevation-1">
+                  <i class="fas fa-shopping-cart"></i>
+                </span>
+
+                <div class="info-box-content">
+                  <span class="info-box-text">Different Numbers</span>
+                  <span totalMoney="0" class="info-box-number" id="khac-so">0</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Main row -->
+          <div class="row">
+            <!-- Left col -->
+            <div class="col-md-12">
+              <!-- MAP & BOX PANE -->
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="card direct-chat direct-chat-warning">
+                    <div class="card-header">
+                      <h3 class="card-title">Betting Statistics</h3>
+
+                      <div class="card-tools">
+                        <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                          <i class="fas fa-minus"></i>
+                        </button>
+                        <button type="button" class="btn btn-tool" data-card-widget="remove">
+                          <i class="fas fa-times"></i>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="card-body">
+                      <div class="direct-chat-messages" style="min-height: 520px;">
+                        <div class="direct-chat-msg">
+                          <!---->
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card-footer"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="card card-primary">
+                    <div class="card-header" style="text-align: center;">
+                      <div data-v-04e3b381="" class="reservation-chunk-sub-num"> Loading... </div>
+                      <div data-v-7d40872f="" class="time" style="font-size: 23px;border-radius: none;">
+                        <span data-v-7d40872f="" class="time-sub" style="border-radius: 0;">0</span>
+                        <span data-v-7d40872f="" class="time-sub" style="border-radius: 0;">0</span>
+                        <span data-v-7d40872f="" class="">:</span>
+                        <span data-v-7d40872f="" class="time-sub" style="border-radius: 0;">4</span>
+                        <span data-v-7d40872f="" class="time-sub" style="border-radius: 0;">7</span>
+                      </div>
+                    </div>
+                    <div class="card-body" style="padding: 0;">
+                      <div class="form-group">
+                        <div data-v-a9660e98="" class="wrap">
+                          <div data-v-a9660e98="" class="c-tc van-row" style="text-align: center;border-bottom: 1px solid;padding: 6px">
+                            <div data-v-a9660e98="" class="van-col van-col--8">Periods</div>
+                            <div data-v-a9660e98="" class="van-col van-col--5">Result</div>
+                            <div data-v-a9660e98="" class="van-col van-col--5">Big/Small</div>
+                            <div data-v-a9660e98="" class="van-col van-col--5">Even/Odd</div>
+                          </div>
+                        </div>
+                        <div id="list-orders">
+                          <!---->
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="card card-primary">
+                    <div class="card-header">
+                      <h3 class="card-title">Adjust results</h3>
+                    </div>
+                    <div class="card-body">
+                      <div class="form-group">
+                        <b> Enter 5 numbers (e.g., 431). 431 represents 3 dice. The sum will be 4 + 3 + 1 = 8 (8 is Even) (Sum <= 10 will be 'small' and vice versa).</p>
+                          <label for="editResult" id="ketQua">Next Result: Random</label>
+                          <input type="text" class="form-control" id="editResult" value="" placeholder="Enter the result (eg: 15267|12048|86936)">
+                      </div>
+                    </div>
+                    <div class="card-footer" style="text-align: center;">
+                      <button type="submit" class="btn btn-primary start-order">Submit</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <a id="back-to-tops" href="#" class="btn btn-primary back-to-top" role="button" aria-label="Scroll to top">
+      <i class="fas fa-chevron-up"></i>
+    </a> 
+  </div>
+  <script src="/plugins/jquery/jquery.min.js"></script>
+  <script src="/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+  <script src="/dist/js/adminlte.js"></script>
+  <script src="/plugins/jquery-mousewheel/jquery.mousewheel.js"></script>
+  <script src="/plugins/raphael/raphael.min.js"></script>
+  <script src="/k3/admin/main.js"></script>
+  <script>
+    $(".start-order").click(function (e) { 
+      e.preventDefault();
+      let game = $('html').attr('data-change');
+      let value = $('#editResult').val().trim();
+      let arr = value.split('|');
+      for (let i = 0; i < arr.length; i++) {
+          let check = isNumber(arr[i]);
+          if (arr[i] == "" || arr[i].length != 3 || !check) {
+              alert("Please enter the correct format (e.g., 123|456|234).");
+              return false;
+          }
+      }
+      $.ajax({
+        type: "POST",
+        url: "/api/webapi/admin/k3/editResult",
+        data: {
+          game: game,
+          list: value,
+        },
+        dataType: "json",
+        success: function (response) {
+          Swal.fire(
+              'Good job!',
+              `${response.message}`,
+              'success'
+          );
+          $('#ketQua').text(`Next Result: ${value}`);
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>

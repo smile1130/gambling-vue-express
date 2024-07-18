@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html translate="no" data-dpr="1" style="font-size: 39px;" style="min-height: 100vh;">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="robots" content="noindex,nofollow">
+    <meta content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" name="viewport">
+    <title>BigMumbai</title>
+    <link rel="stylesheet" href="./index_files/index-96409872.css">
+    <link href="/css/member/main.css" rel="stylesheet" />
+    <link href="/css/member/chunk-1.css" rel="stylesheet" />
+    <link href="/css/member/chunk-2.css" rel="stylesheet" />
+    <link href="/css/member/chunk-3.css" rel="stylesheet" />
+    <link href="/css/member/chunk-4.css" rel="stylesheet" />
+    <link href="/css/member/chunk-5.css" rel="stylesheet" />
+    <link href="/css/member/chunk-6.css" rel="stylesheet" />
+    <link href="/css/member/chunk-7.css" rel="stylesheet" />
+    <link rel="shortcut icon" href="/images/bitbug_favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
+    <style>
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+            background-color: #090909;
+            padding: 0;
+            margin: 0;
+        }
+
+        .block-click {
+            pointer-events: none;
+        }
+    
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <div data-v-8cd483ca="" class="mian page">
+            <div data-v-106b99c8="" data-v-8cd483ca="" class="navbar">
+                <div data-v-106b99c8="" class="navbar-left"></div>
+                <div data-v-106b99c8="" class="navbar-title">Mine </div>
+                <div data-v-106b99c8="" class="navbar-right" onclick="location.href='/keFuMenu'">
+                    <div data-v-8cd483ca="" data-v-106b99c8="" class="c-row">
+                        <img data-v-8cd483ca="" data-v-106b99c8="" src="/images/audio.webp" class="audio">
+                    </div>
+                </div>
+            </div>
+            <div data-v-8cd483ca="" class="menu-box">
+                <div data-v-8cd483ca="" class="info p-t-30 p-l-30 p-b-30 p-r-20">
+                    <div data-v-8cd483ca="" class="c-row c-row-between c-row-middle state-box c-pr"
+                        onclick="location.href='/myProfile'">
+                        <div data-v-8cd483ca="" class="c-row c-row-middle">
+                            <div data-v-8cd483ca="" class="user-img">
+                                <img data-v-8cd483ca="" src="/images/avatar.svg" class="img">
+                            </div>
+                            <div data-v-8cd483ca="" class="p-l-10 infoName">
+                                <div data-v-8cd483ca="" class="name mb3 c-row c-row-middle"> </div>
+                                <div data-v-8cd483ca="" class="id tag-read mb3" data-clipboard-text="42472"></div>
+                                <div data-v-8cd483ca="" class="number mb3"> </div>
+                                <!---->
+                            </div>
+                        </div>
+                        <div data-v-8cd483ca="" class="profile">
+                            <i data-v-8cd483ca="" class="van-icon van-icon-arrow"
+                                style="color: #F6F6F6; font-size: 20px;">
+                                <!---->
+                            </i>
+                        </div>
+                    </div>
+                </div>
+                <div data-v-8cd483ca="" class="total-box">
+                    <div data-v-8cd483ca="" class="infoItem">
+                        <div data-v-8cd483ca="" class="c-row c-row-middle">
+                            <img data-v-8cd483ca="" width="45px" height="45px" src="/images/icon_wallet.webp"
+                                class="walletImg">
+                            <div data-v-8cd483ca="" class="p-l-15">
+                                <div data-v-8cd483ca="" class="des u-m-b-15">Balance</div>
+                                <div data-v-8cd483ca="" class="c-row c-row-middle c-row-center p-t-5">
+                                    <div data-v-8cd483ca="" class="money">
+                                        <div data-v-8cd483ca="">
+                                            <span data-v-8cd483ca="" class="txt" id="Balance" style="display: inline;">₹
+                                                0.00</span>
+                                            <span data-v-8cd483ca="" class="txt1" id="balance_show"
+                                                style="display: none;">******</span>
+                                        </div>
+                                    </div>
+                                    <div data-v-8cd483ca="">
+                                        <img data-v-8cd483ca="" width="20px" height="20px" src="/images/king (1).png"
+                                            class="img m-l-10 reload_money">
+                                    </div>
+                                </div>
+                            </div>
+                            <span toggle="#password-field" class="fa fa-fw fa-eye field_icon toggle-password"
+                                style="margin: 8px; align-self: end; margin-left: auto;"
+                                onclick="toggleBalanceVisibility()"></span>
+                        </div>
+                        <div data-v-8cd483ca="" class="c-row c-row-between m-t-10 infoBtn">
+                            <div data-v-8cd483ca="" class="item c-row c-row-center"
+                                onclick="location.href='/wallet/withdrawal'">
+                                <div data-v-8cd483ca="" class="li"> Withdraw</div>
+                            </div>
+                            <div data-v-8cd483ca="" class="item c-row c-row-center"
+                                onclick="location.href='/wallet/recharge'">
+                                <div data-v-8cd483ca="" class="li"> Recharge </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!---->
+                <div data-v-8cd483ca="" class="promote c-row c-row-middle-center" onclick="location.href='/promotion'">
+                    <div data-v-8cd483ca="" class="c-row c-row-middle">
+                        <div data-v-8cd483ca="">Promotion</div>
+                    </div><img data-v-8cd483ca="" width="30px" height="15px" src="/images/king.png" class="img">
+                </div>
+                <!--     <div data-v-8cd483ca="" class="nav-muen c-row p-r-15 p-l-15">
+                    <div data-v-8cd483ca="" class="item c-tc"><img data-v-8cd483ca="" width="45px" height="45px"
+                            src="/images/s6.png" class="img" onclick="location.href='/daily/table/listBet.ejs'">
+                        <div data-v-8cd483ca="" class="name"> Bet History</div>
+                    </div>
+                    <div data-v-8cd483ca="" class="item c-tc"><img data-v-8cd483ca="" width="45px" height="45px"
+                            src="/images/s7.png" class="img">
+                        <div data-v-8cd483ca="" class="name"> Transactions History </div>
+                    </div>
+                    <div data-v-8cd483ca="" class="item c-tc"><img data-v-8cd483ca="" width="45px" height="45px"
+                            src="/images/s8.png" class="img">
+                        <div data-v-8cd483ca="" class="name"> Login History </div>
+                    </div>
+                    <div data-v-8cd483ca="" class="item c-tc">
+                        <div data-v-8cd483ca="" class="messageImg"><span data-v-8cd483ca="" class="number">34</span><img
+                                data-v-8cd483ca="" width="45px" height="45px" src="/images/s9.png" class="img"></div>
+                        <div data-v-8cd483ca="" class="name"> News </div>
+                    </div>
+                </div> -->
+                <div data-v-21f3500a="" data-v-8cd483ca="" class="list">
+                    <!---->
+                    <!---->
+                    <% if (level==1) { %>
+                        <div data-v-21f3500a="" class="item c-row c-row-between"
+                            onclick="location.href='/admin/manager/index'">
+                            <div data-v-21f3500a="" class="c-row c-row-middle">
+                                <img data-v-21f3500a="" width="24px" height="24px" src="/images/s1.png" class="img">
+                                <span data-v-21f3500a="" class="name">Administrator Area</span>
+                            </div>
+                            <div data-v-21f3500a="" class="c-row c-row-middle">
+                                <i data-v-21f3500a="" class="van-icon van-icon-arrow"
+                                    style="color: rgb(84, 94, 104); font-size: 20px;">
+                                    <!---->
+                                </i>
+                            </div>
+                        </div>
+                        <% } %>
+                            <% if (level==2) { %>
+                                <div data-v-21f3500a="" class="item c-row c-row-between"
+                                    onclick="location.href='/manager/index'">
+                                    <div data-v-21f3500a="" class="c-row c-row-middle">
+                                        <img data-v-21f3500a="" width="24px" height="24px" src="/images/s1.png"
+                                            class="img">
+                                        <span data-v-21f3500a="" class="name">Collaborator Area</span>
+                                    </div>
+                                    <div data-v-21f3500a="" class="c-row c-row-middle">
+                                        <i data-v-21f3500a="" class="van-icon van-icon-arrow"
+                                            style="color: rgb(84, 94, 104); font-size: 20px;">
+                                            <!---->
+                                        </i>
+                                    </div>
+                                </div>
+                                <% } %>
+                                    <div data-v-21f3500a="" class="item c-row c-row-between"
+                                        onclick="location.href='/mian/forgot'">
+                                        <div data-v-21f3500a="" class="c-row c-row-middle"><img data-v-21f3500a=""
+                                                width="24px" height="24px" src="/images/s1.png" class="img"><span
+                                                data-v-21f3500a="" class="name">Security and Safety</span></div>
+                                        <div data-v-21f3500a="" class="c-row c-row-middle"><i data-v-21f3500a=""
+                                                class="van-icon van-icon-arrow"
+                                                style="color: rgb(84, 94, 104); font-size: 20px;">
+                                                <!---->
+                                            </i></div>
+                                    </div>
+                                    <!---->
+                                    <!---->
+                                    <div data-v-21f3500a="" class="item c-row c-row-between"
+                                        onclick="location.href='/redenvelopes'">
+                                        <div data-v-21f3500a="" class="c-row c-row-middle"><img data-v-21f3500a=""
+                                                width="24px" height="24px" src="/images/s2.png" class="img"><span
+                                                data-v-21f3500a="" class="name">Redeem Code</span></div>
+                                        <div data-v-21f3500a="" class="c-row c-row-middle"><i data-v-21f3500a=""
+                                                class="van-icon van-icon-arrow"
+                                                style="color: rgb(84, 94, 104); font-size: 20px;">
+                                                <!---->
+                                            </i></div>
+                                    </div>
+                                    <div data-v-21f3500a="" class="item c-row c-row-between"
+                                        onclick="location.href='/newtutorial'">
+                                        <div data-v-21f3500a="" class="c-row c-row-middle"><img data-v-21f3500a=""
+                                                width="24px" height="24px" src="/images/s3.png" class="img"><span
+                                                data-v-21f3500a="" class="name">Guide for beginners</span>
+                                        </div>
+                                        <div data-v-21f3500a="" class="c-row c-row-middle"><i data-v-21f3500a=""
+                                                class="van-icon van-icon-arrow"
+                                                style="color: rgb(84, 94, 104); font-size: 20px;">
+                                                <!---->
+                                            </i></div>
+                                    </div>
+                                    <div data-v-21f3500a="" class="item c-row c-row-between"
+                                        onclick="location.href='/about'">
+                                        <div data-v-21f3500a="" class="c-row c-row-middle"><img data-v-21f3500a=""
+                                                width="24px" height="24px" src="/images/s4.png" class="img"><span
+                                                data-v-21f3500a="" class="name">About Us</span></div>
+                                        <div data-v-21f3500a="" class="c-row c-row-middle">
+                                            <i data-v-21f3500a="" class="van-icon van-icon-arrow"
+                                                style="color: rgb(84, 94, 104); font-size: 20px;">
+                                                <!---->
+                                            </i>
+                                        </div>
+                                    </div>
+                                    <div data-v-21f3500a="" class="item c-row c-row-between"
+                                        onclick="location.href='/keFuMenu'">
+                                        <div data-v-21f3500a="" class="c-row c-row-middle"><img data-v-21f3500a=""
+                                                width="24px" height="24px" src="/images/s5.png" class="img"><span
+                                                data-v-21f3500a="" class="name">Customer Support Online 24/7</span>
+                                        </div>
+                                        <div data-v-21f3500a="" class="c-row c-row-middle">
+                                            <i data-v-21f3500a="" class="van-icon van-icon-arrow"
+                                                style="color: rgb(84, 94, 104); font-size: 20px;">
+                                                <!---->
+                                            </i>
+                                        </div>
+                                    </div>
+                </div>
+            </div>
+
+            <div data-v-8cd483ca="" class="logout-btn m-t-40">
+                <div data-v-8cd483ca="" class="gradient">
+                    <button data-v-8cd483ca=""
+                        class="logout van-button van-button--default van-button--normal van-button--block van-button--round"
+                        style="color: #F6F6F6; background: rgb(242, 65, 59); border-color: rgb(242, 65, 59);">
+                        <div data-v-8cd483ca="" class="van-button__content">
+                            <span data-v-8cd483ca="" class="van-button__text">
+                                <span data-v-8cd483ca="">Logout</span>
+                            </span>
+                        </div>
+                    </button>
+                </div>
+            </div>
+            <div data-v-7692a079="" data-v-8cd483ca="" class="Loading c-row c-row-middle-center">
+                <div data-v-7692a079="" class="van-loading van-loading--circular">
+                    <span data-v-7692a079="" class="van-loading__spinner van-loading__spinner--circular"
+                        style="width: auto; height: auto; -webkit-animation-duration: 1s; animation-duration: 1s;">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                            viewBox="0 0 200 200" width="200" height="200" preserveAspectRatio="xMidYMid meet"
+                            style="width: 100%;height: 100%;transform: translate3d(0px, 0px, 0px);content-visibility: visible;">
+                            <g transform="matrix(-0.5984085202217102,0.8011911511421204,-0.8011911511421204,-0.5984085202217102,239.9599609375,79.72173309326172)"
+                                style="display: block;">
+                                <image width="200px" height="200px" preserveAspectRatio="xMidYMid slice"
+                                    xlink:href="/index_files/loadingspinner.png"></image>
+                            </g>
+                            <g transform="matrix(0.9408400058746338,0,0,0.9408400058746338,20.969436645507812,79.30152130126953)"
+                                style="display: block;">
+                                <image width="168px" height="44px" preserveAspectRatio="xMidYMid slice"
+                                    xlink:href="/index_files/h5setting_202401100608011fs2.png"></image>
+                            </g>
+                        </svg>
+                    </span>
+                </div>
+            </div>
+            <%- include('../nav') -%>
+        </div>
+    </div>
+    <div class="van-overlay" style="z-index: 2001;display: none;"></div>
+    <div role="dialog" class="van-dialog" style="z-index: 2002;display: none;" aria-labelledby="Lời nhắc">
+        <div class="van-dialog__header">Reminder</div>
+        <div class="van-dialog__content">
+            <div class="van-dialog__message van-dialog__message--has-title">Do you want to sign out?</div>
+        </div>
+        <div class="van-hairline--top van-dialog__footer van-dialog__footer--buttons">
+            <button class="van-button van-button--default van-button--large van-dialog__cancel">
+                <div class="van-button__content">
+                    <span class="van-button__text">Cancel</span>
+                </div>
+            </button>
+            <button class="van-button van-button--default van-button--large van-dialog__confirm van-hairline--left">
+                <div class="van-button__content">
+                    <span class="van-button__text">Confirm</span>
+                </div>
+            </button>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="/js/client.js"></script>
+    <script>
+        fetch('/api/webapi/GetUserInfo')
+            .then(response => response.json())
+            .then(data => {
+                if (data.status === false) {
+                    unsetCookie();
+                    return false;
+                };
+                $('.infoName .name').text(data.data.name_user);
+                $('.infoName .id').text(`ID:${data.data.id_user}`);
+                $('.infoName .id').attr('data-clipboard-text', '');
+                $('.infoName .number').text(`Mobile Number: +91 ${data.data.phone_user.slice(0, 2)}****${data.data.phone_user.slice(-4)}`);
+                $('.money .txt').text(` ₹ ${data.data.money_user} `);
+            });
+    </script>
+    <!---->
+    <script>
+        $('.reload_money').click(function (e) {
+            e.preventDefault();
+            $(this).addClass('action block-click');
+            setTimeout(() => {
+                $(this).removeClass('action block-click');
+            }, 3000);
+        });
+
+        window.onload = function () {
+            $('.Loading').fadeOut(10);
+        }
+        $('.van-dialog__cancel').click(function (e) {
+            e.preventDefault();
+
+            $('.van-dialog').addClass('van-dialog-bounce-leave-active van-dialog-bounce-leave-to');
+            setTimeout(() => {
+                $('.van-dialog').removeClass('van-dialog-bounce-leave-active van-dialog-bounce-leave-to');
+                $('.van-dialog, .van-overlay').fadeOut(50);
+            }, 200);
+        });
+        $('.logout').click(function (e) {
+            e.preventDefault();
+            $('.van-dialog, .van-overlay').css('display', '');
+            $('.van-dialog').addClass('van-dialog-bounce-enter-active van-dialog-bounce-enter-to');
+            setTimeout(() => {
+                $('.van-dialog').removeClass('van-dialog-bounce-enter-active van-dialog-bounce-enter-to');
+            }, 500);
+        });
+        function setCookie(cname, cvalue, exdays) {
+            const d = new Date();
+            d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+            let expires = "expires=" + d.toUTCString();
+            document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+        }
+        function getCookie(cname) {
+            let name = cname + "=";
+            let decodedCookie = decodeURIComponent(document.cookie);
+            let ca = decodedCookie.split(';');
+            for (let i = 0; i < ca.length; i++) {
+                let c = ca[i];
+                while (c.charAt(0) == ' ') {
+                    c = c.substring(1);
+                }
+                if (c.indexOf(name) == 0) {
+                    return c.substring(name.length, c.length);
+                }
+            }
+            return "";
+        }
+
+        function unsetCookie() {
+            setCookie('token', '', 0);
+            setCookie('auth', '', 0);
+            var checkToken = getCookie('token');
+            var checkAuth = getCookie('auth');
+            if (!checkToken && !checkAuth) {
+                location.href = "/login";
+            } else {
+                setCookie('token', '', 0);
+                setCookie('auth', '', 0);
+                location.href = "/login";
+            }
+        }
+
+        $('.van-dialog__confirm').click(function (e) {
+            e.preventDefault();
+            unsetCookie();
+        });
+
+        $(document).on('click', '.toggle-password', function () {
+
+            $(this).toggleClass("fa-eye fa-eye-slash");
+
+            var input = $("#pass_log_id");
+            input.attr('type') === 'password' ? input.attr('type', 'text') : input.attr('type', 'password')
+        });
+
+        var isBalanceVisible = true;
+
+        function toggleBalanceVisibility() {
+            var actualBalance = document.getElementById("Balance");
+            var hiddenBalance = document.getElementById("balance_show");
+
+            isBalanceVisible = !isBalanceVisible;
+
+            if (isBalanceVisible) {
+                actualBalance.style.display = "inline";
+                hiddenBalance.style.display = "none";
+            } else {
+                actualBalance.style.display = "none";
+                hiddenBalance.style.display = "inline";
+            }
+        }
+
+    </script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+</body>
+
+</html>

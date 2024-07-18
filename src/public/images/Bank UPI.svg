@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>icon-bhim</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="onion-pay-icons" transform="translate(0.000000, -100.000000)">
+            <g id="icon-bhim" transform="translate(0.000000, 100.000000)">
+                <circle id="Oval" stroke="#66686C" fill="#FFFFFF" cx="12" cy="12" r="11.5"></circle>
+                <g id="bhim" transform="translate(6.000000, 3.000000)">
+                    <polygon id="Path-Copy" fill="#008D3D" points="8.12307692 0.553846154 3.13846154 18 12.7384615 9.13846154"></polygon>
+                    <polygon id="Path" fill="#FF7A08" points="4.98461538 0 0 17.4461538 9.6 8.58461538"></polygon>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

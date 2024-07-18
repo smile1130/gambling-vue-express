@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html translate="no" data-dpr="1" style="font-size: 37.52px;">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="robots" content="noindex,nofollow">
+  <meta content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" name="viewport">
+  <title>BigMumbai</title>
+  <link rel="shortcut icon" href="/images/bitbug_favicon.ico" type="image/x-icon">
+  <link href="css/app.21328c5b.css" rel="stylesheet">
+  <link rel="stylesheet" href="/k3/css/chunk-9ca7d0dc.0f968705.css">
+  <link rel="stylesheet" href="/k3/css/chunk-f7aaa136.30c67545.css">
+  <link rel="stylesheet" href="/k3/css/chunk-vendors.b521b44f.css">
+  <style>
+    html,
+    body {
+      height: 100%;
+      width: 100%;
+      background-color: #090909;
+      padding: 0;
+      margin: 0;
+    }
+
+    .block-click {
+      pointer-events: none;
+    }
+
+    .d-none {
+      display: none !important;
+    }
+  </style>
+</head>
+
+<body style="font-size: 12px;">
+  <div id="app">
+    <div data-v-03b808c2="" class="mian game">
+      <div data-v-106b99c8="" data-v-03b808c2="" class="navbar">
+        <div data-v-106b99c8="" class="navbar-left" onclick="location.href='/home'">
+          <div data-v-03b808c2="" data-v-106b99c8="" class="c-row c-row-middle-center"><img data-v-03b808c2=""
+              data-v-106b99c8="" src="/images/back.c3244ab0.png" class="navbar-back"></div>
+        </div>
+        <div data-v-106b99c8="" class="navbar-title">
+          <div data-v-03b808c2="" data-v-106b99c8="" class="c-row c-row-middle-center">
+            <img data-v-03b808c2="" data-v-106b99c8="" height="38px" width="100px" src="/images/espgame.png"
+              class="logo" style="height: .80333rem!important;">
+          </div>
+        </div>
+        <div data-v-106b99c8="" class="navbar-right">
+          <div data-v-03b808c2="" data-v-106b99c8="" class="c-row navbarR">
+            <div data-v-03b808c2="" data-v-106b99c8="" class="c-row item c-row-middle-center"
+              onclick="location.href='/keFuMenu'">
+              <img data-v-03b808c2="" data-v-106b99c8="" src="/images/audio.webp" class="item-audio">
+            </div>
+            <div data-v-03b808c2="" data-v-106b99c8="" class="c-row item c-row-middle-center">
+              <img data-v-03b808c2="" data-v-106b99c8="" src="/images/volume-up-line.webp" class="item-volume">
+            </div>
+          </div>
+        </div>
+      </div>
+      <%- include('element/gameHead.ejs') -%>
+        <%- include('element/betting.ejs') -%>
+          <%- include('element/listOrder.ejs') -%>
+            <%- include('element/popupJoin.ejs') -%>
+              <%- include('element/quytac.ejs') -%>
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdn.socket.io/4.4.1/socket.io.min.js"
+    integrity="sha384-fKnu0iswBIqkjxrhQCTZ7qlLHOFEgNkRmK2vaO/LbTZSXdJfAu6ewRBdwHPhBo/H"
+    crossorigin="anonymous"></script>
+  <script src="/k3/js/main.js"></script>
+  <script src="/k3/js/chuck.js"></script>
+</body>
+
+</html>

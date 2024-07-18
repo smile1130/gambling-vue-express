@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>User Profile</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <link rel="stylesheet" href="/plugins/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="//cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
+    <link rel="stylesheet" href="/dist/css/adminlte.min.css">
+    <link rel="stylesheet" href="/css/admin.css">
+</head>
+
+<body class="hold-transition sidebar-mini">
+    <div class="wrapper">
+        <%- include('nav') %>
+        <div class="content-wrapper">
+            <!-- Content Header (Page header) -->
+            <section class="content-header">
+                <div class="container-fluid">
+                    <div class="row mb-2">
+                        <div class="col-sm-6">
+                            <h1>User Information</h1>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.container-fluid -->
+            </section>
+
+            <!-- Main content -->
+            <section class="content">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-3">
+
+                            <!-- Profile Image -->
+                            <div class="card card-primary card-outline">
+                                <div class="card-body box-profile">
+                                    <div class="text-center">
+                                        <img class="profile-user-img img-fluid img-circle" src="/images/avatar.svg" alt="User profile picture">
+                                    </div>
+
+                                    <h3 class="profile-username text-center">Member...</h3>
+
+                                    <p class="text-muted text-center" id="id_user">ID: 0</p>
+
+                                    <ul class="list-group list-group-unbordered mb-3">
+                                        <li class="list-group-item">
+                                            <b>Surplus</b> <a class="float-right" id="money">0</a>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <b>Total charge</b> <a class="float-right" id="total_money">0</a>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <b>Total draw</b> <a class="float-right" id="total_withdraw">0</a>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <b>Total commission</b> <a class="float-right" id="roses_all">0</a>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <b>Roses today</b> <a class="float-right" id="roses_today">0</a>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <b>F1</b> <a class="float-right" id="f1">0</a>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <b>F2</b> <a class="float-right" id="f2">0</a>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <b>F3</b> <a class="float-right" id="f3">0</a>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <b>F4</b> <a class="float-right" id="f4">0</a>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <b>General invitation</b> <a class="float-right" id="total_mem">0</a>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <b>IP</b> <a class="float-right" id="ip">157.296.591.22</a>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <b>Telegram</b> <a class="float-right" id="telegram" href="Loading...">Loading...</a>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <b>Inviter</b> <a class="float-right" id="invite">Loading...</a>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <b>DAILY</b> <a class="float-right" id="daily">Loading...</a>
+                                        </li>
+                                    </ul>
+
+                                    <a href="#" class="btn btn-primary btn-block">
+                                        <b style="text-transform: uppercase;" id="level">USER</b>
+                                    </a>
+                                </div>
+                                <!-- /.card-body -->
+                            </div>
+                            <!-- /.card -->
+
+                            <!-- About Me Box -->
+                            <div class="card card-primary">
+                                <div class="card-header">
+                                    <h3 class="card-title">Bank information</h3>
+                                </div>
+                                <!-- /.card-header -->
+                                <div class="card-body">
+                                    
+                                    <strong>
+                                        <i class="fas fa-pencil-alt mr-1"></i> 
+                                        <span>Account name</span>
+                                    </strong>
+
+                                    <p class="text-muted"> 
+                                        <span class="tag tag-danger" id="name">No banks added yet</span>
+                                    </p>
+                                    <hr>
+                                    <strong>
+                                        <i class="far fa-file-alt mr-1"></i>
+                                        <span>Account number</span>
+                                    </strong>
+
+                                    <p class="text-muted" id="stk">No banks added yet</p>
+                                    
+                                    <hr>
+
+                                    <strong>
+                                        <i class="fas fa-map-marker-alt mr-1"></i>
+                                        <span>Address</span>
+                                    </strong>
+
+                                    <p class="text-muted" id="location">No banks added yet</p>
+
+                                    <hr>
+                                    <strong>
+                                        <i class="fas fa-book mr-1"></i>
+                                        <span>Extra time</span>
+                                    </strong>
+                                    <p class="text-muted" id="timeAddBank">No banks added yet</p>
+
+                                <!--    <a href="#" class="btn btn-primary btn-block">
+                                        <b style="text-transform: uppercase;">EDIT</b> -->
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-9" style="overflow: auto;">
+                            <!-- Table Recharge -->
+                            <%- include('table/listRecharge.ejs') %>
+                            <!-- END TABLE -->
+                            <!-- Table Withdraw -->
+                            <%- include('table/listWithdraw.ejs') %>
+                            <!-- END TABLE -->
+                            <!-- Table Withdraw -->
+                            <%- include('table/listRedenvelope.ejs') %>
+                            <!-- END TABLE -->
+                            <!-- Table Withdraw -->
+                            <%- include('table/listBet.ejs') %>
+                            <!-- END TABLE -->
+                        </div> 
+                    </div>
+                </div>
+            </section> 
+        </div>
+    </div>
+    <script src="/plugins/jquery/jquery.min.js"></script>
+    <script src="/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/dist/js/adminlte.min.js"></script>
+    <script src="/js/admin/admin.js"></script>
+    <script>
+    
+    function formateT(params) {
+    let result = (params < 10) ? "0" + params : params;
+    return result;
+    }
+    
+    function timerJoin(params = '', addHours = 0) {
+        let date = '';
+        if (params) {
+            date = new Date(Number(params));
+        } else {
+            date = new Date();
+        }
+    
+        date.setHours(date.getHours() + addHours);
+    
+        let years = formateT(date.getFullYear());
+        let months = formateT(date.getMonth() + 1);
+        let days = formateT(date.getDate());
+    
+        let hours = date.getHours() % 12;
+        hours = hours === 0 ? 12 : hours;
+        let ampm = date.getHours() < 12 ? "AM" : "PM";
+    
+        let minutes = formateT(date.getMinutes());
+        let seconds = formateT(date.getSeconds());
+    
+        return years + '-' + months + '-' + days + ' ' + hours + ':' + minutes + ':' + seconds + ' ' + ampm;
+    }
+
+    </script>
+    <script>
+        let url = window.location.pathname;
+        let phones = url.split('/');
+        let phone = phones[phones.length - 1];
+        $.ajax({
+            type: "POST",
+            url: "/api/webapi/admin/member/info",
+            data: {
+                phone: phone,
+            },
+            dataType: "json",
+            success: function (response) {
+                if(response.status === false) return false;
+                let user = response.datas[0];
+                // user
+                $('.profile-username').text(user.name_user);
+                $('#telegram').text(response.telegram.telegram);
+                $('#telegram').attr('href', response.telegram.telegram);
+                $('#id_user').text("ID: " + user.id_user);
+                $('#money').text(user.money + ".0");
+                $('#roses_all').text(user.roses_f + user.roses_f1 + '.0');
+                $('#roses_today').text(user.roses_today + '.0');
+                $('#invite').text(response.ng_moi.phone);
+                $('#daily').text(response.daily);
+
+                $('#f1').text(response.f1 + " member");
+                $('#f2').text(response.f2 + " member");
+                $('#f3').text(response.f3 + " member");
+                $('#f4').text(response.f4 + " member");
+                $('#total_mem').text(response.f1 + response.f2 + response.f3 + response.f4);
+                $('#ip').text(user.ip_address);
+                $('#level').text((user.level == 1) ? 'ADMIN' : (user.level == 2) ? "CTV" : "USER");
+
+                $('#total_money').text((response.total_r[0].total) ? response.total_r[0].total + '.0' : '0.0');
+                $('#total_withdraw').text((response.total_w[0].total) ? response.total_w[0].total + '.0' : '0.0');
+
+                // bank
+                if (response.bank_user[0]) {
+                    $('#name').text(response.bank_user[0].name_user);
+                    $('#stk').text(response.bank_user[0].stk);
+                    $('#location').text(response.bank_user[0].tinh + " - " + response.bank_user[0].tp);
+                    $('#timeAddBank').text(timerJoin(response.bank_user[0].time));
+                }
+            }
+        });
+    </script>
+
+    <!--Withdraw-->
+    <script>
+        const RenderWithdraw = (datas) => {
+            if (datas.length == 0) {
+                $('#list-withdraw').html(`
+                    <tr class="text-center">
+                    <td colspan="7">no data...</td>
+                    </tr>
+                `);
+                return;
+            }
+            let html = '';
+            datas.map((data) => {
+                html += 
+                `
+                <tr class="text-center" style="">
+                    <td style="color: #e74c3c;font-weight: 600;min-width: 210px">${data.id_order}</td>
+                    <td><b style="color: #3498db">${(data.money)}</b></td>
+                    <td style="min-width: 210px;"><b>${data.name_bank}</b></td>
+                    <td class="project-state"><span class="badge badge-${(data.status == '1' ? 'success' : 'danger')}">${(data.status == '1' ? 'success' : 'closed')}</span></td>
+                    <td style="min-width: 210px;"><b>${timerJoin(data.time)}</b></td>
+                </tr>
+                `;
+            });
+            $("#list-withdraw").html(html);
+        }
+
+        var pageno = 0;
+        var limit = 15;
+        var page = 1;
+        $.ajax({
+        type: "POST",
+        url: "/admin/member/listWithdraw/<%=phone%>",
+        data: {
+            typeid: "1",
+            pageno: pageno,
+            limit: limit,
+            language: "vi",
+        },
+        dataType: "json",
+        success: function (response) {
+            $('#text-withdraw').text(page + ' / ' + response.page_total);
+            if (response.status === true) return RenderWithdraw(response.datas);
+        },
+        });
+
+        $('#nextWithdraw').click(function (e) {
+        pageno += limit;
+        e.preventDefault();
+        $.ajax({
+            type: "POST",
+            url: "/admin/member/listWithdraw/<%=phone%>",
+            data: {
+            typeid: "1",
+            pageno: pageno,
+            limit: limit,
+            language: "vi",
+            },
+            dataType: "json",
+            success: function (response) {
+            if(response.datas.length == 0) {
+                $('#nextRecharge').addClass('block-click');
+                return pageno -= limit
+            };
+            $('#text-withdraw').text(++page + ' / ' + response.page_total);
+            if (response.status === true) return RenderWithdraw(response.datas);
+            }
+        });
+        });
+        
+        $('#previousWithdraw').click(function (e) { 
+        e.preventDefault();
+        $('#nextWithdraw').removeClass('block-click');
+        pageno -= limit;
+        if(pageno < 0) return pageno = 0;
+        $.ajax({
+            type: "POST",
+            url: "/admin/member/listWithdraw/<%=phone%>",
+            data: {
+            typeid: "1",
+            pageno: pageno,
+            limit: limit,
+            language: "vi",
+            },
+            dataType: "json",
+            success: function (response) {
+            $('#text-withdraw').text(--page + ' / ' + response.page_total);
+            if (response.status === true) return RenderWithdraw(response.datas);
+            }
+        });
+        });
+    </script>
+    <!--Withdraw-->
+
+    <!--Recharge-->
+    <script>
+        const RenderRecharge = (datas) => {
+            if (datas.length == 0) {
+                $('#list-recharge').html(`
+                    <tr class="text-center">
+                    <td colspan="7">no data...</td>
+                    </tr>
+                `);
+                return;
+            }
+            let html = '';
+            datas.map((data) => {
+                html += 
+                `
+                <tr class="text-center" style="">
+                    <td style="color: #e74c3c;font-weight: 600;min-width: 210px">${data.transaction_id}</td>
+                    <td><b style="color: #3498db">${(data.money)}</b></td>
+                    <td style="min-width: 210px;"><b>${(data.type == "bank") ? "BANK" : "UPI"}</b></td>
+                    <td class="project-state"><span class="badge badge-${(data.status == '1' ? 'success' : 'warning')}">${(data.status == '1' ? 'success' : 'closed')}</span></td>
+                    <td style="min-width: 210px;"><b>${timerJoin(data.time)}</b></td>
+                </tr>
+                `;
+            });
+            $("#list-recharge").html(html);
+        }
+
+        var pageno1 = 0;
+        var limit1 = 15;
+        var page1 = 1;
+        $.ajax({
+        type: "POST",
+        url: "/admin/member/listRecharge/<%=phone%>",
+        data: {
+            typeid: "1",
+            pageno: pageno1,
+            limit: limit1,
+            language: "vi",
+        },
+        dataType: "json",
+        success: function (response) {
+            $('#text-recharge').text(page1 + ' / ' + response.page_total);
+            if (response.status === true) return RenderRecharge(response.datas);
+        },
+        });
+
+        $('#nextRecharge').click(function (e) {
+        pageno1 += limit1;
+        e.preventDefault();
+        $.ajax({
+            type: "POST",
+            url: "/admin/member/listRecharge/<%=phone%>",
+            data: {
+            typeid: "1",
+            pageno: pageno1,
+            limit: limit1,
+            language: "vi",
+            },
+            dataType: "json",
+            success: function (response) {
+            if(response.datas.length == 0) {
+                $('#nextRecharge').addClass('block-click');
+                return pageno1 -= limit1
+            };
+            $('#text-recharge').text(++page1 + ' / ' + response.page_total);
+            if (response.status === true) return RenderRecharge(response.datas);
+            }
+        });
+        });
+        
+        $('#previousRecharge').click(function (e) { 
+        e.preventDefault();
+        $('#nextRecharge').removeClass('block-click');
+        pageno1 -= limit1;
+        if(pageno1 < 0) return pageno1 = 0;
+        $.ajax({
+            type: "POST",
+            url: "/admin/member/listRecharge/<%=phone%>",
+            data: {
+            typeid: "1",
+            pageno: pageno1,
+            limit: limit1,
+            language: "vi",
+            },
+            dataType: "json",
+            success: function (response) {
+            $('#text-recharge').text(--page1 + ' / ' + response.page_total);
+            if (response.status === true) return RenderRecharge(response.datas);
+            }
+        });
+        });
+    </script>
+    <!--Recharge-->
+
+    <!--Redenvelope-->
+    <script>
+        const RenderRedenvelopes = (datas) => {
+            if (datas.length == 0) {
+                $('#list-redenvelope').html(`
+                    <tr class="text-center">
+                    <td colspan="7">no data...</td>
+                    </tr>
+                `);
+                return;
+            }
+            let html = '';
+            datas.map((data) => {
+                html += 
+                ` 
+                <tr class="text-center" style="">
+                    <td style="color: #e74c3c;font-weight: 600;min-width: 210px">${data.phone}</td>
+                    <td><b style="color: #3498db">${(data.money)}</b></td>
+                    <td style="min-width: 210px;"><b>${data.id_redenvelops}</b></td>
+                    <td class="project-state"><span class="badge badge-success">success</span></td>
+                    <td style="min-width: 210px;"><b>${timerJoin(data.time)}</b></td>
+                </tr>
+                `;
+            });
+            $("#list-redenvelope").html(html);
+        }
+
+        var pageno2 = 0;
+        var limit2 = 15;
+        var page2 = 1;
+        $.ajax({
+        type: "POST",
+        url: "/admin/member/redenvelope/<%=phone%>",
+        data: {
+            typeid: "1",
+            pageno: pageno2,
+            limit: limit2,
+            language: "vi",
+        },
+        dataType: "json",
+        success: function (response) {
+            $('#text-redenvelope').text(page2 + ' / ' + response.page_total);
+            let total = 0;
+            let amount = 0;
+            for (let i = 0; i < response.datas.length; i++) {
+                total += response.datas[i].money;
+                amount += 1;
+            }
+            $('#totlaide').text(' ₹ ' + total   + " / " + amount + ' Lixi');
+            if (response.status === true) return RenderRedenvelopes(response.datas);
+        },
+        });
+
+        $('#nextRedenvelope').click(function (e) {
+        pageno2 += limit2;
+        e.preventDefault();
+        $.ajax({
+            type: "POST",
+            url: "/admin/member/redenvelope/<%=phone%>",
+            data: {
+            typeid: "1",
+            pageno: pageno2,
+            limit: limit2,
+            language: "vi",
+            },
+            dataType: "json",
+            success: function (response) {
+            if(response.datas.length == 0) {
+                $('#nextRedenvelope').addClass('block-click');
+                return pageno2 -= limit2
+            };
+            $('#text-redenvelope').text(++page2 + ' / ' + response.page_total);
+            if (response.status === true) return RenderRedenvelopes(response.datas);
+            }
+        });
+        });
+        
+        $('#previousRedenvelope').click(function (e) { 
+        e.preventDefault();
+        $('#nextRedenvelope').removeClass('block-click');
+        pageno2 -= limit2;
+        if(pageno2 < 0) return pageno2 = 0;
+        $.ajax({
+            type: "POST",
+            url: "/admin/member/redenvelope/<%=phone%>",
+            data: {
+            typeid: "1",
+            pageno: pageno2,
+            limit: limit2,
+            language: "vi",
+            },
+            dataType: "json",
+            success: function (response) {
+            $('#text-redenvelope').text(--page2 + ' / ' + response.page_total);
+            if (response.status === true) return RenderRedenvelopes(response.datas);
+            }
+        });
+        });
+    </script>
+    <!--Redenvelope-->
+
+    <!-- BET-->
+    <script>
+        const RenderBet = (datas) => {
+            if (datas.length == 0) {
+                $('#list-bet').html(`
+                    <tr class="text-center">
+                    <td colspan="7">no data...</td>
+                    </tr>
+                `);
+                return;
+            }
+            let html = '';
+            datas.map((data) => {
+                html += 
+                `
+                <tr class="text-center" style="">
+                    <td style="color: #e74c3c;font-weight: 600;min-width: 210px">${data.stage}</td>
+                    <td><b style="color: #3498db">${(data.status == 1) ? "+" : "-"} ${(data.money)}</b></td>
+                    <td style="min-width: 210px;"><b>${(data.game.toUpperCase())}</b></td>
+                    <td class="project-state"><span class="badge badge-${(data.status == '1' ? 'success' : 'danger')}">${(data.status == '1' ? 'win' : 'loss')}</span></td>
+                    <td style="min-width: 210px;"><b>${timerJoin(data.time)}</b></td>
+                </tr>
+                `;
+            });
+            $("#list-bet").html(html);
+        }
+
+        var pageno3 = 0;
+        var limit3 = 30;
+        var page3 = 1;
+        $.ajax({
+        type: "POST",
+        url: "/admin/member/bet/<%=phone%>",
+        data: {
+            typeid: "1",
+            pageno: pageno3,
+            limit: limit3,
+            language: "vi",
+        },
+        dataType: "json",
+        success: function (response) {
+            $('#text-bet').text(page3 + ' / ' + response.page_total);
+            if (response.status === true) return RenderBet(response.datas);
+        },
+        });
+
+        $('#nextBet').click(function (e) {
+        pageno3 += limit3;
+        e.preventDefault();
+        $.ajax({
+            type: "POST",
+            url: "/admin/member/bet/<%=phone%>",
+            data: {
+            typeid: "1",
+            pageno: pageno3,
+            limit: limit3,
+            language: "vi",
+            },
+            dataType: "json",
+            success: function (response) {
+            if(response.datas.length == 0) {
+                $('#nextBet').addClass('block-click');
+                return pageno3 -= limit3
+            };
+            $('#text-bet').text(++page3 + ' / ' + response.page_total);
+            if (response.status === true) return RenderBet(response.datas);
+            }
+        });
+        });
+        
+        $('#previousBet').click(function (e) { 
+        e.preventDefault();
+        $('#nextBet').removeClass('block-click');
+        pageno3 -= limit3;
+        if(pageno3 < 0) return pageno3 = 0;
+        $.ajax({
+            type: "POST",
+            url: "/admin/member/bet/<%=phone%>",
+            data: {
+            typeid: "1",
+            pageno: pageno3,
+            limit: limit3,
+            language: "vi",
+            },
+            dataType: "json",
+            success: function (response) {
+            $('#text-bet').text(--page3 + ' / ' + response.page_total);
+            if (response.status === true) return RenderBet(response.datas);
+            }
+        });
+        });
+    </script>
+    <!-- BET-->
+</body>
+
+</html>

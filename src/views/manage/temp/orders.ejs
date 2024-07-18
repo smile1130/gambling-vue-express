@@ -1,0 +1,46 @@
+<div data-v-04e3b381="" class="orders">
+    <div data-v-04e3b381="" style="margin: 0px 14px; text-align: center;">
+        <!---->
+    </div>
+    <div data-v-3978cf5e="" data-v-04e3b381="" class="container" style="padding: 0;">
+        <div data-v-3978cf5e="" role="feed" class="van-list">
+            <% for (var i = 0; i < orders_list.length; i++) { %>
+                <div data-v-3978cf5e="" class="content van-row van-row--flex van-row--justify-center">
+                    <div data-v-3978cf5e="" class="header__noe van-col van-col--9"><%=orders_list[i].giai_doan%></div>
+                    <div data-v-3978cf5e="" class="van-col van-col--5"><%=String(orders_list[i].ket_qua).replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1.');%></div>
+
+                    <div data-v-3978cf5e="" class="van-col van-col--5">
+                    <% if (String(orders_list[i].ket_qua).split("")[5] == "1" || String(orders_list[i].ket_qua).split("")[5] == "3" || String(orders_list[i].ket_qua).split("")[5] == "7" || String(orders_list[i].ket_qua).split("")[5] == "9" || String(orders_list[i].ket_qua).split("")[5] == "5") { %>
+                        <b data-v-3978cf5e="" class="content__anodd"><%=String(orders_list[i].ket_qua).split("")[5]%></b>
+                    <% } %>
+                    <% if (String(orders_list[i].ket_qua).split("")[5] == "2" || String(orders_list[i].ket_qua).split("")[5] == "4" || String(orders_list[i].ket_qua).split("")[5] == "6" || String(orders_list[i].ket_qua).split("")[5] == "8" || String(orders_list[i].ket_qua).split("")[5] == "0") { %>
+                        <b data-v-3978cf5e="" class="conten__aneven"><%=String(orders_list[i].ket_qua).split("")[5]%></b>
+                    <% } %>
+                    </div>
+
+                    <div data-v-3978cf5e="" class="header__child point van-col van-col--5">
+                        <div data-v-3978cf5e="" class="point-box">
+                        <% if (String(orders_list[i].ket_qua).split("")[5] == "1" || String(orders_list[i].ket_qua).split("")[5] == "3" || String(orders_list[i].ket_qua).split("")[5] == "7" || String(orders_list[i].ket_qua).split("")[5] == "9") { %>
+                            <div data-v-3978cf5e="" class="point-box__anodd"></div>
+                            <div data-v-3978cf5e="" class="point-box__add"></div>
+                        <% } %>
+                        <% if (String(orders_list[i].ket_qua).split("")[5] == "2" || String(orders_list[i].ket_qua).split("")[5] == "4" || String(orders_list[i].ket_qua).split("")[5] == "6" || String(orders_list[i].ket_qua).split("")[5] == "8") { %>
+                            <div data-v-3978cf5e="" class="point-box__aneven"></div>
+                            <div data-v-3978cf5e="" class="point-box__add"></div>
+                        <% } %>
+                        <% if (String(orders_list[i].ket_qua).split("")[5] == "5") { %>
+                            <div data-v-3978cf5e="" class="point-box__anodd"></div>
+                            <div data-v-3978cf5e="" class="point-box__aliquot"></div>
+                        <% } %>
+                        <% if (String(orders_list[i].ket_qua).split("")[5] == "0") { %>
+                            <div data-v-3978cf5e="" class="point-box__aneven"></div>
+                            <div data-v-3978cf5e="" class="point-box__aliquot"></div>
+                        <% } %>
+                        </div>
+                    </div>
+                </div>
+            <% } %>
+            <div class="van-list__placeholder"></div>
+        </div>
+    </div>
+</div>

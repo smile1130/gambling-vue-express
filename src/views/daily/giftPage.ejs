@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Gift</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <link rel="stylesheet" href="/plugins/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/dist/css/adminlte.min.css">
+    <link href="//cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/admin.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style>
+        .result {
+            display: flex;
+        }
+        
+        .result input {
+            width: 90%;
+            border-radius: 5px 0 0 5px;
+        }
+        
+        .result .input-group-text {
+            width: 10%;
+            border-radius: 0 5px 5px 0;
+            justify-content: center;
+            cursor: pointer;
+            background-color: #007bff;
+            color: #fff;
+        }
+        
+        .result .input-group-text:active,
+        .result .input-group-text:hover {
+            background-color: #2ecc71;
+        }
+    </style>
+</head>
+
+<body class="hold-transition sidebar-mini">
+    <div class="wrapper">
+        <%- include('nav') %>
+            <div class="content-wrapper">
+                <section class="content-header">
+                    <div class="container-fluid">
+                        <div class="row mb-2">
+                            <div class="col-sm-6">
+                                <h1>Create Giftcode</h1>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.container-fluid -->
+                </section>
+
+                <div class="container-fluid">
+                    <div class="card">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div style="padding: 10px 20px;">
+                                    <div class="form-group money">
+                                        <label for="money" id="label_money">Total: <%=money%></label>
+                                        <input type="text" oninput="value=value.replace(/\D/g,'')" class="form-control" id="money" placeholder="Enter the amount">
+                                    </div>
+                                    <div class="form-group result" style="display: none;">
+                                        <input type="text" class="form-control" id="money_result" placeholder="Link">
+                                        <div class="input-group-text copy_link">
+                                            <i class="fa fa-clone" aria-hidden="true"></i>
+                                        </div>
+                                    </div>
+    
+                                    <button type="submit" class="btn btn-primary" id="submit" style="width: 100%;margin-top: 26px;">Create</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div style="padding: 10px 20px;">
+                                    <div class="form-group">
+                                        <div class="text-center">
+                                            <label for="quantity">Increase | Discounts on member accounts.</label>
+                                        </div>
+                                        <label for="" id="label_money2">Surplus: <%=money2%></label>
+                                        <input type="text" class="form-control" oninput="value=value.replace(/\D/g,'')" id="buff-username" placeholder="Enter the ID number"><br>
+                                        <select class="form-select mb-4" id="buff-select" aria-label="Default select example">
+                                            <option selected value="">--------------- Select function ---------------</option>
+                                            <option value="1">Increase (+)</option>
+                                            <option value="2">Decrease (-)</option>
+                                        </select>
+    
+                                        <input type="text" class="form-control mb-4" oninput="value=value.replace(/\D/g,'')" id="buff-money" placeholder="Enter amount">
+                                        <button type="submit" class="btn btn-primary" id="buff-submit" style="width: 100%;">Submit</button>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-4"></div>
+                <!-- Financial details -->
+                <section class="content">
+                    <!-- Default box -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">List of giftcodes &nbsp</h3>
+                            <div class="card-tools">
+                                <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                                    <i class="fas fa-minus"></i>
+                                </button>
+                                <button type="button" class="btn btn-tool" data-card-widget="remove" title="Remove">
+                                    <i class="fas fa-times"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="card-body p-0" style="display: block; overflow-y: hidden;">
+                            <table class="table table-striped projects" id="table1">
+                                <thead>
+                                    <tr>
+                                        <th class="text-center">ID</th>
+                                        <th class="text-center">Creator</th>
+                                        <th class="text-center">Value</th>
+                                        <th class="text-center">Used</th>
+                                        <th class="text-center">Time</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="list-details-news">
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+            </div>
+    </div>
+    <script src="/plugins/jquery/jquery.min.js"></script>
+    <script src="/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/dist/js/adminlte.min.js"></script>
+    <script src="/js/admin/admin.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+
+    <script>
+    
+    function formateT(params) {
+    let result = (params < 10) ? "0" + params : params;
+    return result;
+    }
+    
+    function timerJoin(params = '', addHours = 0) {
+        let date = '';
+        if (params) {
+            date = new Date(Number(params));
+        } else {
+            date = new Date();
+        }
+    
+        date.setHours(date.getHours() + addHours);
+    
+        let years = formateT(date.getFullYear());
+        let months = formateT(date.getMonth() + 1);
+        let days = formateT(date.getDate());
+    
+        let hours = date.getHours() % 12;
+        hours = hours === 0 ? 12 : hours;
+        let ampm = date.getHours() < 12 ? "AM" : "PM";
+    
+        let minutes = formateT(date.getMinutes());
+        let seconds = formateT(date.getSeconds());
+    
+        return years + '-' + months + '-' + days + ' ' + hours + ':' + minutes + ':' + seconds + ' ' + ampm;
+    }
+        
+        const RenderMemberNews = (datas) => {
+            if (datas.length == 0) {
+                $('#list-details-news').html(`
+                    <tr class="text-center">
+                    <td colspan="7">no data...</td>
+                    </tr>
+                `);
+                return;
+            }
+            let html = '';
+            datas.map((data) => {
+                html += 
+                `
+                <tr class="text-center" style="">
+                    <td>${data.id_redenvelope}</td>
+                    <td style="color: #3498db;font-weight: 600;min-width: 110px">${data.phone}</td>
+                    <td><b style="color: #e74c3c">${formatMoney(data.money)}</b></td>
+                    <td class="project-state"><span class="badge badge-${(data.status == 1 ? 'success' : 'warning')}">${(data.status == 1 ? 'success' : 'not used yet')}</span></td>
+                    <td style="min-width: 110px;"><b>${timerJoin(data.time)}</b></td>
+                </tr>
+                `;
+                $("#list-details-news").html(html);
+            });
+        }
+        $('.copy_link').click(function(e) {
+            var url = $('#money_result').val();
+            navigator.clipboard.writeText(url);
+            Swal.fire(
+                'Good job!',
+                'Copy Success!',
+                'success'
+            );
+        });
+        
+        $.ajax({
+            type: "POST",
+            url: "/manager/listRedenvelops",
+            data: {
+
+            },
+            dataType: "json",
+            success: function (response) {
+                RenderMemberNews(response.redenvelopes);
+            }
+        });
+
+        $('#submit').click(function (e) { 
+            e.preventDefault();
+            let money = $('#money').val().trim();
+            if (money) {
+                $.ajax({
+                    type: "POST", 
+                    url: "/manager/createBonus",
+                    data: {
+                        money: money,
+                    },
+                    dataType: "json",
+                    success: function (response) {
+                        if(response.status == true) {
+                            $('#money_result').val(response.id);
+                            $('.result').show();
+                            $('#label_money').text('Surplus: ' + response.money);
+                        }
+                        alert(response.message);
+                    }
+                });
+            } else {
+                alert("Please enter full information");
+            }
+        });
+        $('select').change(function() {
+            var value = $('select :selected').val();
+            if (value == 2 || value == 3) {
+                $('.quantity').show();
+            } else {
+                $('#quantity').val("");
+                $('.quantity').hide();
+            }
+        });
+
+        $('#buff-submit').click(function (e) { 
+            e.preventDefault();
+            let username = $('#buff-username').val().trim();
+            let select = $('#buff-select').val().trim();
+            let money = $('#buff-money').val().trim();
+
+            if (username && select && money) {
+                $.ajax({
+                    type: "POST",
+                    url: "/api/webapi/manager/buff",
+                    data: {
+                        username: username,
+                        select: select,
+                        money: money,
+                    },
+                    dataType: "json",
+                    success: function (response) {
+                        if(response.status == true) {
+                            $('#label_money2').text('remaining: ' + response.money);
+                        }
+                        alert(response.message);
+                    }
+                });
+            } else {
+                alert("Please enter full information");
+            }
+        });
+    </script>
+</body>
+
+</html>

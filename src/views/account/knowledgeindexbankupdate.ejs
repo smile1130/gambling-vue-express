@@ -1,0 +1,564 @@
+<html lang="en_US" style="background-color: #ffffff;"><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>BigMumbai Self-Service Center</title>
+    <meta http-equiv="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+     
+        
+            <link rel="icon" href="https://www.bigmumbaics.com/page/1/9622ff99c98be9393052f20afdf19f53.png" type="image/x-icon">
+        
+    
+    <!-- fontawesome -->
+    <link href="https://www.bigmumbaics.com/assets/css/fonts/font-awesome/css/all.min.css" rel="stylesheet">
+    
+    <!-- mmenu -->
+    <link rel="stylesheet" type="text/css" href="https://www.bigmumbaics.com/assets/css/mmenu.css?v=2024062803">
+    
+    <!-- myCenter -->
+    <link rel="stylesheet" type="text/css" href="https://www.bigmumbaics.com/assets/css/style_m_6.css?v=2024062803">
+    
+        <style>
+          #leminCaptchaRow .lemin-captcha-input-box.checked .lemin-captcha-checkbox .checkmark:after {
+                    top: -6px;
+                }
+    
+                /*活動標題色*/
+                .listbox p {
+                    color:#C8B599;
+                     background:#302B27;
+                }
+    
+                /*LOG 區域*/
+                .header {
+                    background: #d9b38c; 
+    
+                }
+    
+                /*全站弹窗*/
+                .modal_title .modal-header{
+                     color : #fee563;
+                }
+                a.btn_detail {
+                     color:#0055aa;
+                }
+                a.btn_detail:hover{
+                     color:#fee563;
+                }
+                /*彈窗設置*/
+                
+                     .popbox{
+                        background: #000000; 
+    
+                     }
+                
+    
+                /*全站输入字段提示信息-是否显示*/
+                  
+                 /*全站输入字段提示信息-文字颜色*/
+                      ::placeholder {
+                          color: #000000 !important;
+                      }
+                      ::-webkit-input-placeholder {
+                          color: #000000 !important;
+                    }
+                    ::-moz-placeholder {
+                          color: #000000 !important;
+                    }
+                    :-ms-input-placeholder {
+                          color: #000000 !important;
+                    }
+    
+                /*按钮設置*/
+                
+                     #applyDiv .btn{
+                         background: #f4d17b;
+                         color:#000000;
+                     }
+                     #applyDiv .btn:hover{
+                         background:#f4d17b;
+                     }
+    
+    
+                 .modal-wrap .btn{
+                    background: #f4d17b;
+                    color:#000000;
+                 }
+                 .modal-wrap .btn:hover{
+                    background:#f4d17b;
+                 }
+                 
+    
+                nav {
+                    background:#d9b38c;
+                }
+                nav a span {
+                    color:#ffffff;
+                }
+                 /*查詢結果字型顏色*/
+                    #resultTable th {
+                        color:#ffffff;
+                    width: 30%;
+                    }
+    
+                #resultTable td {
+                    color:#ffffff;
+                   }
+                /*主内容区域*/
+                body{
+                background: #ffffff; 
+    
+                    /*background:#ffffff;*/
+                }
+                /*底部宣告*/
+                .footer {
+                    color:#d9b38c;
+                }
+                /*跑马灯*/
+                .notice i,.notice .marqueebox{
+                    color:#ff5de4;
+                }
+                .notice{
+                     background: #ffffff;
+                }
+    
+                #totalLotteryTitle{
+                    color:#ff5de4;
+                }
+    
+                #userIdMsg{
+                    color:#ff5de4;
+                }
+    
+                #addedLottery{
+                    color:#ff0000;
+                }
+                 .footer{
+                 text-align: center;
+                 padding: 15px;
+                }
+    
+            </style>
+    <script src="chrome-extension://pbcpfbcibpcbfbmddogfhcijfpboeaaf/inject.js"></script></head>
+    <body style="">
+        
+    
+    
+    
+    
+    
+    
+    
+    <script>
+        window.onload = function () {
+            var audioPromise, audio;
+            audio = document.getElementById("audio");
+            if (audio && !audio.error) {
+                audioPromise = audio.play();
+                var playAudio = function () {
+                    document.getElementById("audio").play();
+                    document.removeEventListener('click', playAudio);
+                    document.removeEventListener('touchend', playAudio);
+                };
+                if (audioPromise) {
+                    audioPromise.catch(function () {
+                        document.addEventListener('click', playAudio);
+                        document.addEventListener('touchend', playAudio);
+                    });
+                }
+            }
+            var effectAudio = document.getElementById("effectSound");
+            if (effectAudio && !effectAudio.error) {
+                enableAudio(document, effectAudio, true);
+            }
+        }
+    </script>
+    
+    
+        <div class="container event-detail" ontouchstart="">
+            <div class="header">
+                
+                    
+                    
+                        
+                    
+                
+                <a class="back" href="/knowledgebase/index">Back</a>
+    
+            
+                
+                    <a class="kefu" href="https://direct.lc.chat/15938940/" target="_blank">
+                            <div class="pic">
+                                
+                                      
+                                           <img src="https://www.bigmumbaics.com/assets/images/images_cm/kefu.png">
+                                      
+                                      
+                                   
+                                 </div>
+                           Customer Service
+                       </a>
+                
+                
+            
+    
+    
+    
+            </div>
+    
+            <div class="listbox" style="display: block;">
+                <ul>
+                    <li class="imgHover" actno="20240106002"><img src="https://www.bigmumbaics.com/page/1/activity/20240106002/3c0d8ad91673e0607d1db5cf9aaccaad.png"></li>
+                </ul>
+            </div>
+            <div id="lotteryArea">
+                <div id="lotteryAreaMsg" style="width:50%; display: none">
+                    <span style="width:50%" id="totalLotteryTitle">累计彩池彩金:</span>
+                    <span style="width:50%;text-align:left" id="addedLottery"></span>
+                </div>
+    
+                <div id="userAreaMsg" style="width:50%; display: none">
+                
+                    <span style="width:100%" id="userIdMsg"><ul></ul></span>
+                
+                </div>
+            </div>
+    
+            
+    
+            <div class="main detail" id="applyDiv">
+                <form action="/support/submit" method="post" id="supportForm">
+                <div id="apply_20240106002" class="apply-form" style="display: block;">
+                    <input type="hidden" id="activityNo" value="20240106002">
+    
+                    
+                    <p id="accountRow" class="template">
+                        
+                        <span id="display">Account ID：</span>
+                        
+                        <input id="account" type="text" name="account" placeholder="Enter ID">
+                    </p>
+                    
+    
+    
+    
+    
+                    <p id="d0" class="template">
+                        
+                        <span id="display">Correct bank name：</span>
+                        
+                        <input id="d304" type="text" name="Correct_Bank_name" placeholder="Enter Correct bank name" coltype="1" chkvalue="5" minvalue="0" maxvalue="99" maxlength="99" colname="Correct bank name">
+                    </p>
+                </div>
+                <div class="btn_row">
+                    <button id="applyBtn"  class="btn close btn-apply" type="submit">Submit</button>
+            </form>
+                <a id="inquireBtn" href="javascript:ActivityItem.pageReadyF_inquireBtn();" class="btn btn-apply width-50">Check Issue Status</a>
+                </div>
+                <div id="detailContent" style=""></div>
+                <div style=" text-align: center;">
+                    <img id="detailImg" style="display: none;width: 100%/*;height: 120px*/; max-width:100%; margin: 20px auto;" src="" class="img1">
+                </div>
+    
+            </div><div id="applyTemplate" class="apply-form" style="display: none">
+                    <input type="hidden" id="activityNo" value="">
+    
+                    
+                    <p id="accountRow" class="template">
+                        
+                        <span id="display">ID：</span>
+                        
+                        <input id="account" type="text" name="account" placeholder="Enter ID">
+                    </p>
+                    
+    
+    
+    
+    
+                    <div id="verifyRow" class="verify-wrap" style="display: none;">
+                        
+                        <span>CAPTCHA：</span>
+                        
+    
+                        <input class="" type="text" id="verify" name="verify" value="" placeholder="Please enter the code">
+                        <img class="verify-img" id="securityImg" src="/assets/verify" alt="Click to switch picture">
+                    </div>
+    
+                    <div id="leminCaptchaRow" style="display: none;">
+                        
+                        <span>CAPTCHA：</span>
+                        
+                        <br>
+                         <div id="lemin-cropped-captcha" style="height: 65px;width: 100%;margin-bottom: 10px;" class="col col-data" "="">
+    
+                        </div><br>
+                    </div>
+    
+    
+    
+    
+    
+                    <my-element id="clientPhoneRow" style="display:none">
+                        
+                            <span>Mobile phone number：</span>
+                        
+                        <input type="text" id="clientPhone" name="clientPhone" placeholder="Fill in mobile phone number">
+                    </my-element>
+    
+                    <my-element id="smsVerifyRow" style="display:none">
+                        
+                                <span>SMS verification code：</span>
+                        
+    
+                        <div class="sms-wp">
+                            <input type="text" id="smsOtpCode" name="" placeholder="Fill in the verification code">
+                            <a id="getSmsOtpCodeBtn" onclick="ActivityItem.getSmsOtpCode()" class="btn">Get verification code</a>
+                        </div>
+                   </my-element>
+    
+    
+    
+                <div id="applyTemplate2" class="apply-form" style="display: none">
+                        <div id="hints" class="notify">
+                        
+                        <h1>此活动无需申请，系统每周一下午16点自动派发，届时请登录查看！</h1>
+    
+                    </div>
+    
+                </div>
+                <div class="btn_row">
+                <a id="applyBtn" href="javascript:;" class="btn close btn-apply">Submit</a>
+                <a id="inquireBtn" href="javascript:ActivityItem.pageReadyF_inquireBtn();" class="btn btn-apply width-50">Check Issue Status</a>
+                </div>
+                <div id="detailContent" style=""></div>
+                <div style=" text-align: center;">
+                    <img id="detailImg" style="display: none;width: 100%/*;height: 120px*/; max-width:100%; margin: 20px auto;" src="" class="img1">
+                </div>
+    
+            </div>
+        </div>
+    
+        <div class="footer">
+            <p>Copyright © 2024 Big Mumbai</p>
+        </div>
+    
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+    // Select the element with the ID 'inquireBtn'
+    const inquireBtn = document.getElementById('inquireBtn');
+
+    // Check if the inquireBtn exists
+    if (inquireBtn) {
+        // Add a click event listener to the inquireBtn
+        inquireBtn.addEventListener('click', function() {
+            // Select the element with the ID 'searchForm'
+            const searchForm = document.getElementById('searchForm');
+            
+            // Check if the searchForm element exists
+            if (searchForm) {
+                // Make the searchForm element visible
+                searchForm.style.display = 'block'; // or 'inline' or 'inline-block' depending on your requirement
+            }
+        });
+    }
+});
+
+         </script>
+         <script>
+            document.addEventListener('DOMContentLoaded', function() {
+    // Select the element with the ID 'inquireBtn'
+    const inquireBtn = document.getElementById('closebtnclk');
+
+    // Check if the inquireBtn exists
+    if (inquireBtn) {
+        // Add a click event listener to the inquireBtn
+        inquireBtn.addEventListener('click', function() {
+            // Select the element with the ID 'searchForm'
+            const searchForm = document.getElementById('searchForm');
+            
+            // Check if the searchForm element exists
+            if (searchForm) {
+                // Make the searchForm element visible
+                searchForm.style.display = 'none'; // or 'inline' or 'inline-block' depending on your requirement
+            }
+        });
+    }
+});
+
+         </script>
+            <!------------inquire start------------>
+        <div class="inquire modal no-show" id="searchForm">
+            <!-- Modal content -->
+            <div class="popbox searchForm modal-wrap modal_title">
+                <a class="btn-close close" id="closebtnclk"><img src="https://www.bigmumbaics.com/assets/images/images_cm/close.png"></a>
+                <div class="modal-header">Check Issue Status</div>
+                <div class="modal-content">
+                    <input class="mode-A" type="text" id="clientAccount" name="clientAccount" maxlength="22" placeholder="Enter your BIGMUMBAI ID">
+                    <select id="actSel" class="game_list"><option value="-1">All</option><option value="20181130003">Deposit Not Receive</option><option value="20181119006">IFSC Modification</option><option value="20240106002">Bank Name Change</option><option value="20181119005">Delete Bank Account</option><option value="20181119001">Delete Old USDT Address and Rebind</option><option value="20240106003">Change ID Login Password</option><option value="20240106001">Retrieve Login ID Account</option><option value="20240215001">Delete Google Authenticator</option><option value="20240331001">WINGO 1Minute Winstreak Bonus</option></select>
+                    <div class="verify-wrap" style="display: none;">
+                        <input class="mode-A" type="text" id="verify" name="verify" placeholder="Please enter the code">
+                        <img id="securityImg" src="../assets/images/images_cm/vcode.png" alt="Click to switch picture" class="verify-img">
+                    </div>
+                    <a href="javascript:ActivityItem.processqueryApply_F();" class="btn btn-apply width-50">Click to search</a>
+                </div>
+            </div>
+        </div>
+        <!-------------inquire end------------->
+    
+    
+        <!---------inquire_detail start--------->
+        <div class="inquire_detail modal  no-show" id="searchDetail">
+            <!-- Modal content -->
+            <div class="popbox modal-wrap modal_title searchDetail">
+                <a class="btn-close close"><img src="../assets/images/images_cm/close.png"></a>
+                <div class="modal-header">Issue Status</div>
+                <div class="modal-content">
+                    <table id="resultTable">
+                        <tbody id="resultBody">
+                        <tr>
+                            <th>会员账号</th>
+                            <td id="textNum">Test0001</td>
+                        </tr>
+                        <tr>
+                            <th>申请时间</th>
+                            <td>2022-03-10 11:30</td>
+                        </tr>
+                        <tr>
+                            <th>申请状态</th>
+                            <td class="red">不符合</td>
+                        </tr>
+                        <tr>
+                            <th>查看回复</th>
+                            <td>请您提供正确的会员账号</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="page">
+                    <div class="pagination">
+                        <a id="prev" href="#">«</a>
+                        <a id="current" href="#" class="active">1</a>
+                        <a id="next" href="#">»</a>
+                    </div>
+                </div>
+            </div>
+            <!---------inquire_detail end--------->
+        <script>
+            var pageId = 1;
+            var template = 'F';
+            var phoneActiveTitleShow = 'Y';
+        </script>
+    
+        <script>
+            var please_fillin_client_phone = 'Please fill in your mobile phone number';
+              var please_fillin_sms_verification_code = '???please_fillin_sms_verification_code???';
+            var sila_semak_nombor_telefon_bimbit = 'Failed to send, please check the mobile number';
+            var all_activities = 'All';
+            var select_the_requested_activity = 'Please select the issues you are applying for';
+            var no_information_found = 'No member information found';
+            var details = 'View Details';
+            var account_input_is_inconsistent = '[Hint] 2 inconsistent account entries!';
+            var please_enter_verification_code = 'Please enter the code';
+            var special_characters_are_not_allowed = 'No special characters allowed';
+            var only_numbers_allowed = 'Only numbers are allowed';
+            var only_allow_alphanumeric = 'Only English numbers allowed';
+            var the_extension_only_supports = 'Sub-name support only';
+            var this_field_is_required = 'This field is required';
+            var this_field_alphanumeric_is_required = 'This field English numbers is required';
+            var field = 'field';
+            var format_does_not_match = 'Formatting discrepancies';
+            var the_number_of_words_must_be_between = 'The word count needs to be between';
+            var between = "???between???";
+            var please_enter_the_query_account_number_and_verification_code = 'Please enter your BIGMUMBAI ID and choose the Issue to search';
+            var promotion_application_has_been_sent = 'Issue have been submitted';
+            var enter = 'Enter ';
+            var confirm_the_account = 'Confirm';
+            var member_account = 'Account';
+            var application_time = 'Submit Time';
+            var application_status = 'Status';
+            var activity_item = 'Issue';
+            var view_reply = 'Result';
+            var activity_jackpot = 'Campaign bonuses';
+            var the_system_is_busy_please_try_again_later = 'The system is busy, please try again later !';
+            var please_select_an_event = 'Please select an event';
+            var congratulations = 'Congratulations';
+            var successfully_handled = 'Successful handling';
+            var application_status_i18n =[];
+             application_status_i18n[1]='Pending review';
+             application_status_i18n[2]='Pass - Not added';
+            application_status_i18n[3]='Pass - Added';
+            application_status_i18n[4]='Pass - Error';
+            application_status_i18n[5]='Reject';
+            application_status_i18n[6]='Pending review';
+            application_status_i18n[7]='Pending review - Error';
+            application_status_i18n[8]='Pending review - Manual processing';
+            application_status_i18n[9]='Pass - Succes';
+        </script>
+    
+    
+        
+    
+    
+    <script>
+    var isTest = true;
+    var fntWebContext = "";
+    var isInBlackList = false;
+    var pageStatus = '1';
+    var isOpenCopyPaste = 'N';
+    var isEnterTwiceAccount = 'N';
+    </script>
+    
+    <script src="/assets/plugins/jquery-1.12.1.js" type="text/javascript"></script>
+    <script src="/assets/plugins/bootstrap.min.js" type="text/javascript"></script>
+    <!--  <script src="/assets/plugins/jquery-ui/jquery-ui-custom.js" type="text/javascript" ></script>-->
+    <script src="/assets/js/common.js?v=2024062803" type="text/javascript"></script>
+    <script src="/assets/js/activity1.6.js?v=2024062803" type="text/javascript"></script>
+    <script type="text/javascript" src="/assets/js/jquery.countdown.js"></script>
+    <script type="text/javascript" src="/assets/js/moment.min.js"></script>
+    <script type="text/javascript" src="/assets/js/dateUtil.js"></script>
+    
+    <script type="text/javascript" src="/assets/js/moment-timezone-with-data.js"></script>
+    
+    
+        <script src="/assets/js/mmenu.js"></script>
+        <script type="text/javascript">
+            ActivityItem.fInit();
+            ActivityItem.initApplyF();
+    
+            $(document).ready(function() {
+                ActivityItem.pageReadyF();
+            });
+        </script>
+    
+    
+      <script>
+        
+document.getElementById('supportForm').addEventListener('submit', function(e) {
+    e.preventDefault(); // Prevent the form from submitting normally
+
+    var formData = new FormData(this); // Create a new FormData object passing in the form
+    var jsonObject = {}; // Create an empty JSON object
+
+    // Loop through each form field
+    for (const [key, value]  of formData.entries()) {
+        jsonObject[key] = value; // Add the form field name and value to the JSON object
+    }
+
+
+    
+    fetch('/support/submit', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json' // Set the content type to JSON
+        },
+        body: JSON.stringify(jsonObject)
+    })
+    .then(response => response.json()) // Parse the response as JSON
+    .then(data => alert("Issue have been submitted")) // Log the response data
+    .catch((error) => {
+        console.error('Error:', error); // Log any errors
+    });
+});
+      </script>
+    
+    </div></div><amino-inspect></amino-inspect></body><chatgpt-sidebar data-gpts-theme="light"></chatgpt-sidebar><chatgpt-sidebar-popups data-gpts-theme="light"></chatgpt-sidebar-popups></html>

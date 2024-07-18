@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Members list</title>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback" />
+  <link rel="stylesheet" href="/plugins/fontawesome-free/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link href="//cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet" />
+  <link rel="stylesheet" href="/dist/css/adminlte.min.css" />
+  <link rel="stylesheet" href="/css/admin.css" />
+  <style>
+    .block-click {
+      pointer-events: none;
+    }
+  </style>
+</head>
+
+<body class="hold-transition sidebar-mini">
+  <div class="wrapper">
+    <%- include('nav') %>
+      <div class="content-wrapper">
+        <section class="content-header">
+          <div class="container-fluid">
+            <div class="row mb-2">
+              <div class="col-sm-6">
+                <h1>Members list</h1>
+              </div>
+            </div>
+          </div>
+          <!-- /.container-fluid -->
+        </section>
+
+        <div class="form-group" style="text-align: center">
+          <input type="text" id="search" placeholder="Enter the account you want to search" />
+        </div>
+
+        <!-- Main content -->
+        <section class="content">
+          <!-- Default box -->
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">Members list</h3>
+              <div class="card-tools">
+                <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                  <i class="fas fa-minus"></i>
+                </button>
+                <button type="button" class="btn btn-tool" data-card-widget="remove" title="Remove">
+                  <i class="fas fa-times"></i>
+                </button>
+              </div>
+            </div>
+            <div class="card-body p-0" style="overflow-y: hidden">
+              <table class="table table-striped projects" id="table1">
+                <thead>
+                  <tr>
+                    <th class="text-center">#</th>
+                    <th class="text-center">Account</th>
+                    <th class="text-center">Amount</th>
+                    <th class="text-center">Commision</th>
+                    <th class="text-center">Status</th>
+                    <th class="text-center">Time</th>
+                    <th class="text-center">Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <!-- #region -->
+                </tbody>
+              </table>
+            </div>
+            <nav aria-label="Page navigation example" style="margin-top: 20px; display: flex; justify-content: center">
+                <ul class="pagination table1">
+                    <li class="page-item previous" id="previous">
+                        <a class="page-link" href="#" tabindex="-1">Previous</a>
+                    </li>
+                    <div id="numbers" style="display: flex">
+                        <li class="page-item">
+                            <a class="page-link active text-white" id="text-page"></a>
+                        </li>
+                    </div>
+                    <li class="page-item next" id="next">
+                        <a class="page-link" href="#">Next</a>
+                    </li>
+                </ul>
+            </nav>
+          </div>
+        </section>
+      </div>
+  </div> 
+  <script src="/plugins/jquery/jquery.min.js"></script>
+  <script src="/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/dist/js/adminlte.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+  <script src="/js/admin/admin.js"></script>
+  <script>
+    $("#search").on("keyup", function() {
+        var value = $(this).val().toLowerCase();
+        $("tbody tr").filter(function() {
+            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
+        });
+    });
+  </script>
+  <script>
+    function formateT(params) {
+    let result = (params < 10) ? "0" + params : params;
+    return result;
+    }
+    
+    function timerJoin(params = '', addHours = 0) {
+        let date = '';
+        if (params) {
+            date = new Date(Number(params));
+        } else {
+            date = new Date();
+        }
+    
+        date.setHours(date.getHours() + addHours);
+    
+        let years = formateT(date.getFullYear());
+        let months = formateT(date.getMonth() + 1);
+        let days = formateT(date.getDate());
+    
+        let hours = date.getHours() % 12;
+        hours = hours === 0 ? 12 : hours;
+        let ampm = date.getHours() < 12 ? "AM" : "PM";
+    
+        let minutes = formateT(date.getMinutes());
+        let seconds = formateT(date.getSeconds());
+    
+        return years + '-' + months + '-' + days + ' ' + hours + ':' + minutes + ':' + seconds + ' ' + ampm;
+    }
+</script>
+  <script>
+    const Render = (datas) => {
+      let html = '';
+      datas.map((data) => {
+        html += `
+        <tr class="text-center" style="">
+          <td>${data.id_user}</td>
+          <td>
+            <b style="color: #2003db">${data.phone}</b>
+          </td>
+          <td>
+            <b>${data.money}</b>
+          </td>
+          <td>
+            <b>${data.total_money}</b>
+          </td>
+          <td class="project-state">
+            ${(data.status == 1) ? '<span class="badge badge-success">Online</span>' : '<span class="badge badge-warning">Banded</span>'}
+          </td>
+          <td>
+            <b>${timerJoin(data.time)}</b>
+          </td>
+          <td class="project-actions text-center" style="min-width: 100px">
+            <a class="btn btn-primary btn-sm confirm-btn" href="/manager/member/info/${data.phone}">
+              <i class="fas fa-folder"></i> Profile
+            </a>
+          </td>
+        </tr>`;
+        $("tbody").html(html);
+      });
+    }
+
+
+    $('#search').keypress(function(event){
+      var keycode = (event.keyCode ? event.keyCode : event.which);
+      var value = $('#search').val().trim();
+      if(keycode == '13'){
+        $.ajax({
+          type: "POST",
+          url: "/api/webapi/search",
+          data: {
+            phone: value,
+          },
+          dataType: "json",
+          success: function (response) {
+            if (response.status === true) return Render(response.datas);
+          }
+        });
+      }
+
+    });
+    let pageno = 0;
+    let limit = 30;
+    let page = 1;
+    $.ajax({
+      type: "POST",
+      url: "/api/webapi/manager/listMember",
+      data: {
+        typeid: "1",
+        pageno: pageno,
+        limit: limit,
+        language: "vi",
+      },
+      dataType: "json",
+      success: function (response) {
+        $('#text-page').text(page + ' / ' + response.page_total);
+        if (response.status === true) return Render(response.datas);
+      },
+    });
+
+    $('#next').click(function (e) {
+      pageno += limit;
+      e.preventDefault();
+      $.ajax({
+        type: "POST",
+        url: "/api/webapi/manager/listMember",
+        data: {
+          typeid: "1",
+          pageno: pageno,
+          limit: limit,
+          language: "vi",
+        },
+        dataType: "json",
+        success: function (response) {
+          if(response.datas.length == 0) {
+            $('#next').addClass('block-click');
+            return pageno -= limit
+          };
+          $('#text-page').text(++page + ' / ' + response.page_total);
+          if (response.status === true) return Render(response.datas);
+        }
+      });
+    });
+    
+    $('#previous').click(function (e) { 
+      e.preventDefault();
+      $('#next').removeClass('block-click');
+      pageno -= limit;
+      if(pageno < 0) return pageno = 0;
+      $.ajax({
+        type: "POST",
+        url: "/api/webapi/manager/listMember",
+        data: {
+          typeid: "1",
+          pageno: pageno,
+          limit: limit,
+          language: "vi",
+        },
+        dataType: "json",
+        success: function (response) {
+          $('#text-page').text(--page + ' / ' + response.page_total);
+          if (response.status === true) return Render(response.datas);
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>

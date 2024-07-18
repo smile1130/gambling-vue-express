@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Rút tiền</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <link rel="stylesheet" href="/plugins/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/dist/css/adminlte.min.css">
+    <link rel="stylesheet" href="/css/admin.css">
+    <link href="//cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
+</head>
+
+<body class="hold-transition sidebar-mini">
+    <div class="wrapper">
+        <%- include('nav') %>
+            <div class="content-wrapper">
+                <section class="content-header">
+                    <div class="container-fluid">
+                        <div class="row mb-2">
+                            <div class="col-sm-6">
+                                <h1>Duyệt rút hoa hồng</h1>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.container-fluid -->
+                </section>
+
+                <!-- Main content -->
+                <section class="content">
+
+                    <!-- Default box -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">Danh sách rút hoa hồng</h3>
+
+                            <div class="card-tools">
+                                <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                                <i class="fas fa-minus"></i>
+                            </button>
+                                <button type="button" class="btn btn-tool" data-card-widget="remove" title="Remove">
+                                <i class="fas fa-times"></i>
+                            </button>
+                            </div>
+                        </div>
+                        <div class="card-body p-0" style="overflow-y: hidden;">
+                            <table class="table table-striped projects">
+                                <thead>
+                                    <tr>
+                                        <th class="text-center">#</th>
+                                        <th class="text-center">Tài khoản</th>
+                                        <th class="text-center">Tiền</th>
+                                        <th class="text-center">Status</th>
+                                        <th class="text-center"></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <% if (bonus.length > 0) { %>
+                                        <% for (var i = 0; i < bonus.length; i++) { %>
+                                            <tr class="text-center">
+                                                <td id="<%=bonus[i].id%>">
+                                                    <%=bonus[i].id%>
+                                                </td>
+                                                <td>
+                                                    <b style="color: #3498db"><%=bonus[i].phone_login%></b>
+                                                </td>
+                                                <td style="min-width: 105px;">
+                                                    <b style="color: #2ecc71"><%=String(bonus[i].money).replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');%></b>
+                                                </td>
+                                                <td class="project-state">
+                                                    <span class="badge badge-warning">Waiting...</span>
+                                                </td>
+                                                <td class="project-actions text-center" style="min-width: 140px;">
+                                                    <a class="btn btn-success btn-sm confirm-btn" href="#">
+                                                        <i class="fa fa-check"></i>
+                                                    </a>
+                                                    <a class="btn btn-info btn-sm" href="#">
+                                                        <i class="fas fa-pencil-alt"></i>
+                                                    </a>
+                                                    <a class="btn btn-danger btn-sm delete-btn" href="#">
+                                                        <i class="fas fa-trash"></i>
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            <% } %>
+                                        <% } %>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                </section>
+            </div>
+    </div>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+    <script src="/plugins/jquery/jquery.min.js"></script>
+    <script src="/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/dist/js/adminlte.min.js"></script>
+    <script src="/js/admin.js"></script>
+    <script>
+        $('.confirm-btn').click(function(e) {
+            e.preventDefault();
+            var parents = $(this).parent().parent();
+            var id = parents.children();
+            var id_product = id.children().prevObject[0].id;
+            $.ajax({
+                type: "POST",
+                url: "/manage/admin/withdrawBonus",
+                data: {
+                    type: "confirm",
+                    id_product: id_product,
+                },
+                dataType: "json",
+                success: function(response) {
+                    if (response.message == 1) {
+                        Swal.fire(
+                            'Good job!',
+                            '<b style="color: #fff">Xác nhận thành công!</b>',
+                            'success'
+                        );
+                        parents.remove();
+                    } else {
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Oops...',
+                            text: 'Something went wrong!'
+                        });
+                    }
+                }
+            });
+        });
+        $('.delete-btn').click(function(e) {
+            e.preventDefault();
+            var parents = $(this).parent().parent();
+            var id = parents.children();
+            console.log(id);
+            var id_product = id.children().prevObject[0].id;
+            Swal.fire({
+                title: 'Do you want to save the changes?',
+                showDenyButton: true,
+                denyButtonText: `No`,
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    $.ajax({
+                        type: "POST",
+                        url: "/manage/admin/withdrawBonus",
+                        data: {
+                            type: "delete",
+                            id_product: id_product,
+                        },
+                        dataType: "json",
+                        success: function(response) {
+                            if (response.message == 1) {
+                                Swal.fire(
+                                    'Good job!',
+                                    'Xác nhận thành công!',
+                                    'success'
+                                );
+                                parents.remove();
+                            } else {
+                                Swal.fire({
+                                    icon: 'error',
+                                    title: 'Oops...',
+                                    text: 'Something went wrong!'
+                                });
+                            }
+                        }
+                    });
+                } else if (result.isDenied) {
+                    Swal.fire('Changes are not saved', '', 'info')
+                }
+            });
+
+        });
+    </script>
+</body>
+
+</html>

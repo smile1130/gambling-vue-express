@@ -1,0 +1,130 @@
+*{
+    margin: 0;
+    font-family: arial;
+}
+.box{
+    position: relative;
+    height: 600px;
+    width: 400px;
+    background-color: #404040;
+    border-radius: 12px;
+    left: 35%;
+}
+button{
+    font-size: 3rem;
+    color: grey;
+    margin-left: 180px;
+    margin-top: 600px;
+    border: none;
+    background-color: white;
+}
+h2{
+    color: white;
+    margin-top: -615px;
+    margin-left: 95px;
+    font-size: medium;
+}
+h4{
+    margin-top: 20px;
+    color: white;
+    margin-left: 25px;
+    font-size: 1rem;
+}
+/* Overlay styles */
+.overlay {
+    display: none; /* Hidden by default */
+    position: fixed; /* Cover the entire screen */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5); /* Semi-transparent black */
+    z-index: 1; /* Ensure it sits behind the popup */
+}
+
+/* Popup box styles */
+.box {
+    display: none; /* Hidden by default */
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2; /* Ensure it sits on top of the overlay */
+    /* Add additional styling as necessary */
+}
+
+.container{
+    height:470px ;
+   background-color: #22275b;
+   margin-top: 20px;
+   display: flex;
+}
+.foot{
+    color: white;
+}
+.foot{
+    margin-top: 12px;
+    margin-left: 12px;
+}
+.button-2{
+    margin-top: -280px;
+    font-size: 1.5rem;
+    margin-left: 130px;
+    border-radius: 25px;
+    color: #955a0e;
+    background-color: #ca9c4a;
+}
+.box-2{
+    height: 150px;
+    width: 380px;
+    background-color: #404040;
+    border-radius: 12px;
+    margin-left: 10px;
+    margin-top: 10px;
+   
+}
+.box-2 h4 a{
+    color: orange;
+}
+.transection{
+    display: flex;
+}
+.transection i{
+    font-size: small;
+}
+.transection a{
+    color: rgb(253, 186, 61);
+   margin-left: 20px;
+   margin-top:-18px;
+   margin-left: 280px;
+}
+.deposit{
+    font-size: smaller;
+    color: #A6A9AE;
+    margin-top: 10px;
+}
+.date{
+    width: 150px;
+    height: 20px;
+    color: white;
+    background-color:#22275b ;
+    border-radius: 12px;
+    margin-top: 40px;
+    margin-left: 20px;
+    
+}
+.date a{
+    margin-left: 25%;
+}
+.btn{
+    margin-left: -280px;
+    margin-top: -480px;
+    
+}
+.btn button{
+    font-size: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid rgb(253, 186, 61);
+    background-color:#404040 ;
+    color:rgb(253, 186, 61) ;
+}

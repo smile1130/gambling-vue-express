@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Statistical</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <link rel="stylesheet" href="/plugins/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="/dist/css/adminlte.min.css">
+    <link href="//cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/admin.css">
+</head>
+
+<body class="dark-mode sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
+    <div class="wrapper">
+        <%- include('nav') %>
+
+            <!-- Content Wrapper. Contains page content -->
+            <div class="content-wrapper">
+                <!-- Content Header (Page header) -->
+                <section class="content-header">
+                    <div class="container-fluid">
+                        <div class="row mb-2">
+                            <div class="col-sm-6">
+                                <h1>Statistics </h1>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.container-fluid -->
+                </section>
+
+                <!-- Main content -->
+                <section class="content">
+                    <div class="container-fluid">
+                        <!-- <h5 class="mb-2">Info Box</h5> -->
+                        <div class="row">
+                            <div class="col-md-3 col-sm-6 col-12">
+                                <div class="info-box">
+                                    <span class="info-box-icon bg-info"><i class="fa fa-user-circle" aria-hidden="true"></i></span>
+                                    <div class="info-box-content">
+                                        <span class="info-box-text">Total Member</span>
+                                        <span class="info-box-number totalMember">0</span>
+                                    </div>
+                                    <!-- /.info-box-content -->
+                                </div>
+                                <!-- /.info-box -->
+                             </div>
+                            <!-- /.col -->
+                            <div class="col-md-3 col-sm-6 col-12">
+                                <div class="info-box">
+                                    <span class="info-box-icon bg-success"><i class="far fa-flag"></i></span>
+
+                                    <div class="info-box-content">
+                                        <span class="info-box-text">Win Bets Today</span>
+                                        <span class="info-box-number totalWin">0</span>
+                                    </div>
+                                    <!-- /.info-box-content -->
+                                </div>
+                                <!-- /.info-box -->
+                            </div>
+                            <!-- /.col -->
+                            <div class="col-md-3 col-sm-6 col-12">
+                                <div class="info-box">
+                                    <span class="info-box-icon bg-danger"><i class="far fa-flag"></i></span>
+
+                                    <div class="info-box-content">
+                                        <span class="info-box-text">Lost Bets Today</span>
+                                        <span class="info-box-number totalLoss">0</span>
+                                    </div>
+                                    <!-- /.info-box-content -->
+                                </div>
+                                <!-- /.info-box -->
+                            </div>
+                            <!-- /.col -->
+                            <div class="col-md-3 col-sm-6 col-12">
+                                <div class="info-box">
+                                    <span class="info-box-icon bg-warning"><i class="fa fa-user-times" aria-hidden="true"></i></span>
+
+                                    <div class="info-box-content">
+                                        <span class="info-box-text">Members Locked</span>
+                                        <span class="info-box-number totalMemberFail">0</span>
+                                    </div>
+                                    <!-- /.info-box-content -->
+                                </div>
+                                <!-- /.info-box -->
+                            </div>
+                            <!-- /.col -->
+                        </div>
+                        <!-- /.row -->
+
+                        <!-- =========================================================== -->
+                        <!-- <h5 class="mb-2">Info Box</h5> -->
+                        <div class="row">
+                            <!-- /.col -->
+                            <div class="col-md-3 col-sm-6 col-12">
+                                <div class="info-box shadow-sm">
+                                    <span class="info-box-icon bg-success"><i class="fa fa-check" aria-hidden="true"></i></span>
+
+                                    <div class="info-box-content">
+                                        <span class="info-box-text">Total Deposit Amount</span>
+                                        <span class="info-box-number totalRecharge">0</span>
+                                    </div>
+                                    <!-- /.info-box-content -->
+                                </div>
+                                <!-- /.info-box -->
+                            </div>
+                            <div class="col-md-3 col-sm-6 col-12">
+                                <div class="info-box shadow-sm">
+                                    <span class="info-box-icon bg-success"><i class="fa fa-check" aria-hidden="true"></i></span>
+
+                                    <div class="info-box-content">
+                                        <span class="info-box-text">Today's Deposit Amount</span>
+                                        <span class="info-box-number totalRechargeToday">0</span>
+                                    </div>
+                                    <!-- /.info-box-content -->
+                                </div>
+                                <!-- /.info-box -->
+                            </div>
+                            <!-- /.col -->
+                            <div class="col-md-3 col-sm-6 col-12">
+                                <div class="info-box shadow">
+                                    <span class="info-box-icon bg-warning"><i class="fa fa-university" aria-hidden="true"></i></span>
+
+                                    <div class="info-box-content">
+                                        <span class="info-box-text">Total Withdrawal Amount</span>
+                                        <span class="info-box-number totalwithdraw">0</span>
+                                    </div>
+                                    <!-- /.info-box-content -->
+                                </div>
+                                <!-- /.info-box -->
+                            </div>
+                            <div class="col-md-3 col-sm-6 col-12">
+                                <div class="info-box shadow">
+                                    <span class="info-box-icon bg-warning"><i class="fa fa-university" aria-hidden="true"></i></span>
+
+                                    <div class="info-box-content">
+                                        <span class="info-box-text">Today's Withdrawal Amount</span>
+                                        <span class="info-box-number totalwithdrawToday">0</span>
+                                    </div>
+                                    <!-- /.info-box-content -->
+                                </div>
+                                <!-- /.info-box -->
+                            </div>
+                            <div class="col-md-3 col-sm-6 col-12">
+                                <div class="info-box shadow">
+                                    <span class="info-box-icon bg-info"><i class="fa fa-line-chart" aria-hidden="true"></i></span>
+
+                                    <div class="info-box-content">
+                                        <span class="info-box-text">Total Commission</span>
+                                        <span class="info-box-number totalRoses">0</span>
+                                    </div>
+                                    <!-- /.info-box-content -->
+                                </div>
+                                <!-- /.info-box -->
+                            </div>
+                            <div class="col-md-3 col-sm-6 col-12">
+                                <div class="info-box shadow">
+                                    <span class="info-box-icon bg-info"><i class="fa fa-line-chart" aria-hidden="true"></i></span>
+
+                                    <div class="info-box-content">
+                                        <span class="info-box-text">Roses Today</span>
+                                        <span class="info-box-number totalRosesToday">0</span>
+                                    </div>
+                                    <!-- /.info-box-content -->
+                                </div>
+                                <!-- /.info-box -->
+                            </div>
+                            <div class="col-md-3 col-sm-6 col-12">
+                                <div class="info-box shadow">
+                                    <span class="info-box-icon bg-info"><i class="fa fa-line-chart" aria-hidden="true"></i></span>
+
+                                    <div class="info-box-content">
+                                        <span class="info-box-text">Rose F1</span>
+                                        <span class="info-box-number totalRosesF1">0</span>
+                                    </div>
+                                    <!-- /.info-box-content -->
+                                </div>
+                                <!-- /.info-box -->
+                            </div>
+                            <div class="col-md-3 col-sm-6 col-12">
+                                <div class="info-box shadow">
+                                    <span class="info-box-icon bg-info"><i class="fa fa-line-chart" aria-hidden="true"></i></span>
+
+                                    <div class="info-box-content">
+                                        <span class="info-box-text">Team Roses</span>
+                                        <span class="info-box-number totalRosesF">0</span>
+                                    </div>
+                                    <!-- /.info-box-content -->
+                                </div>
+                                <!-- /.info-box -->
+                            </div>
+                            <div class="col-md-3 col-sm-6 col-12">
+                                <div class="info-box">
+                                    <span class="info-box-icon bg-info"><i class="fa fa-money" aria-hidden="true"></i></span>
+                                    <div class="info-box-content">
+                                        <span class="info-box-text">Remaining Amount to generate giftcode</span>
+                                        <span class="info-box-number moneyCTV">0</span>
+                                    </div>
+                                    <!-- /.info-box-content -->
+                                </div>
+                                <!-- /.info-box -->
+                             </div>
+                        </div>
+                    </div>
+                    <!-- /.container-fluid -->
+                </section>
+                <!-- /.content -->
+
+                <!-- Bộ lọc thời gian -->
+                <section class="content">
+                    <!-- Default box -->
+                    <div class="card">
+                        <div class="card-header text-center">
+                            <div class="text-center">
+                                <input type="date" id="sort-date">
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Chi tiết tài chính -->
+                <section class="content">
+                    <!-- Default box -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">giftcode  Details&nbsp</h3>
+                            <div class="card-tools">
+                                <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                                    <i class="fas fa-minus"></i>
+                                </button>
+                                <button type="button" class="btn btn-tool" data-card-widget="remove" title="Remove">
+                                    <i class="fas fa-times"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="card-body p-0" style="display: block; overflow-y: hidden;">
+                            <table class="table table-striped projects" id="table1">
+                                <thead>
+                                    <tr>
+                                        <th class="text-center">ID</th>
+                                        <th class="text-center">Creator</th>
+                                        <th class="text-center">Receiver</th>
+                                        <th class="text-center">Amount</th>
+                                        <th class="text-center">Time</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="list-details-news">
+                                    
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- Thành viên mới -->
+                <section class="content">
+                    <!-- Default box -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">New Member &nbsp</h3> <span id="ip_address"></span>
+                            <div class="card-tools">
+                                <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                                    <i class="fas fa-minus"></i>
+                                </button>
+                                <button type="button" class="btn btn-tool" data-card-widget="remove" title="Remove">
+                                    <i class="fas fa-times"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="card-body p-0" style="display: block; overflow-y: hidden;">
+                            <table class="table table-striped projects" id="table1">
+                                <thead>
+                                    <tr>
+                                        <th class="text-center">ID</th>
+                                        <th class="text-center">Account</th>
+                                        <th class="text-center">Amount</th>
+                                        <th class="text-center">Loaded</th>
+                                        <th class="text-center">IP</th>
+                                        <th class="text-center">Time</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="list-mem-news">
+                                    
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Nạp tiền hôm nay -->
+                <section class="content">
+                    <!-- Default box -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">Recharge Today</h3>
+                            <div class="card-tools">
+                                <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                                    <i class="fas fa-minus"></i>
+                                </button>
+                                <button type="button" class="btn btn-tool" data-card-widget="remove" title="Remove">
+                                    <i class="fas fa-times"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="card-body p-0" style="display: block; overflow-y: hidden;">
+                            <table class="table table-striped projects" id="table1">
+                                <thead>
+                                    <tr>
+                                        <th class="text-center">ID</th>
+                                        <th class="text-center">Account</th>
+                                        <th class="text-center">Amount</th>
+                                        <th class="text-center">Status</th>
+                                        <th class="text-center">Time</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="list-recharge-news">
+                                    
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Rút tiền hôm nay -->
+                <section class="content">
+                    <!-- Default box -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">Withdraw Money Today</h3>
+                            <div class="card-tools">
+                                <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                                    <i class="fas fa-minus"></i>
+                                </button>
+                                <button type="button" class="btn btn-tool" data-card-widget="remove" title="Remove">
+                                    <i class="fas fa-times"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="card-body p-0" style="display: block; overflow-y: hidden;">
+                            <table class="table table-striped projects" id="table1">
+                                <thead>
+                                    <tr>
+                                        <th class="text-center">ID</th>
+                                        <th class="text-center">Account</th>
+                                        <th class="text-center">Amount</th>
+                                        <th class="text-center">Status</th>
+                                        <th class="text-center">Time</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="list-withdraw-news">
+                                    
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Chi tiết tài chính -->
+                <section class="content">
+                    <!-- Default box -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">Increase / Decrease Account Money &nbsp</h3>
+                            <div class="card-tools">
+                                <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                                    <i class="fas fa-minus"></i>
+                                </button>
+                                <button type="button" class="btn btn-tool" data-card-widget="remove" title="Remove">
+                                    <i class="fas fa-times"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="card-body p-0" style="display: block; overflow-y: hidden;">
+                            <table class="table table-striped projects" id="table1">
+                                <thead>
+                                    <tr>
+                                        <th class="text-center">ID</th>
+                                        <th class="text-center">Sender</th>
+                                        <th class="text-center">Receiver</th>
+                                        <th class="text-center">Amount</th>
+                                        <th class="text-center">Time</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="financial_details">
+                                    
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+                <a id="back-to-top" href="#" class="btn btn-primary back-to-top" role="button" aria-label="Scroll to top">
+                    <i class="fas fa-chevron-up"></i>
+                </a>
+            </div>
+    </div>
+    <script src="/plugins/jquery/jquery.min.js"></script>
+    <script src="/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/dist/js/adminlte.min.js"></script>
+    <script src="/js/admin/admin.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+    <script>
+        function formateT(params) {
+            let result = (params < 10) ? "0" + params : params;
+            return result;
+        }
+
+        function timerJoin(params = '') {
+            let date = '';
+            if (params) {
+            date = new Date(Number(params));
+            } else {
+            date = Date.now();
+            date = new Date(Number(date));
+            }
+            let years = formateT(date.getFullYear());
+            let months = formateT(date.getMonth() + 1);
+            let days = formateT(date.getDate());
+            let weeks = formateT(date.getDay());
+        
+            let hours = formateT(date.getHours());
+            let minutes = formateT(date.getMinutes());
+            let seconds = formateT(date.getSeconds());
+            return years + '/' + months + '/' + days + ' - ' + hours + ':' + minutes + ':' + seconds;
+        }
+    </script>
+    <script>
+        const RenderMemberNews = (datas) => {
+            if (datas.length == 0) {
+                $('#list-mem-news').html(`
+                    <tr class="text-center">
+                    <td colspan="7">No Data...</td>
+                    </tr>
+                `);
+                return;
+            }
+            let html = '';
+            datas.map((data) => {
+                html += 
+                `
+                <tr class="text-center" style="">
+                    <td>${data.id_user}</td>
+                    <td style="color: #3498db;font-weight: 600;min-width: 210px">${data.phone}</td>
+                    <td><b style="color: #e74c3c">${(data.total_money)}</b></td>
+                    <td class="project-state"><span class="badge badge-${(data.total_money > 0 ? 'success' : 'warning')}">${(data.total_money > 0 ? 'success' : 'pending')}</span></td>
+                    <td style="min-width: 110px;"><b>${data.ip_address}</b></td>
+                    <td style="min-width: 110px;"><b>${timerJoin(data.time)}</b></td>
+                </tr>
+                `;
+            });
+            $("#list-mem-news").html(html);
+        }
+
+        const RenderRechargeNews = (datas) => {
+            if (datas.length == 0) {
+                $('#list-recharge-news').html(`
+                    <tr class="text-center">
+                    <td colspan="7">no data...</td>
+                    </tr>
+                `);
+                return;
+            }
+            let html = '';
+            datas.map((data) => {
+                html += 
+                `
+                <tr class="text-center" style="">
+                    <td>${data.id}</td>
+                    <td style="color: #3498db;font-weight: 600;min-width: 210px">${data.phone}</td>
+                    <td><b style="color: #e74c3c">${(data.money)}</b></td>
+                    <td class="project-state"><span class="badge badge-success">success</span></td>
+                    <td style="min-width: 110px;"><b>${timerJoin(data.time)}</b></td>
+                </tr>
+                `;
+            });
+            $("#list-recharge-news").html(html);
+        }
+
+        const RenderWithdrawNews = (datas) => {
+            if (datas.length == 0) {
+                $('#list-withdraw-news').html(`
+                    <tr class="text-center">
+                    <td colspan="7">no data...</td>
+                    </tr>
+                `);
+                return;
+            }
+            let html = '';
+            datas.map((data) => {
+                html += 
+                `
+                <tr class="text-center" style="">
+                    <td>${data.id}</td>
+                    <td style="color: #3498db;font-weight: 600;min-width: 210px">${data.phone}</td>
+                    <td><b style="color: #e74c3c">${(data.money)}</b></td>
+                    <td class="project-state"><span class="badge badge-success">success</span></td>
+                    <td style="min-width: 110px;"><b>${timerJoin(data.time)}</b></td>
+                </tr>
+                `;
+            });
+            $("#list-withdraw-news").html(html);
+        }
+        
+        const redenvelopesUsed = (datas) => {
+            if (datas.length == 0) {
+                $('#list-details-news').html(`
+                    <tr class="text-center">
+                    <td colspan="7">no data...</td>
+                    </tr>
+                `);
+                return;
+            }
+            let html = '';
+            datas.map((data) => {
+                html += 
+                `
+                <tr class="text-center" style="">
+                    <td>${data.id_redenvelops}</td>
+                    <td style="color: #3498db;font-weight: 600;min-width: 210px">${data.phone}</td>
+                    <td style="color: #3498db;font-weight: 600;min-width: 210px">${data.phone_used}</td>
+                    <td><b style="color: #e74c3c">+${(data.money)}</b></td>
+                    <td style="min-width: 110px;"><b>${timerJoin(data.time)}</b></td>
+                </tr>
+                `;
+            });
+            $("#list-details-news").html(html);
+        }
+
+        const financial_details = (datas) => {
+            if (datas.length == 0) {
+                $('#financial_details').html(`
+                    <tr class="text-center">
+                    <td colspan="7">no data...</td>
+                    </tr>
+                `);
+                return;
+            }
+            let html = '';
+            datas.map((data) => {
+                html += 
+                `
+                <tr class="text-center" style="">
+                    <td>${data.id}</td>
+                    <td style="color: #3498db;font-weight: 600;min-width: 210px">${data.phone}</td>
+                    <td style="color: #3498db;font-weight: 600;min-width: 210px">${data.phone_used}</td>
+                    <td><b style="color: #e74c3c">${(data.type == '1') ? '+' : '-'} ${(data.money)}</b></td>
+                    <td style="min-width: 110px;"><b>${timerJoin(data.time)}</b></td>
+                </tr>
+                `;
+                $("#financial_details").html(html);
+            });
+        }
+    </script>
+    <script>
+        $('#sort-date').change(function (e) { 
+            e.preventDefault();
+            let timeDate = $(this).val();
+            $.ajax({
+                type: "POST",
+                url: "/admin/manager/infoCtv/select",
+                data: {
+                    timeDate: timeDate,
+                    phone: "<%=phone%>",
+                }, 
+                dataType: "json",
+                success: function (response) {
+                    RenderMemberNews(response.list_mems);
+                    RenderRechargeNews(response.list_recharge_news);
+                    RenderWithdrawNews(response.list_withdraw_news);
+                    redenvelopesUsed(response.redenvelopes_used);
+                    financial_details(response.financial_details_today);
+                }
+            });
+        });
+        $.ajax({
+            type: "POST",
+            url: "/admin/manager/infoCtv",
+            data: {
+                phone: "<%=phone%>",
+            }, 
+            dataType: "json",
+            success: function (response) {
+                RenderMemberNews(response.list_mems);
+                RenderRechargeNews(response.list_recharge_news);
+                RenderWithdrawNews(response.list_withdraw_news);
+                redenvelopesUsed(response.redenvelopes_used);
+                financial_details(response.financial_details_today);
+
+                $('.totalMember').text((response.f1 + response.f2 + response.f3 + response.f4));
+                $('.totalRoses').text((response.datas[0].roses_f + response.datas[0].roses_f1));
+                $('.totalRosesToday').text((response.datas[0].roses_today));
+                $('.totalRosesF1').text((response.datas[0].roses_f1));
+                $('.totalRosesF').text((response.datas[0].roses_f));
+                $('#ip_address').text(' - IP Address ( ' + response.datas[0].ip_address + ' )');
+
+                $('.totalRecharge').text((response.total_recharge));
+                $('.totalwithdraw').text((response.total_withdraw));
+                $('.totalRechargeToday').text((response.total_recharge_today));
+                $('.totalwithdrawToday').text((response.total_withdraw_today));
+                $('.totalMemberFail').text((response.list_mem_baned));
+
+                $('.totalWin').text((response.win));
+                $('.totalLoss').text((response.loss));
+
+                $('.moneyCTV').text((response.moneyCTV));
+            }
+        });
+
+    </script>
+</body>
+
+</html>

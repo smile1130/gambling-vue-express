@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Settings</title>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <link rel="stylesheet" href="/plugins/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/dist/css/adminlte.min.css">
+    <link rel="stylesheet" href="/css/admin.css">
+    <link href="//cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.7/axios.min.js"
+        integrity="sha512-NQfB/bDaB8kaSXF8E77JjhHG5PM6XVRxvHzkZiwl3ddWCEPBa23T76MuWSwAJdMGJnmQqM0VeY9kFszsrBEFrQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+        </script>
+    <style>
+        .form-group {
+            background: aliceblue;
+            margin-top: 20px;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 5px #2e9fcc;
+        }
+
+        .btn-primary {
+    color: #fff;
+    background-color: #ff0000 !important;
+    border-color: #000307 !important;
+}
+
+        .form-group button {
+            margin-top: 30px;
+        }
+
+
+
+        <style>
+        /* Style for the dot */
+        .dot {
+            width: 20px;
+            height: 20px;
+            background-color: green;
+            border-radius: 50%;
+            animation: blink 1s infinite; /* Continuous blinking animation */
+        }
+
+        /* Animation keyframes for blinking effect */
+        @keyframes blink {
+            0% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+    </style>
+    </style>
+</head>
+
+<body class="hold-transition sidebar-mini">
+    <div class="wrapper">
+        <%- include('nav') %>
+            <div class="content-wrapper">
+                <section class="content-header">
+                    <div class="container-fluid">
+                        <div class="row mb-2">
+                            <div class="col-sm-6">
+                                <h1>Settings</h1>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.container-fluid -->
+                </section>
+
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div style="padding: 10px 20px;margin-bottom: 200px;">
+                                <div class="form-group">
+                                    <div class="text-center">
+                                        <label for="quantity">Members Wallet (Plus - Minus)</label>
+                                    </div>
+                                    <input type="text" class="form-control" oninput="value=value.replace(/\D/g,'')"
+                                        id="buff-id" placeholder="Enter account ID"><br>
+                                    <select class="form-select mb-4" id="buff-acc" aria-label="Default select example">
+                                        <option selected value="">----------- Select Function ----------</option>
+                                        <option value="1">Increase (+)</option>
+                                        <option value="2">Drecrease (-)</option>
+                                    </select>
+
+                                    <input type="text" class="form-control" oninput="value=value.replace(/\D/g,'')"
+                                        id="buff-money" placeholder="Enter Amount">
+                                    <button type="submit" class="btn btn-primary" id="buff-username"
+                                        style="width: 100%;">Submit</button>
+                                </div> 
+
+                                <div class="form-group">
+                                   
+                                    <div class="text-center">
+                                        <label for="quantity">Additional / Backup Recharge Setting</label>
+                                    </div>
+
+                                    <label for="edit-momo-name_bank" style="color: #3498db;">UPI ID 1</label>
+                                    <input type="text" class="form-control" placeholder="UPI ID"
+                                        id="edit-momo-name_bank" value=""><br>
+                                        <label for="edit-momo-name" style="color: #3498db;">UPI ID 2</label>
+                                    <input type="text" class="form-control" placeholder="UPI ID"
+                                        id="edit-momo-name" value=""><br>
+                                        <label for="edit-momo-info" style="color: #3498db;">UPI ID 3</label>
+                                    <input type="text" class="form-control" placeholder="UPI ID" id="edit-momo-info"
+                                        value=""><br>
+                                        <label for="edit-momo-qr" style="color: #3498db;">USDT Wallet Address</label>
+                                    <input type="text" class="form-control" placeholder="USDT Wallet Address"
+                                        id="edit-momo-qr" value=""><br>
+                                        
+                                    <button type="submit" class="btn btn-primary edit-momo"
+                                        style="width: 100%;">Submit</button>
+                                </div>
+                                
+
+
+
+
+
+
+                                <form action="/submit-gaming-api" method="post">
+                                    <!-- Form fields for API keys and tokens -->
+                                    <!-- Make sure to use proper input names corresponding to your backend script -->
+                                
+                                    <div class="form-group">
+                                    <div class="text-center">
+                                      <label for="quantity">
+                                        3rd Party Game API Setting
+                                      </label>
+                                    </div>
+                                    <label style="color: #3498db;">
+                                      CQ9 Gaming API/Token <span class="box">🟢</span>
+                                    </label>
+                                    <br>
+                                    <span>
+                                      API
+                                    </span>
+                                    
+                                    <input type="text" class="form-control random-string" placeholder="API Key" value="" readonly>
+                                    <br>
+                                    <span>
+                                      Token
+                                    </span>
+                                    <input type="text" class="form-control random-string" placeholder="API Token" value="" readonly>
+                                    <br>
+                                    <label style="color: #3498db;">
+                                      Micro Gaming API/Token <span class="box">🟢</span>
+                                    </label>
+                                    <br>
+                                    <span>
+                                      API
+                                    </span>
+                                    <input type="text" class="form-control random-string" placeholder="API Key" value="" readonly>
+                                    <br>
+                                    <span>
+                                      Token
+                                    </span>
+                                    <input type="text" class="form-control random-string" placeholder="API Token" value="" readonly>
+                                    <br>
+                                    <label style="color: #3498db;">
+                                      JDB Gaming API/Token <span class="box">🟢</span>
+                                    </label>
+                                    <br>
+                                    <span>
+                                      API
+                                    </span>
+                                    <input type="text" class="form-control random-string" placeholder="API Key" value="" readonly>
+                                    <br>
+                                    <span>
+                                      Token
+                                    </span>
+                                    <input type="text" class="form-control random-string" placeholder="API Token" value="" readonly>
+                                    <br>
+                                    <label style="color: #3498db;">
+                                      Evolution Gaming API/Token <span class="box">🟢</span>
+                                    </label>
+                                    <br>
+                                    <span>
+                                      API
+                                    </span>
+                                    <input type="text" class="form-control random-string" placeholder="API Key" value="" readonly>
+                                    <br>
+                                    <span>
+                                      Token
+                                    </span>
+                                    <input type="text" class="form-control random-string" placeholder="API Token" value="" readonly>
+                                    <br>
+                                    <label style="color: #3498db;">
+                                      Jili Gaming API/Token <span class="box">🟢</span>
+                                    </label>
+                                    <br>
+                                    <span>
+                                      API
+                                    </span>
+                                    <input type="text" class="form-control random-string" placeholder="API Key" value="" readonly>
+                                    <br>
+                                    <span>
+                                      Token
+                                    </span>
+                                    <input type="text" class="form-control random-string" placeholder="API Token" value="" readonly>
+                                    <br>
+                                    <label style="color: #3498db;">
+                                      AG Gaming API/Token <span class="box">🟢</span>
+                                    </label>
+                                    <br>
+                                    <span>
+                                      API
+                                    </span>
+                                    <input type="text" class="form-control random-string" placeholder="API Key" value="" readonly>
+                                    <br>
+                                    <span>
+                                      Token
+                                    </span>
+                                    <input type="text" class="form-control random-string" placeholder="API Token" value="" readonly>
+                                    <br>
+                                    <label style="color: #3498db;">
+                                      Casino Live Gaming API/Token <span class="box">🟢</span>
+                                    </label>
+                                    <br>
+                                    <span>
+                                      API
+                                    </span>
+                                    <input type="text" class="form-control random-string" placeholder="API Key" value="" readonly>
+                                    <br>
+                                    <span>
+                                      Token
+                                    </span>
+                                    <input type="text" class="form-control random-string" placeholder="API Token" value="" readonly>
+                                    <br>
+                                    <label style="color: #3498db;">
+                                      EA Sports Gaming API/Token <span class="box">🟢</span>
+                                    </label>
+                                    <br>
+                                    <span>
+                                      API
+                                    </span>
+                                    <input type="text" class="form-control random-string" placeholder="API Key" value="" readonly>
+                                    <br>
+                                    <span>
+                                      Token
+                                    </span>
+                                    <input type="text" class="form-control random-string" placeholder="API Token" value="" readonly>
+                                    <br>
+                                    <label style="color: #3498db;">
+                                      Bet365 Gaming API/Token <span class="box">🟢</span>
+                                    </label>
+                                    <br>
+                                    <span>
+                                      API
+                                    </span>
+                                    <input type="text" class="form-control random-string" placeholder="API Key" value="" readonly>
+                                    <br>
+                                    <span>
+                                      Token
+                                    </span>
+                                    <input type="text" class="form-control random-string" placeholder="API Token" value="" readonly>
+                                    <br>
+                                    <label style="color: #3498db;">
+                                      PG Gaming API/Token <span class="box">🟢</span>
+                                    </label>
+                                    <br>
+                                    <span>
+                                      API
+                                    </span>
+                                    <input type="text" class="form-control random-string" placeholder="API Key" value="" readonly>
+                                    <br>
+                                    <span>
+                                      Token
+                                    </span>
+                                    <input type="text" class="form-control random-string" placeholder="API Token" value="" readonly>
+                                    <br>
+                                    <button type="submit" class="btn btn-primary edit-momo" style="width: 100%;">
+                                      Fetch Games
+                                    </button>
+                                    </div>
+                                </form>
+                            
+
+
+
+
+
+
+
+
+
+                                <div class="form-group">
+                                    <div class="text-center">
+                                        <label for="telegram">Telegram</label>
+                                    </div>
+                                    <label for="telegram" style="color: #3498db;">Telegram</label>
+                                    <input type="text" class="form-control" id="telegram"
+                                        placeholder="Enter Telegram Link" value=""><br>
+                                    <label for="cskh" style="color: #3498db;">Online Services</label>
+                                    <input type="text" class="form-control" id="cskh" placeholder="Online Services"
+                                        value=""><br>
+                                    <label for="myapp_web" style="color: #3498db;">App Download Link</label>
+                                    <input type="text" class="form-control" id="myapp_web" placeholder="Enter App Link"
+                                        value=""><br>
+                                    <button type="submit" class="btn btn-primary telegram"
+                                        style="width: 100%;">Submit</button>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+    <script src="/plugins/jquery/jquery.min.js"></script>
+    <script src="/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/dist/js/adminlte.min.js"></script>
+    <script src="/js/admin/admin.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+
+
+
+
+    <script>
+        // Function to generate a random alphanumeric string
+        function generateRandomString(length) {
+            let result = '';
+            const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+            const charactersLength = characters.length;
+            for (let i = 0; i < length; i++) {
+                result += characters.charAt(Math.floor(Math.random() * charactersLength));
+            }
+            return result;
+        }
+
+        // Select all input fields with the class 'random-string' and set their value to a random string
+        const randomStringInputs = document.querySelectorAll('.random-string');
+        randomStringInputs.forEach(function(input) {
+            input.value = generateRandomString(64);
+        });
+    </script>
+
+
+
+
+
+
+
+
+
+
+    <script>
+        $.ajax({
+            type: "POST",
+            url: "/admin/manager/settings/get",
+            data: "data",
+            dataType: "json",
+            success: function (response) {
+                let bank = response.datas[0];
+                let momo = response.momo;
+                $('#edit-momo-name_bank').val(momo.bank_name);
+                $('#edit-momo-name').val(momo.username);
+                $('#edit-momo-info').val(momo.upi_id);
+                $('#edit-momo-qr').val(momo.usdt_wallet_address);
+
+                $('#edit-banking-name_bank').val(bank.name_bank);
+                $('#edit-banking-name').val(bank.name_user);
+                $('#edit-banking-info').val(bank.stk);
+                // $('#edit-momo-qr').val(momo.qr_code_image);
+
+                $('#telegram').val(response.settings[0].telegram);
+                $('#cskh').val(response.settings[0].cskh);
+                $('#myapp_web').val(response.settings[0].app);
+            }
+        });
+    </script>
+    <script>
+        function sendRequest(params1, params2, typer) {
+            $.ajax({
+                type: "POST",
+                url: "/manage/admin/settings",
+                data: {
+                    params1: params1,
+                    params2: params2,
+                    typer: typer,
+                },
+                dataType: "json",
+                success: function (response) {
+                    if (response.message == 1) {
+                        Swal.fire(
+                            'Good job!',
+                            'You clicked the button!',
+                            'success'
+                        )
+                    } else if (response.message == 2) {
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Phone number does not exist',
+                        })
+                    } else {
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'An unknown error !',
+                        })
+                    }
+                }
+            });
+        }
+
+        function sendRequestBank(name_bank = '', name = '', info = '', qr = '', typer = '') {
+            $.ajax({
+                type: "POST",
+                url: "/admin/manager/settings/bank",
+                data: {
+                    name_bank: name_bank,
+                    name: name,
+                    info: info,
+                    qr: qr,
+                    typer: typer
+                },
+                dataType: "json",
+                success: function (response) {
+                    Swal.fire(
+                        'Good job!',
+                        'Updated Successfully!',
+                        'success'
+                    )
+                }
+            });
+        }
+        $('.buff-money').click(function (e) {
+            e.preventDefault();
+            const phone = $('#buff-phone').val();
+            const money = $('#buff-money').val();
+            const checkMoney = $.isNumeric(money);
+            if (phone && checkMoney) {
+                sendRequest(phone, money, "buff");
+            } else {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Empty or Wrong Details',
+                })
+            }
+        });
+
+        const alertMessage = (text) => {
+            const msg = document.createElement('div');
+            msg.setAttribute('data-v-1dcba851', '');
+            msg.className = 'msg';
+
+            const msgContent = document.createElement('div');
+            msgContent.setAttribute('data-v-1dcba851', '');
+            msgContent.className = 'msg-content v-enter-active v-enter-to';
+            msgContent.style = '';
+            msgContent.textContent = text;
+
+            msg.appendChild(msgContent);
+            document.body.appendChild(msg);
+
+            setTimeout(() => {
+                msgContent.classList.remove('v-enter-active', 'v-enter-to');
+                msgContent.classList.add('v-leave-active', 'v-leave-to');
+
+                setTimeout(() => {
+                    document.body.removeChild(msg);
+                }, 100);
+            }, 1000);
+        }
+
+        $('.edit-momo').click(async (e) => {
+            try {
+                e.preventDefault();
+                const bank_name = $('#edit-momo-name_bank').val();
+                const username = $('#edit-momo-name').val();
+                const upi_id = $('#edit-momo-info').val();
+                const usdt_wallet_address = $('#edit-momo-qr').val();
+
+                const response = await axios.post("/admin/manager/settings/bank", {
+                    bank_name,
+                    username,
+                    upi_id,
+                    usdt_wallet_address,
+                    typer: 'momo'
+                })
+
+                if (response?.data?.status === true) {
+                    alertMessage(response?.data?.message)
+                }
+            } catch (error) {
+                console.log(error)
+            }
+        });
+        $('.edit-banking').click(function (e) {
+            e.preventDefault();
+            const name_bank = $('#edit-banking-name_bank').val();
+            const name = $('#edit-banking-name').val();
+            const info = $('#edit-banking-info').val();
+            sendRequestBank(name_bank, name, info, "bank");
+        });
+        $('.telegram').click(function (e) {
+            e.preventDefault();
+            const telegram = $('#telegram').val();
+            const cskh = $('#cskh').val();
+            const myapp_web = $('#myapp_web').val();
+            $.ajax({
+                type: "POST",
+                url: "/admin/manager/settings/cskh",
+                data: {
+                    telegram: telegram,
+                    cskh: cskh,
+                    myapp_web: myapp_web,
+                },
+                dataType: "json",
+                success: function (response) {
+                    if (response.status == true) {
+                        Swal.fire(
+                            'Good job!',
+                            'Your Links Updated Successfully!',
+                            'success'
+                        )
+                    } else {
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Empty or Wrong',
+                        })
+                    }
+                }
+            });
+        });
+
+        $('#buff-username').click(function (e) {
+            e.preventDefault();
+            let id_user = $('#buff-id').val().trim();
+            let buff_acc = $('#buff-acc').val().trim();
+            let money_value = $('#buff-money').val().trim();
+            if (id_user && buff_acc && money_value) {
+                $.ajax({
+                    type: "POST",
+                    url: "/admin/manager/settings/buff",
+                    data: {
+                        id_user: id_user,
+                        buff_acc: buff_acc,
+                        money_value: money_value,
+                    },
+                    dataType: "json",
+                    success: function (response) {
+                        if (response.status == true) {
+                            Swal.fire(
+                                'Good job!',
+                                'Data Added Successfully!',
+                                'success'
+                            )
+                        } else {
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'User ID does not exist',
+                            })
+                        }
+                    }
+                });
+            } else {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Please enter complete information',
+                })
+            }
+        });        
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

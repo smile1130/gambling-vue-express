@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html translate="no" data-dpr="1" style="font-size: 39px;">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="robots" content="noindex,nofollow">
+    <meta content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" name="viewport">
+    <title>BigMumbai</title>
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/all.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-thin.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-solid.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-regular.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-light.css">
+    <link rel="stylesheet" href="./index_files/index-96409872.css">
+    <link rel="stylesheet" href="../index_files/index-96409872.css">
+    <link href="/css/wallet/main.css" rel="stylesheet" />
+    <link href="/css/wallet/chunk_2-1.css" rel="stylesheet" />
+    <link href="/css/wallet/chunk_2-2.css" rel="stylesheet" />
+    <link href="/css/wallet/chunk_2-3.css" rel="stylesheet" />
+    <link rel="shortcut icon" href="/images/bitbug_favicon.ico" type="image/x-icon">
+    <style>
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+            background-color: #090909;
+            padding: 0;
+            margin: 0;
+        }
+
+        #app {
+            color: #ffffff;
+        }
+
+        .mian[data-v-3966082f] {
+            background-color: #22275b
+        }
+
+        .mian .box[data-v-3966082f] {
+            padding: .4rem;
+            background: #22275b
+        }
+
+        .mian .box .list[data-v-3966082f] {
+            background: #22275b;
+            border-radius: 0rem;
+            overflow: hidden
+        }
+
+        .mian .box .list .item[data-v-4e585e69] {
+    padding: 0.26667rem 0.4rem;
+    border: 2px solid;
+    border-radius: 15px;
+}
+
+        .mian .box .list .item[data-v-3966082f] {
+            padding: .26667rem .4rem
+        }
+
+        .mian .box .list .item .money[data-v-3966082f] {
+            font-size: .4rem;
+            color: #fb4e4e
+        }
+
+        .mian .box .list .item .money.action[data-v-3966082f] {
+            color: #6abe57
+        }
+
+        .mian .box .list .item .number[data-v-3966082f],
+        .mian .box .list .item .time[data-v-3966082f] {
+            font-size: .32rem;
+            color: #fff
+        }
+
+        .mian .box .list .item .number[data-v-3966082f] {
+            font-size: .4rem
+        }
+
+        .mian .box .list .item .number .btn[data-v-3966082f] {
+            padding: .13333rem .26667rem;
+            font-size: .32rem;
+            margin-left: .26667rem;
+            border-radius: .13333rem;
+            background-color: #ffce1f;
+            color: #fff
+        }
+
+        .mian .box .list .item .state[data-v-3966082f] {
+            text-align: center;
+            font-weight: 600
+        }
+
+        .mian .box .list .item .txt[data-v-3966082f] {
+            text-align: center
+        }
+
+        html {
+            -webkit-tap-highlight-color: transparent
+        }
+
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Segoe UI, Arial, Roboto, PingFang SC, Hiragino Sans GB, Microsoft Yahei, sans-serif
+        }
+
+        a {
+            text-decoration: none
+        }
+
+        button,
+        input,
+        textarea {
+            color: inherit;
+            font: inherit
+        }
+
+        [class*=van-]:focus,
+        a:focus,
+        button:focus,
+        input:focus,
+        textarea:focus {
+            outline: 0
+        }
+
+        ol,
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style: none
+        }
+
+        .navbar[data-v-106b99c8] {
+        background: linear-gradient(90deg, rgb(43, 50, 112) 0%, rgb(43, 50, 112) 100%) !important;
+        }
+        
+        .item.c-row.c-row-between.m-b-10 {
+        border: 1px solid;
+        border-radius: 15px;
+        }
+        
+        .navbar[data-v-106b99c8] {
+    background: linear-gradient(90deg, #D9AD82 0%, #B1835A 100%) !important;
+}
+#app {
+    color: #F7F8FF !important;
+}
+.mian[data-v-3966082f] {
+    background-color: #F7F8FF !important;
+}
+.mian .box[data-v-3966082f] {
+    padding: .4rem;
+    background: #F7F8FF;
+}
+.mian .box .list[data-v-3966082f] {
+    background: #F7F8FF !important;
+    border-radius: 0rem;
+    overflow: hidden;
+    color: #1E2637 !important;
+}
+
+.mian .box .list .item .number[data-v-3966082f], .mian .box .list .item .time[data-v-3966082f] {
+    font-size: .32rem;
+    color: #1E2637 !important;
+}
+.item.c-row.c-row-between.m-b-10 {
+    border: 1px solid #B1835A;
+    border-radius: 15px;
+    color: #1E2637;
+}
+.mian .box .list .item[data-v-4e585e69] {
+    padding: 0.26667rem 0.4rem;
+    border: 1px solid #B1835A;
+    border-radius: 15px;
+}
+.ar_select {
+    position: fixed;
+    top: .93333rem;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translate(-50%);
+    width: 100%;
+    max-width: 10rem;
+    -webkit-user-select: none;
+    user-select: none;
+    z-index: 100;
+    padding: 0 .29333rem;
+    background-color: #F7F8FF !important;
+}.navbar[data-v-106b99c8] {
+    background: #fff !important;
+    color: #1E2637;
+}
+        
+    </style>
+</head>
+
+<body style="font-size: 12px;">
+    <script>
+        // JavaScript to hide the loader element
+        setTimeout(function() {
+            document.getElementById('loader').style.display = 'none';
+        }, 1800); // 2200 milliseconds = 2.2 seconds
+    </script>
+    <style>
+        .rotate {
+    
+    animation: spin 1.5s linear infinite; /* Rotate animation */
+    
+    }
+    
+    @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+        .ar-loading-view[data-v-647954c7] {
+        background-color: #0000004d;
+        width: 100%;
+        height: 100%;
+        z-index: 999;
+        left: 0;
+        position: fixed;
+    }.ar-loading-view .loading-wrapper[data-v-647954c7] {
+        pointer-events: none;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+        height: 100%;
+        position: absolute;
+        width: 100%;
+    }.ar-loading-view .loading-animat[data-v-647954c7] {
+        width: 4rem;
+        height: 4rem;
+    }.com__box[data-v-647954c7] {
+        position: relative;
+        width: 2.66667rem;
+        height: 1.6rem;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+        z-index: 1000;
+    }.mian[data-v-7b283485] {
+    padding-bottom: 4rem;
+    background-color: #F7F8FF;
+}
+        </style>
+        <div id="app">
+                        <div id="loader" data-v-647954c7="" class="ar-loading-view" style="--f13b4d11-currentFontFamily: 'Roboto', 'Inter', sans-serif;"><div data-v-647954c7="" class="loading-wrapper"><!-- <VanLoading /> --><div data-v-647954c7="" class="loading-animat"><svg class="rotate" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 200 200" width="200" height="200" preserveAspectRatio="xMidYMid meet" style="width: 100%; height: 100%; transform: translate3d(0px, 0px, 0px); content-visibility: visible;"><defs><clipPath id="__lottie_element_2"><rect width="200" height="200" x="0" y="0"></rect></clipPath><image xlink:href="data:image/png;base64,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"></image><image  style="animation: rotation 2s linear infinite;" class="rotate-animation" xlink:href="data:image/png;base64,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"></image></defs><g clip-path="url(#__lottie_element_2)"><g class="ai" transform="matrix(1,0,0,1,0,0)" opacity="1" style="display: block;"><image width="200px" height="200px" preserveAspectRatio="xMidYMid slice" xlink:href="data:image/png;base64,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"></image></g><g class="png" transform="matrix(0.8999999761581421,0,0,0.8999999761581421,55,55)" opacity="1" style="display: block;"><image width="100px" height="100px" preserveAspectRatio="xMidYMid slice" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAMAAABHPGVmAAAAJHpUWHRDcmVhdG9yAAAImXNMyU9KVXBMK0ktUnBNS0tNLikGAEF6Bs5qehXFAAAACXBIWXMAAAABAAAAAQBPJcTWAAAAYFBMVEVHcEy0e0P////30Z31xoqzekLJk1qwdz/bu5bVoWfDj1jIlV7MmmPUpG7mu4XPnmjYqXP1y5Xtw4/crXjwyJPqv4rfsnzjtoG9hEv79vDhxKP169/v3825iljn0bfQrohTr7GMAAAACnRSTlMAj///gHm//Pw/Y+NasgAABrRJREFUaN7tmut2oyAQgK0mrY3iXQyo+P5vuXMBRUO67Z64Z3/sYAWGYT5BTTvTRNEqn5e0qV8kTXr5jB7l0tXJS6VuLgfEZ/NiBGN2q7nUJzAQc/G3KqmprEe9Vb6qftD5ikezeqPA7XBKHqGGq/2WN93a+YqDEQ13lvLZhZ+Q5KHxJ9LxfekB0tVdV/tlt7VsgCVJjEnM3pTLvkJ/CTd62qymI6k7T5J4J+Pk69WDeRdwsapww4qA9RECjpMD5PvS4xvS0VKaryFxbNBohdhZdG6e+kerBt6WS8PSNb50j5C4Bj1DAhO+ENiv96Axr0RZsTcGJ0wozc9kiIoeqn4t3OaVqN6OdCNREh7r+/2UUNlOUIqoD4qFrEKLmfofS0Pnb0KMg/Dz4ruB24t1De9P0gSdFbBdoaIZ4ro93aNxhTt9MtES1ZT0tKPJ0RFXURGUhuZufVrJeNA3o/e6Ek0f3PRcfRPC92Sv1+rhKU/C3gAyDAP/FLaGg50NMOhdcuf0qB1Cr5K2M6iypwEhQ0ia0Hvi9IosrFapUXmQkBRRUD30gcvsnZ4gEyPI7bpxXdgbQCQWOexKAGJWvVqvYiwkzh/k5FYiAwUgEoXPWx2AKBwrqAWNiZ9l6ebxXdMyJA5ylDSwXZMPIadmm6C/hrRStrZsR7F7hA3v+bBBWlJI6aa1UllIuyt0DJFsQ8LOti65MJte7sdByKIJOpNPIMPBCX92bfpHCO2ffgqpXOGKTuzMjbQVbflYVU7PFy6rdS5D0s2XdYQFIFVIrLNVDpCq4hvvzeCVrN3WG/ouZLI+V73hJ+MASYPOZNRWooJD7KpK7iHkEl2set4vtV66cBD2IOiwpY1a7NOPO6Ms/GvCCj/BCvTSNYSxrygZaGEh1ke1+sIWQkIiQx+xO4gY/fd0gwTkGaQNfHateoZU4/chlSip2MqWB4jSNMAQa2Q8SGkh5b6UNClqy5AcIMq0NKO0EGdl71Y8lRZycMOcZxChPUkXsdP7rmRqNUEISxVVZVhyr/hav+vb0JqqZ5A8LKU9l6751IaE/4YKmz2H/EwW/nPm9RC8Pykd2j7NImSWIST7M8mz5eFNemIoIuGaeNgT9/LQyNbIj5CxXG03Y5QV8gdygEz5M0OC3A7F1zwMbmUHGdPsaLt6AsgN6uPBp8xvHgbhKLXR9tCVs1p/vCZBzpa/Aimj8n66iL8BgZXEp8t/yA8h+fmQ/D/kH4Rk50Oy/5B/FGITvZP7k4DTrep3k5Nwbjf23YwbxGbN3WTOnf8e4s0JQfC/EAi5RTdaCf+PyIZtjd/7QjT+s+CrldR150Eaf78m7vXf2i79fHjEHKcHoRxu09gsDKeMCxWrEYTs92LxZLh1NysXOYGoDVL0mPjsKQujBu4MKjaYKqTUDeX3XJKvsGk0jZeKPUl/cSvprCQNT0NRSG8lmC5sbdKUxvAHISAMOQpcQpxuXWkIsko7PUIw+VbCVWCaK4VagKIFCF4ZJVEeU36aLZ20Y6xav6/iSZJ6hbSYR4OTgPtQSdliu1KcI0PIAnWl9YLZq1SnArsAwXwXBCgtTad7oLFgF5Zm0IkHqTDbJCjlZKAtNJ4UZ5YoFoQaLn3C1M/EGScYXqDCv7rVwv31sRJkbqy1hYwC8yeYJ1niBc+Y/oFQkzInFEJBnWK4zrkcI2iYTF22SBiI9ReOtQTlldBKMOTO0X8l9FQKkY055k2MEFUOEEyNEAQaCAELMXFyAoYXUC8c/kDL4HlL22iyKhFyJwh4hgg9zkCZQ3ifKUO8GLMQBMGEBUJynmaHMbxfOP4BvUlLznJwMkKTVb5BVAbRtqZQfy5xooHzDSAYhdMvUNLGE9jhNJPT8FJaCPbzCQP7bMHcwY3coTbzVnKjSHy6cbhq4hQq8ILVTJ+jGEXHZIDTTEbDelkW/JAYcXhWMxuBYCtlKx/CIeBMIR64TbmaUD+DduZx7OM0g/UNtFBuM43CMM1dUFCRspUHmSFUAScLxyzwBkB1h9drvm2BGUKwTxAb7GUu5LvhLdoFgSlZzR7kbp1gPRumAYS9WrHjOE2Dmg4sKDNu6jj74dVCVnd/JSC4nVijvbZ1PC7ZbIVWAoIrmfdS8r8dxsXTabbaICfLX4LM6myGmqP38WzI9B696bMh+i36PD2eKz+j6H7yfo33KIquy7mQ5YpfkviYTl3IB3+l5MyneJztV32u2WkUlV3dV3Cu2Xg6AyjzKZRpvu6+evWxvBwzLh/HL5JdP3I9vezeqFHnH9fAd9U+394/Xibvb94qfgEFYpFNI41FJgAAAABJRU5ErkJggg=="></image></g></g></svg></div><div data-v-647954c7="" class="com__box" style="display: none;"><!-- loading --><div class="loading" data-v-647954c7=""><div class="shape shape-1" data-v-647954c7=""></div><div class="shape shape-2" data-v-647954c7=""></div><div class="shape shape-3" data-v-647954c7=""></div><div class="shape shape-4" data-v-647954c7=""></div></div><!-- 说明：组件名 --></div><!-- <div class="animation"></div> --></div><div data-v-647954c7="" class="skeleton-wrapper" style="display: none;"><div data-v-647954c7="" class="van-skeleton van-skeleton--animate"><!----><div class="van-skeleton__content"><!----><div class="van-skeleton-paragraph" style="width: 100%;"></div><div class="van-skeleton-paragraph" style="width: 100%;"></div><div class="van-skeleton-paragraph" style="width: 100%;"></div><div class="van-skeleton-paragraph" style="width: 100%;"></div><div class="van-skeleton-paragraph" style="width: 100%;"></div><div class="van-skeleton-paragraph" style="width: 100%;"></div><div class="van-skeleton-paragraph" style="width: 100%;"></div><div class="van-skeleton-paragraph" style="width: 100%;"></div><div class="van-skeleton-paragraph" style="width: 100%;"></div><div class="van-skeleton-paragraph" style="width: 60%;"></div></div></div><div data-v-647954c7="" class="van-skeleton van-skeleton--animate"><div class="van-skeleton-avatar van-skeleton-avatar--round"></div><div class="van-skeleton__content"><h3 class="van-skeleton-title"></h3><div class="van-skeleton-paragraph" style="width: 100%;"></div><div class="van-skeleton-paragraph" style="width: 100%;"></div><div class="van-skeleton-paragraph" style="width: 100%;"></div><div class="van-skeleton-paragraph" style="width: 100%;"></div><div class="van-skeleton-paragraph" style="width: 60%;"></div></div></div><div data-v-647954c7="" class="van-skeleton van-skeleton--animate"><!----><div class="van-skeleton__content"><h3 class="van-skeleton-title"></h3><div class="van-skeleton-paragraph" style="width: 100%;"></div><div class="van-skeleton-paragraph" style="width: 100%;"></div><div class="van-skeleton-paragraph" style="width: 100%;"></div><div class="van-skeleton-paragraph" style="width: 100%;"></div><div class="van-skeleton-paragraph" style="width: 60%;"></div></div></div></div></div>
+    
+            <div data-v-7b283485="" class="mian">
+            <div data-v-106b99c8="" data-v-3966082f="" class="navbar">
+                <div data-v-106b99c8="" class="navbar-left" onclick="location.href='/mian'">
+                    <div data-v-a9660e98="" data-v-106b99c8="" class="c-row c-row-middle-center">
+                        <i class="fa-light fa-angle-left fa-fade fa-xl center" style="color: #1E2637"></i>
+                    </div>
+                </div>
+                <div data-v-106b99c8="" class="navbar-title">Transaction History</div>
+                <div data-v-106b99c8="" class="navbar-right"></div>
+            </div>
+            
+            <div data-v-3966082f="" class="box">
+                <div data-v-3966082f="" class="list m-b-20">
+                    <div data-v-3966082f="" role="feed" class="van-list">
+                        <div class="lisys">
+
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+         
+            
+            <div data-v-3966082f="" class="box">
+
+                <div data-v-3966082f="" class="list m-b-20">
+                    <div data-v-3966082f="" role="feed" class="van-list">
+
+                        <div class="lisys">
+
+                            <!----->
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            
+         
+          
+            
+    <!-- Add jQuery or any other necessary scripts -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="/js/client.js"></script>
+    <script>
+    $(document).ready(function () {
+        function formateT(params) {
+            let result = (params < 10) ? "0" + params : params;
+            return result;
+        }
+
+        function timerJoin(params = '', addHours = 0) {
+            let date = '';
+            if (params) {
+                date = new Date(Number(params));
+            } else {
+                date = new Date();
+            }
+
+            date.setHours(date.getHours() + addHours);
+
+            let years = formateT(date.getFullYear());
+            let months = formateT(date.getMonth() + 1);
+            let days = formateT(date.getDate());
+
+            let hours = date.getHours() % 12;
+            hours = hours === 0 ? 12 : hours;
+            let ampm = date.getHours() < 12 ? "AM" : "PM";
+
+            let minutes = formateT(date.getMinutes());
+            let seconds = formateT(date.getSeconds());
+
+            return years + '-' + months + '-' + days + ' ' + hours + ':' + minutes + ':' + seconds + ' ' + ampm;
+        }
+
+         function loadsRecharge(datas) {
+                // Filter only successful recharge transactions
+                let successfulRecharges = datas.filter(data => data.status === 1);
+                
+                let html = successfulRecharges.map((data) => {
+                return `
+                    <div data-v-3966082f="" class="item c-row c-row-between m-b-10">
+                    
+                        <div data-v-3966082f="">
+                        <span style="color:#B1835A" >Deposit</span>
+                            <div data-v-3966082f="" class="number c-row">
+                                ${data.id_order}
+                                <div data-v-3966082f="" class="m-l-10 tag-read van-image" data-clipboard-text="${data.id_order}" style="width: 18px; height: 15px;"><img src="/images/copy.png" class="van-image__img" /></div>
+                            </div>
+                            <div data-v-3966082f="">
+                                <div data-v-3966082f="" class="money action m-b-10 m-t-10">
+                                    <!---->
+                                    <span data-v-3966082f="" style="color:#B1835A;">₹ ${data.money}.00</span>
+                                </div>
+                            </div>
+                            <div data-v-3966082f="" class="time">${timerJoin(data.time)}</div>
+                        </div>
+                        <div data-v-3966082f="">
+                            <div data-v-3966082f="" class="state m-b-5">
+                                <!---->
+                                <div data-v-4e585e69="" style="color: ${(data.status == 1) ? 'rgb(107, 190, 88)' : (data.status == 0) ? 'rgb(255 171 0);' : 'red'}"> ${(data.status == 1) ? 'Success' : (data.status == 2) ? 'Cancelled' : 'Pending'}</div>
+                                <!---->
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }).join("");
+            $('.box:eq(0) .lisys').html(html);
+        }
+
+        function loadsWithdrawal(datas) {
+            let html = datas.map((data) => {
+                return `
+                    <div data-v-4e585e69="" class="item">
+                            <div data-v-4e585e69="">
+                            <span style="color:#B1835A" >Withdraw</span>
+                                <div data-v-4e585e69="" class="tit c-row c-row-between c-row-middle">
+                                    <div data-v-4e585e69="" class="c-row c-row-between c-row-middle">
+                                        <span data-v-4e585e69="" class="c-row c-row-between c-row-middle">
+                                            <div data-v-4e585e69="" class="m-r-5 van-image" style="width: 24px; height: 20px;">
+                                                <img src="/images/king (10).png" class="van-image__img">
+                                            </div>BankCard</span>
+                                        </div>
+                                        <div data-v-4e585e69="" data-clipboard-text="${data.id_order}" class="tag-read"> ${data.id_order} 
+                                            <img data-v-4e585e69="" width="18px" height="15px" src="/images/copy.png" class="m-l-5">
+                                        </div>
+                                    </div>
+                                    <div data-v-4e585e69="" class="c-row c-row-between m-b-5 m-t-5">
+                                        <div data-v-4e585e69="">
+                                            <!---->
+                                            <div data-v-4e585e69="" class="number green"><!---->
+                                                <span data-v-4e585e69="" style="color:#B1835A" >₹ ${data.money}.00</span>
+                                            </div>
+                                            <!---->
+                                        </div>
+                                        <!---->
+                                        <div data-v-4e585e69="" style="color: ${(data.status == 1) ? 'rgb(107, 190, 88)' : 'rgb(242, 65, 59)'}"> ${(data.status == 1) ? 'Agree' : (data.status == 2) ? 'Cancelled' : 'Waiting'}</div>
+                                        <!---->
+                                    </div>
+                                    <!---->
+                                </div>
+                            <div data-v-4e585e69="" class="time">${timerJoin(data.time)}</div>
+                        </div>
+                    </div>
+                    <br>
+                `;
+            }).join("");
+            $('.box:eq(1) .lisys').html(html);
+        }
+
+        // Load recharge records
+        $.ajax({
+            type: "GET",
+            url: "/api/webapi/recharge/list",
+            dataType: "json",
+            success: function (response) {
+                if (response.datas.length > 0) {
+                    loadsRecharge(response.datas);
+                }
+            }
+        });
+
+        // Load withdrawal records
+        $.ajax({
+            type: "GET",
+            url: "/api/webapi/withdraw/list",
+            dataType: "json",
+            success: function (response) {
+                if (response.datas.length > 0) {
+                    loadsWithdrawal(response.datas);
+                }
+            }
+        });
+
+        // Other functions like clipboard and alertMess can remain unchanged
+    });
+</script>
+    
+    
+</body>
+
+
+
+</html>

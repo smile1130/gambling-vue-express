@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html translate="no" data-dpr="1" style="font-size: 39px;">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="robots" content="noindex,nofollow">
+    <meta content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" name="viewport">
+    <title>BigMumbai</title>
+    <link href="/css/account/chunk-vendors.css" rel="stylesheet" />
+    <link href="/css/account/app.css" rel="stylesheet" />
+    <link href="/css/account/chunk-3abb8cfe.27bda068.css" rel="stylesheet" />
+    <link rel="shortcut icon" href="/images/bitbug_favicon.ico" type="image/x-icon" />
+    <style>
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+            background-color: #090909;
+            padding: 0;
+            margin: 0;
+        }
+
+        .msg-content {
+            animation: zoom-in 0.45s ease reverse;
+        }
+
+        .block-click {
+            pointer-events: none;
+        }
+
+        @keyframes zoom-in {
+            0% {
+                opacity: 1;
+                transform: scale(1, 1);
+            }
+
+            50% {
+                transform: scale(0.6, 0.6);
+            }
+
+            100% {
+                opacity: 0;
+                transform: scale(1, 1);
+            }
+        }
+    </style>
+</head>
+
+<body style="font-size: 12px;">
+    <div id="app">
+        <div data-v-51f72da1="" class="mian forgot">
+            <div data-v-106b99c8="" data-v-51f72da1="" class="navbar">
+                <div data-v-106b99c8="" class="navbar-left" onclick="location.href='/login'">
+                    <div data-v-106b99c8="" class="bank c-row c-row-middle-center">
+                        <img data-v-106b99c8="" src="/images/back.c3244ab0.png" class="navbar-back">
+                    </div>
+                </div>
+                <div data-v-106b99c8="" class="navbar-title"> Forgot password</div>
+                <div data-v-106b99c8="" class="navbar-right">
+                    <div data-v-51f72da1="" data-v-106b99c8="" class="c-row" onclick="location.href='/keFuMenu'">
+                        <img data-v-51f72da1="" data-v-106b99c8="" src="/images/audio.webp" class="audio">
+                    </div>
+                </div>
+            </div>
+            <div data-v-51f72da1="" class="forgot-box">
+                <div data-v-51f72da1="" class="mian-from m-t-20">
+                    <div data-v-51f72da1="" class="lab">Phone number format:<span data-v-51f72da1=""></span>
+                    </div>
+                    <div data-v-51f72da1="" class="item c-row c-row-center c-row-middle m-t-15 m-b-30 first">
+                        <div data-v-51f72da1="" class="c-row number">
+                            <span data-v-51f72da1="" class="c-row c-row-middle-center">
+                                <img data-v-51f72da1="" height="22px" width="15px" src="/images/phone.png"
+                                    class="mobile">
+                            </span>
+                            <div data-v-51f72da1="" class="p-l-5">+91</div>
+                        </div>
+                        <input data-v-51f72da1="" id="username" type="text" maxlength="12"
+                            placeholder="Please Enter The Phone Number" oninput="value=value.replace(/\D/g,'')">
+                    </div>
+                    <div data-v-51f72da1="" class="item c-row c-row-center c-row-middle m-b-30">
+                        <span data-v-51f72da1="" class="img c-row c-row-middle-center">
+                            <img data-v-51f72da1="" height="22px" width="15px" src="/images/verifie.png"
+                                class="mobile"></span>
+                        <input data-v-51f72da1="" type="number" id="otp"
+                            placeholder="Please Enter The Verification Code">
+                        <button data-v-51f72da1="" class="otp">Send</button>
+                    </div>
+                    <div data-v-51f72da1="" class="tip">Did not receive the OTP code? Please contact TIRANGA</div>
+                    <div data-v-51f72da1="" class="item c-row c-row-center c-row-middle m-b-30">
+                        <span data-v-51f72da1="" class="img  c-row c-row-middle-center">
+                            <img data-v-51f72da1="" height="20px" width="18px" src="/images/password.png"
+                                class="password">
+                        </span>
+                        <input data-v-d8986e5e="" id="password" data-v-51f72da1=""
+                            placeholder="Plese Enter The New Password" οnkeyup="value=value.replace(/[^\w\.\/]/ig,'')"
+                            class="pw-input">
+                    </div>
+                    <!---->
+                    <div data-v-51f72da1="" class="mian-btn m-t-40"><button data-v-51f72da1="" id="submit"
+                            class="gradient van-button van-button--default van-button--normal van-button--block van-button--round"
+                            style="color: #fff; background: #c42929;>
+                            <div data-v-51f72da1="" class=" van-button__content">
+                            <span data-v-51f72da1="" class="van-button__text">
+                                <span data-v-51f72da1="">Reset</span>
+                            </span>
+                    </div>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!---->
+        <div data-v-7692a079="" data-v-51f72da1="" class="Loading c-row c-row-middle-center" style="display: none;">
+            <div data-v-7692a079="" class="van-loading van-loading--circular">
+                <span data-v-7692a079="" class="van-loading__spinner van-loading__spinner--circular"
+                    style="width: auto; height: auto; -webkit-animation-duration: 1s; animation-duration: 1s;">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                        viewBox="0 0 200 200" width="200" height="200" preserveAspectRatio="xMidYMid meet"
+                        style="width: 100%;height: 100%;transform: translate3d(0px, 0px, 0px);content-visibility: visible;">
+                        <g transform="matrix(-0.5984085202217102,0.8011911511421204,-0.8011911511421204,-0.5984085202217102,239.9599609375,79.72173309326172)"
+                            style="display: block;">
+                            <image width="200px" height="200px" preserveAspectRatio="xMidYMid slice"
+                                xlink:href="/index_files/loadingspinner.png"></image>
+                        </g>
+                        <g transform="matrix(0.9408400058746338,0,0,0.9408400058746338,20.969436645507812,79.30152130126953)"
+                            style="display: block;">
+                            <image width="168px" height="44px" preserveAspectRatio="xMidYMid slice"
+                                xlink:href="/index_files/h5setting_202401100608011fs2.png"></image>
+                        </g>
+                    </svg>
+                </span>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="van-overlay" style="z-index: 2003; display: none;"></div>
+    <div class="alert-toast"></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        function alertMess(text) {
+            let length = $('.alert-toast .msg').length;
+            if (length == 0) {
+                $('.alert-toast').append(
+                    `
+                    <div data-v-1dcba851="" class="msg">
+                        <div data-v-1dcba851="" class="msg-content" style=""> ${text} </div>
+                    </div>
+                    `
+                );
+                setTimeout(() => {
+                    $('.msg').fadeOut();
+                    setTimeout(() => {
+                        $('.alert-toast .msg').remove();
+                    }, 100);
+                }, 1500);
+            }
+        }
+
+        function validateForm(username, password, otp, text) {
+            if (!username || !password || !otp || !text) {
+                alertMess(text);
+                return false;
+            } else {
+                return true;
+            }
+        }
+
+        $('#submit').click(async (e) => {
+            e.preventDefault();
+            let username = $('#username').val().trim();
+            let otp = $('#otp').val().trim();
+            let password = $('#password').val().trim();
+            let status = validateForm(username, password, otp, 'Please fill in the required section');
+            if (status) {
+                $('.van-overlay').fadeIn(10);
+                $.ajax({
+                    type: "POST",
+                    url: "/api/resetPasword",
+                    data: {
+                        username: username,
+                        otp: otp,
+                        pwd: password,
+                    },
+                    dataType: "json",
+                    success: function (response) {
+                        if (response.status === true) {
+                            $('.van-overlay').fadeOut(300);
+                            $('.Loading').fadeIn(10);
+                            setTimeout(() => {
+                                $('.Loading').fadeOut(10);
+                                alertMess(response.message);
+                            }, 100);
+                            setTimeout(() => {
+                                location.href = '/login';
+                            }, 900);
+                        } else {
+                            $('.van-overlay').fadeOut(300);
+                            alertMess(response.message);
+                        }
+                    }
+                });
+            }
+
+        });
+
+        $('.otp').click(function (e) {
+            e.preventDefault();
+            let phone = $('#username').val().trim();
+            $(this).addClass('block-click');
+            setTimeout(() => {
+                $(this).removeClass('block-click');
+            }, 1600);
+            if (phone) {
+                $.ajax({
+                    type: "POST",
+                    url: "/api/sent/otp/verify/reset",
+                    data: {
+                        phone: phone,
+                    },
+                    dataType: "json",
+                    success: function (response) {
+                        alertMess(response.message);
+                    }
+                });
+            } else {
+                alertMess('Please fill in the required section');
+            }
+        });
+    </script>
+    <script>
+        let getWBody = $('.mian').width();
+
+        $('html').css('font-size', `${getWBody / 10}px`);
+        $('.van-tabbar .van-tabbar-item').css({
+            'transform': 'scale(0.9)',
+        });
+        $(window).resize(() => {
+            let getWBody = $('.mian').width();
+            $('html').css('font-size', `${getWBody / 10}px`);
+            $('.van-tabbar .van-tabbar-item').css({
+                'transform': 'scale(0.9)',
+            });
+        });
+    </script>
+</body>
+
+</html>

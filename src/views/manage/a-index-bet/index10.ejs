@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en" data-change="4">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>10 min | Management page</title>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <link rel="stylesheet" href="/plugins/fontawesome-free/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+  <link rel="stylesheet" href="/dist/css/adminlte.min.css">
+  <link rel="stylesheet" href="/css/pages__parity.css">
+  <link rel="stylesheet" href="/css/vantjs.css">
+  <link href="//cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
+  <script src="https://cdn.socket.io/4.4.1/socket.io.min.js"
+    integrity="sha384-fKnu0iswBIqkjxrhQCTZ7qlLHOFEgNkRmK2vaO/LbTZSXdJfAu6ewRBdwHPhBo/H"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="/css/admin.css">
+
+  <style>
+    .active {
+      background-color: #007bff !important;
+    }
+
+    /* Chrome, Safari, Edge, Opera */
+
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    /* Firefox */
+
+    input[type=number] {
+      -moz-appearance: textfield;
+    }
+    #list-orders .item  {
+      padding: 5px 0;
+      text-align: center;
+    }
+    .box .li[data-v-a9660e98] {
+        display: block;
+        height: 13px;
+        width: 13px;
+        border-radius: 50%;
+        margin: 0 0.13333rem;
+    }
+    .van-col .goItem .c-tc .green {
+      background-color: #5cba47;
+    }
+    .van-col .goItem .c-tc .red {
+      background-color: #fb4e4e;
+    }
+    .van-col .goItem .c-tc .violet {
+      background-color: #fff;
+    }
+
+    .van-col .c-tc .green {
+      color: #5cba47;
+    }
+    .van-col .c-tc .red {
+      color: #fb4e4e;
+    }
+    .van-col .c-tc .violet {
+      color: #fff;
+    }
+    .goItem .c-row-center {
+      display: flex;
+      justify-content: center;
+    }
+    .game {
+      background-color: #e67e22!important;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body class="hold-transition dark-mode sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
+  <div class="wrapper">
+    <%- include('../nav') %>
+      <div class="content-wrapper">
+        <div class="content-header">
+          <div class="container-fluid">
+            <div class="row mb-2">
+              <div class="col-sm-6">
+                <h1 class="m-0">Dashboard V3</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+        <section class="content">
+          <div class="container-fluid">
+            <div class="row info-box">
+              <div class="col-12 col-sm-6 col-md-3" onclick="location.href='/admin/manager/index'">
+                <div class="info-box mb-3">
+                  <span class="info-box-icon elevation-1 bg-primary game">1M</span>
+
+                  <div class="info-box-content">
+                    <span class="info-box-text">WinGo 1P</span>
+                  </div>
+                </div>
+              </div>
+              <div class="clearfix hidden-md-up"></div>
+
+              <div class="col-12 col-sm-6 col-md-3" onclick="location.href='/admin/manager/index/3'">
+                <div class="info-box mb-3">
+                  <span class="info-box-icon elevation-1 bg-primary game">3M</span>
+
+                  <div class="info-box-content">
+                    <span class="info-box-text">WinGo 3P</span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-sm-6 col-md-3" onclick="location.href='/admin/manager/index/5'">
+                <div class="info-box mb-3">
+                  <span class="info-box-icon elevation-1 bg-primary game">5M</span>
+
+                  <div class="info-box-content">
+                    <span class="info-box-text">WinGo 5P</span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-sm-6 col-md-3" onclick="location.href='/admin/manager/index/10'">
+                <div class="info-box">
+                  <span class="info-box-icon elevation-1 bg-primary game">10M</span>
+
+                  <div class="info-box-content">
+                    <span class="info-box-text">WinGo 10P</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-12 col-sm-6 col-md-3">
+                <div class="info-box mb-3">
+                  <span class="info-box-icon bg-danger elevation-1">
+                    <i class="fas fa-shopping-cart"></i>
+                  </span>
+
+                  <div class="info-box-content">
+                    <span class="info-box-text">Join Red</span>
+                    <span totalMoney='' class="info-box-number orderRed">0</span>
+                  </div>
+                </div>
+              </div>
+              <div class="clearfix hidden-md-up"></div>
+
+              <div class="col-12 col-sm-6 col-md-3">
+                <div class="info-box mb-3">
+                  <span class="info-box-icon elevation-1" style="background-color: #8e44ad;"><i
+                      class="fas fa-shopping-cart"></i></span>
+                  <div class="info-box-content">
+                    <span class="info-box-text">Join Violet</span>
+                    <span totalMoney="" class="info-box-number orderViolet">0</span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-sm-6 col-md-3">
+                <div class="info-box mb-3">
+                  <span class="info-box-icon bg-success elevation-1">
+                    <i class="fas fa-shopping-cart"></i>
+                  </span>
+
+                  <div class="info-box-content">
+                    <span class="info-box-text">Join Green</span>
+                    <span totalMoney="" class="info-box-number orderGreen">0</span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-sm-6 col-md-3">
+                <div class="info-box">
+                  <span class="info-box-icon bg-info elevation-1">
+                    <i class="fas fa-shopping-cart"></i>
+                  </span>
+
+                  <div class="info-box-content">
+                    <span class="info-box-text">Overall Amount</span>
+                    <span totalMoney="" class="info-box-number orderNumbers">0</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-12 col-sm-6 col-md-3">
+                <div class="info-box mb-3">
+                  <span class="info-box-icon elevation-1 bg-primary">0</span>
+
+                  <div class="info-box-content">
+                    <span class="info-box-text">Join 0</span>
+                    <span totalMoney="" class="info-box-number orderNumber">0</span>
+                  </div>
+                </div>
+              </div>
+              <div class="clearfix hidden-md-up"></div>
+
+              <div class="col-12 col-sm-6 col-md-3">
+                <div class="info-box mb-3">
+                  <span class="info-box-icon elevation-1 bg-primary">1</span>
+
+                  <div class="info-box-content">
+                    <span class="info-box-text">Join 1</span>
+                    <span totalMoney="" class="info-box-number orderNumber">0</span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-sm-6 col-md-3">
+                <div class="info-box mb-3">
+                  <span class="info-box-icon elevation-1 bg-primary">2</span>
+
+                  <div class="info-box-content">
+                    <span class="info-box-text">Join 2</span>
+                    <span totalMoney="" class="info-box-number orderNumber">0</span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-sm-6 col-md-3">
+                <div class="info-box">
+                  <span class="info-box-icon elevation-1 bg-primary">3</span>
+
+                  <div class="info-box-content">
+                    <span class="info-box-text">Join 3</span>
+                    <span totalMoney="" class="info-box-number orderNumber">0</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-12 col-sm-6 col-md-3">
+                <div class="info-box mb-3">
+                  <span class="info-box-icon elevation-1 bg-primary">4</span>
+
+                  <div class="info-box-content">
+                    <span class="info-box-text">Join 4</span>
+                    <span totalMoney="" class="info-box-number orderNumber">0</span>
+                  </div>
+                </div>
+              </div>
+              <div class="clearfix hidden-md-up"></div>
+
+              <div class="col-12 col-sm-6 col-md-3">
+                <div class="info-box mb-3">
+                  <span class="info-box-icon elevation-1 bg-primary">5</span>
+
+                  <div class="info-box-content">
+                    <span class="info-box-text">Join 5</span>
+                    <span totalMoney="" class="info-box-number orderNumber">0</span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-sm-6 col-md-3">
+                <div class="info-box mb-3">
+                  <span class="info-box-icon bg-primary elevation-1">6</span>
+
+                  <div class="info-box-content">
+                    <span class="info-box-text">Join 6</span>
+                    <span totalMoney="" class="info-box-number orderNumber">0</span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-sm-6 col-md-3">
+                <div class="info-box">
+                  <span class="info-box-icon bg-primary elevation-1">7</span>
+
+                  <div class="info-box-content">
+                    <span class="info-box-text">Join 7</span>
+                    <span totalMoney="" class="info-box-number orderNumber">0</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-12 col-sm-6 col-md-3">
+                <div class="info-box mb-3">
+                  <span class="info-box-icon bg-primary elevation-1">8</span>
+
+                  <div class="info-box-content">
+                    <span class="info-box-text">Join 8</span>
+                    <span totalMoney="" class="info-box-number orderNumber">0</span>
+                  </div>
+                </div>
+              </div>
+              <div class="clearfix hidden-md-up"></div>
+
+              <div class="col-12 col-sm-6 col-md-3">
+                <div class="info-box mb-3">
+                  <span class="info-box-icon elevation-1 bg-primary">9</span>
+
+                  <div class="info-box-content">
+                    <span class="info-box-text">Join 9</span>
+                    <span totalMoney="" class="info-box-number orderNumber">0</span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-sm-6 col-md-3">
+                <div class="info-box mb-3">
+                  <span class="info-box-icon elevation-1 bg-primary">B</span>
+
+                  <div class="info-box-content">
+                    <span class="info-box-text">Join Big</span>
+                    <span totalMoney="" class="info-box-number orderNumber">0</span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-sm-6 col-md-3">
+                <div class="info-box mb-3">
+                  <span class="info-box-icon elevation-1 bg-primary">S</span>
+
+                  <div class="info-box-content">
+                    <span class="info-box-text">Join Small</span>
+                    <span totalMoney="" class="info-box-number orderNumber">0</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Main row -->
+            <div class="row">
+              <!-- Left col -->
+              <div class="col-md-12">
+                <!-- MAP & BOX PANE -->
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="card direct-chat direct-chat-warning">
+                      <div class="card-header">
+                        <h3 class="card-title">Betting Statistics</h3>
+
+                        <div class="card-tools">
+                          <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                            <i class="fas fa-minus"></i>
+                          </button>
+                          <button type="button" class="btn btn-tool" data-card-widget="remove">
+                            <i class="fas fa-times"></i>
+                          </button>
+                        </div>
+                      </div>
+                      <div class="card-body">
+                        <div class="direct-chat-messages" style="min-height: 520px;">
+                          <div class="direct-chat-msg">
+                            <!---->
+                          </div>
+                        </div>
+                      </div>
+                      <div class="card-footer"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="card card-primary">
+                      <div class="card-header" style="text-align: center;">
+                        <div data-v-04e3b381="" class="reservation-chunk-sub-num">012401924124912</div>
+                        <div data-v-7d40872f="" class="time" style="font-size: 23px;border-radius: none;">
+                          <span data-v-7d40872f="" class="time-sub" style="border-radius: 0;">0</span>
+                          <span data-v-7d40872f="" class="time-sub" style="border-radius: 0;">0</span>
+                          <span data-v-7d40872f="" class="">:</span>
+                          <span data-v-7d40872f="" class="time-sub" style="border-radius: 0;">4</span>
+                          <span data-v-7d40872f="" class="time-sub" style="border-radius: 0;">7</span>
+                        </div>
+                      </div>
+                      <div class="card-body" style="padding: 0;">
+                        <div class="form-group">
+                          <div data-v-a9660e98="" class="wrap">
+                              <div data-v-a9660e98="" class="c-tc van-row" style="text-align: center;border-bottom: 1px solid;padding: 6px">
+                                  <div data-v-a9660e98="" class="van-col van-col--8">Lottery</div>
+                                  <div data-v-a9660e98="" class="van-col van-col--5">Amount</div>
+                                  <div data-v-a9660e98="" class="van-col van-col--5">Small/Big</div>
+                                  <div data-v-a9660e98="" class="van-col van-col--6">Colour</div>
+                              </div>
+                          </div>
+                          <div id="list-orders">
+                            <!---->
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="card card-primary">
+                      <div class="card-header">
+                        <h3 class="card-title">Adjust Result</h3>
+                      </div>
+                      <div class="card-body">
+                        <div class="form-group">
+                          <p>0 (Red And Violet) | 5 (Green And Violet) | 1,3,7,9 (Green) | 2,4,6,8 (Red)</p>
+                          <label for="editResult" id="ketQua">Kết quả tiếp theo: 0</label>
+                          <input type="text" class="form-control" id="editResult" value=""
+                          placeholder="Enter the result (e.g., 1)">
+                        </div>
+                      </div>
+                      <div class="card-footer" style="text-align: center;">
+                        <button type="submit" class="btn btn-primary start-order">Submit</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+      <a id="back-to-tops" href="#" class="btn btn-primary back-to-top" role="button" aria-label="Scroll to top">
+        <i class="fas fa-chevron-up"></i>
+      </a>
+  </div>
+  <script src="/plugins/jquery/jquery.min.js"></script>
+  <script src="/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+  <script src="/dist/js/adminlte.js"></script>
+  <script src="/plugins/jquery-mousewheel/jquery.mousewheel.js"></script>
+  <script src="/plugins/raphael/raphael.min.js"></script>
+  <script src="/js/admin/admin.js"></script>
+  <script src="/js/admin/index.js"></script>
+  
+</body>
+
+</html>

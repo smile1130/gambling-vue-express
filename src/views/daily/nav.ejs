@@ -1,0 +1,94 @@
+<style>
+    .display-none {
+        display: none;
+    }
+</style>
+<div id="preloader">
+    <div class="loadingPlaceholder"></div>
+</div>
+<nav class="main-header navbar navbar-expand navbar-dark">
+    <ul class="navbar-nav" id="menu-click">
+        <li class="nav-item">
+            <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+        </li>
+    </ul>
+    <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+            <a class="nav-link" data-widget="fullscreen" href="#" role="button">
+                <i class="fas fa-expand-arrows-alt"></i>
+            </a>
+        </li>
+    </ul>
+</nav>
+<aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <div class="sidebar" style="margin-top: 0;">
+        <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+            <div class="image">
+                <img src="/images/facebook.jpg" class="img-circle elevation-2" alt="User Image">
+            </div>
+            <div class="info">
+                <a href="#" class="d-block">Collaborator</a>
+            </div>
+        </div>
+        <nav class="mt-2">
+            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                <li class="nav-item">
+                    <a href="/manager/index" class="nav-link">
+                        <i class="nav-icon fas fa-chart-pie"></i>
+                        <p>Statistics</p>
+                    </a>
+                </li>
+                <li class="nav-item" id="member">
+                    <a href="/manager/members" class="nav-link">
+                        <i class="nav-icon fa fa-users"></i>
+                        <p>Subordinates</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="/manager/listRecharge" class="nav-link">
+                        <i class="nav-icon fa fa-credit-card-alt"></i>
+                        <p>Recharge</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="/manager/listWithdraw" class="nav-link">
+                        <i class="nav-icon fa fa-bank"></i>
+                        <p>Withdraw</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="/manager/gifts" class="nav-link">
+                        <i class="nav-icon fa fa-gift"></i>
+                        <p>Giftcode</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="/manager/support" class="nav-link">
+                        <i class="nav-icon fa fa-question-circle"></i>
+                        <p>Support</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="/manager/settings" class="nav-link">
+                        <i class="nav-icon fa fa-cog"></i>
+                        <p>Settings</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="/home" class="nav-link">
+                        <i class="nav-icon fa fa-sign-out" aria-hidden="true"></i>
+                        <p>Home</p>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</aside>
+<script>
+    let nav = document.querySelector('#member');
+    let navList = document.querySelector('#navList-member');
+    let menuClick = document.querySelector('#menu-click');
+    menuClick, nav.addEventListener('click', () => {
+        navList.classList.toggle('display-none');
+    });
+</script>

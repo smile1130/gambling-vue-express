@@ -1,0 +1,97 @@
+<head>
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/all.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-thin.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-solid.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-regular.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-light.css">
+    <link rel="stylesheet" href="./index_files/index-96409872.css">
+    <link rel="stylesheet" href="../index_files/index-96409872.css">
+    <link rel="stylesheet" href="../assets/css/index-3cf8aaa6.css"> 
+</head>
+<style>
+    .block-click {
+        pointer-events: none;  
+    }
+
+    .tabbar__container-item[data-v-76c247f8]:nth-of-type(3) svg {
+    position: absolute;
+    bottom: 0.8rem !important;
+    width: 0.86667rem !important;
+    height: 0.86667rem !important;
+    z-index: 3;
+}
+img.navimg {
+    display: block;
+    width: .5776rem;
+    height: .59387rem;
+}
+</style>
+<div class="customer" id="customerId" style="--f13b4d11-currentFontFamily: 'Roboto', 'Inter', sans-serif; --f6a705e1-currentFontFamily: bahnschrift;">
+  <a href="/keFuMenu"><img class="" data-origin="assets/png/icon_sevice-af9dd176.png" src="assets/png/icon_sevice-af9dd176.png"></a>
+</div>
+  <div data-v-76c247f8="" class="tabbar__container"
+    style="--7688837a: &#39;Roboto&#39;, &#39;Inter&#39;, sans-serif;">
+    <div data-v-76c247f8="" class="tabbar__container-item" onclick="window.location='/home'">
+      <img data-v-c4b9aaee src="/svg/homenav.svg" class="navimg">
+      <span data-v-76c247f8="" onclick="window.location='/home'">Home</span>
+    </div>
+    <div data-v-76c247f8="" class="tabbar__container-item" onclick="window.location='/activity'">
+      <img data-v-c4b9aaee src="/svg/activitynav.svg" class="navimg">
+      <span data-v-76c247f8="" onclick="window.location='/activity'">Activity</span>
+    </div>
+    
+    <div data-v-76c247f8="" class="tabbar__container-item" onclick="window.location='/promotion'">
+      <div data-v-c4b9aaee="" class="promotionBg"></div>
+      <svg data-v-c4b9aaee="" xmlns="http://www.w3.org/2000/svg" width="57" height="49" fill="none" viewBox="0 0 57 49" class="">
+        <path fill="#fff" fill-rule="evenodd" d="M8.939 1.501A4 4 0 0 1 12.062 0h32.155a4 4 0 0 1 3.124 1.501l7.738 9.673c.427.533.749 1.12.968 1.735H.233a5.99 
+        5.99 0 0 1 .967-1.735zM0 16.091h56.28a5.985 5.985 0 0 1-1.277 2.673l-23.79 28.549a4 4 0 0 1-6.146 0l-23.79-28.55A5.984 5.984 0 0 1 0 16.092m20.556 
+        5.936 7.195 10.102a.5.5 0 0 0 .816-.002l7.118-10.093a2.44 2.44 0 0 1 4.435 1.406v.2h-.223c-.326 0-.782.248-1.304.93-.506.663-6.466 8.724-9.651 
+        13.035a.975.975 0 0 1-1.563.007L17.32 24.26s-.394-.62-1.06-.62h-.14v-.195a2.445 2.445 0 0 1 4.436-1.418" clip-rule="evenodd">
+        </path>
+      </svg>
+      <span data-v-76c247f8="" onclick="window.location='/promotion'">Promotion</span>
+    </div>
+    <div data-v-76c247f8="" class="tabbar__container-item" onclick="window.location='/wallet'">
+      <img data-v-c4b9aaee src="/svg/walletnav.svg" class="navimg">
+      <span data-v-76c247f8="" onclick="window.location='/wallet'">Wallet</span>
+    </div>
+    <div data-v-76c247f8="" class="tabbar__container-item" onclick="window.location='/mian'">
+      <img data-v-c4b9aaee src="/svg/accountnav.svg" class="navimg">      <span data-v-76c247f8="" onclick="window.location='/mian'">Account</span>
+    </div>
+  </div>
+</div>
+<script>
+    let url = window.location.pathname;
+    let check = document.querySelector(`.van-tabbar-item[data-url='${url}']`);
+    document.querySelector('#nav_checkUrl').setAttribute('data-url', url);
+    if (check) check.classList.add('block-click');
+    let pathname = document.querySelector('#nav_checkUrl').getAttribute('data-url');
+    let select = 0;
+    switch (pathname) {
+        case '/home':
+            select = 0;
+            break;
+        case '/checkIn':
+            select = 1;
+            break;
+        case '/promotion':
+            select = 2;
+            break;
+        case '/wallet':
+            select = 3;
+            break;
+        case '/mian':
+            select = 4;
+            break;
+        default:
+            break;
+    }
+
+    let arr = [
+        { id: 1, src: '/images/home.png' },
+        { id: 2, src: '/images/checkIn.png' },
+        { id: 3, src: '/images/invite.webp' },
+        { id: 4, src: '/images/wallet2.png' },
+        { id: 5, src: '/images/me2.png' },
+    ];
+</script>

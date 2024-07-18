@@ -1,0 +1,309 @@
+.game .logo[data-v-42f27458]{height:1.01333rem;width:2.66667rem}.game .navbarR[data-v-42f27458]{height:100%}.game .navbarR .item[data-v-42f27458]{padding-left:.26667rem;height:100%}.game .navbarR .item-audio[data-v-42f27458],.game .navbarR .item-volume[data-v-42f27458]{width:.66667rem;height:.66667rem}.game-head[data-v-42f27458]{padding:.4rem .4rem 1.86667rem;/*background:url(/images/bg_top_red.webp) no-repeat 0 0;background-size:100% 100%*/}.game-head .total-box[data-v-42f27458]{background: -webkit-linear-gradient(296.76deg,#B1835A 5.33%,#59b0ea 93.42%);background: linear-gradient(153.24deg,#B1835A 5.33%,#59b0ea 93.42%);border-radius: 0.53333rem;padding: 0.4rem;}.game-head .total-box .info .total[data-v-42f27458]{font-size:.45333rem;font-weight:600}.game-head .total-box .info .wallet[data-v-42f27458]{font-size:.32rem;color:#cdcfd6}.game-head .total-box .info .img.action[data-v-42f27458]{-webkit-animation:rotation-data-v-42f27458 .5s linear}@-webkit-keyframes rotation-data-v-42f27458{0%{-webkit-transform:rotate(0deg)}to{-webkit-transform:rotate(180deg)}}.game-head .total-box .info .num[data-v-42f27458]{font-size:.53333rem;font-weight:600}.game-head .total-box .total-btn[data-v-42f27458]{padding:0 .4rem}.game-head .total-box .total-btn .item[data-v-42f27458]{width:45%;height:.93333rem}.game-head .total-box .total-btn .item .btn[data-v-42f27458]{height:.93333rem;font-size:.4rem}.game-head .notice[data-v-42f27458]{border-radius:.21333rem;overflow:hidden}.game-betting .tab[data-v-42f27458]{margin: 0 0.4rem;background-color: #1e234d;border-radius: 0.26667rem;/*box-shadow: 0 0 0.21333rem 0.02667rem rgba(187,191,205,.3);*/}.game-betting .tab .trcBox[data-v-42f27458]{padding:.21333rem}.game-betting .tab .trcBox .how[data-v-42f27458]{height:.8rem;line-height:.8rem}.game-betting .tab .trcBox .how .size[data-v-42f27458]{font-size:.48rem;margin-right:.13333rem}.game-betting .tab .trcBox .inquire[data-v-42f27458]{border-radius:.8rem;height:.8rem;line-height:.8rem;padding:0 .26667rem;background-color:#ec292a;color:#fff}.game-betting .tab .trcBox .inquire .size[data-v-42f27458]{font-size:.48rem;margin-right:.08rem}.game-betting .tab .boxs[data-v-42f27458]{position:relative}.game-betting .tab .boxs[data-v-42f27458]:after{content:"";display:block;height:.08rem;width:100%;background-color:#9898a8;position:absolute;top:0;left:0}.game-betting .tab .boxs .item[data-v-42f27458]{flex:0 0 25%;padding:.26667rem;border-radius:.4rem;position:relative}.game-betting .tab .boxs .item .img[data-v-42f27458]{position:relative}.game-betting .tab .boxs .item .img .triangle[data-v-42f27458]{position:absolute;bottom:0;left:50%;width:0;height:0;border-left:.13333rem solid transparent;border-right:.13333rem solid transparent;border-top:.24rem solid #6abe57;transform:translate(-50%)}.game-betting .tab .boxs .item .txt[data-v-42f27458]{color:#6abe57;font-size:.37333rem}.game-betting .tab .boxs .item.action[data-v-42f27458]{position:relative}.game-betting .tab .boxs .item.action[data-v-42f27458]:after{content:"";display:block;height:.08rem;width:100%;background-color:#ec292a;position:absolute;top:0;left:0;z-index:99}.game-betting .tab .boxs .item.action .triangle[data-v-42f27458]{border-top:.24rem solid #fa4e46}.game-betting .tab .boxs .item.action .txt[data-v-42f27458]{color:#fa4e46}.game-betting .tab .boxs .item.action .li[data-v-42f27458]{background:#fa4e46}.game-betting .tab .box[data-v-42f27458]{position:relative}.game-betting .tab .box[data-v-42f27458]:after{content:"";display:block;height:.13333rem;width:100%;background-color:#9898a8;position:absolute;top:.4rem;left:0}.game-betting .tab .box .item[data-v-42f27458]{flex:0 0 25%;padding:.85333rem .13333rem .26667rem;border-radius:.66667rem;position:relative}.game-betting .tab .box .item .circular[data-v-42f27458]{position:absolute;top:.2rem;left:50%;transform:translate(-50%);z-index:99;height:.53333rem;width:.53333rem;border-radius:.53333rem;background:hsla(0,0%,100%,.8)}.game-betting .tab .box .item .circular .li[data-v-42f27458]{display:block;width:.32rem;height:.32rem;border-radius:.26667rem;background:#6abe57;color:#fff;font-size:.32rem}.game-betting .tab .box .item .img[data-v-42f27458]{position:relative}.game-betting .tab .box .item .img .triangle[data-v-42f27458]{position:absolute;bottom:0;left:50%;width:0;height:0;border-left:.13333rem solid transparent;border-right:.13333rem solid transparent;border-top:.24rem solid #6abe57;transform:translate(-50%)}.game-betting .tab .box .item .txt[data-v-42f27458]{color:#6abe57;font-size:.37333rem}.game-betting .tab .box .item.action .triangle[data-v-42f27458]{border-top:.24rem solid #ffffff}.game-betting .tab .box .item.action .txt[data-v-42f27458]{color:#ffffff}.game-betting .tab .box .item.action .li[data-v-42f27458]{background:#ffffff}.game .page-nav[data-v-42f27458]{margin-top:.53333rem;padding-bottom:.53333rem;height:1.6rem}.game .page-nav .number[data-v-42f27458]{width:2.66667rem;height:1.06667rem;line-height:1.06667rem;color: #a6a9ae;}.game .page-nav .arr[data-v-42f27458]{height:1.06667rem;width:1.06667rem;background-color:#A6A9AE;border-radius:.13333rem}.game .page-nav .arr .icon[data-v-42f27458]{color:#ffffff !important}.game .page-nav .arr .icon.action[data-v-42f27458]{color:#ffffff !important;}.game .page-nav .arr.action[data-v-42f27458]{background-color: #ffffff !important;}.game .rule-box .title[data-v-42f27458]{width:100%;height:1.33333rem;line-height:1.33333rem;padding:0 .53333rem;color:#fff;font-size:.42667rem;background:#f74345 url(../img/Rule-bg.5fc58db6.png) no-repeat 0 0;background-size:100% 100%}.game .rule-box .info[data-v-42f27458]{padding:.4rem;font-size:.37333rem;line-height:1.06667rem}.game .rule-box .info .comment[data-v-42f27458]{max-height:8rem;overflow-y:auto}.game .rule-box .rule-btn .btn[data-v-42f27458]{width:60%;height:1.06667rem}.game .rule-box[data-v-42f27458] p{margin-bottom:.4rem;line-height:1.06667rem}.bettingMore[data-v-42f27458]{padding:0 .26667rem;height:.8rem;border:.02667rem solid #e2e2e2}[data-v-42f27458]{touch-action:pan-y}[data-v-42f27458] .van-popup{z-index:99999!important}.game[data-v-42f27458]{position:relative;background-color:#22275b}.game[data-v-42f27458] .van-sticky--fixed{width:100%;top:1.33333rem;left:50%;transform:translate(-50%);max-width:10.66667rem}.game .moveBox[data-v-42f27458]{width:80%;max-width:10.66667rem;left:10%;top:2.13333rem;height:8.8rem;position:fixed;box-shadow:0 0 .13333rem .08rem #95a5a6;z-index:9999;background-color:#fff;padding-top:1.06667rem;border-radius:.26667rem}.game .moveBox.action[data-v-42f27458]{height:100vh;width:100%;top:0!important;left:0}.game .moveBox .moveHead[data-v-42f27458]{border-radius:.26667rem .26667rem 0 0;height:1.06667rem;background-image:linear-gradient(90deg,#cd0103,#f64841);cursor:move;position:relative;z-index:9999;position:absolute;top:0;left:0;width:100%;padding:0 .4rem;color:#fff}.game .v-enter[data-v-42f27458],.game .v-leave-to[data-v-42f27458]{opacity:0;transform:scale(.5)}.game .content[data-v-42f27458]{padding:.26667rem}.game .v-enter-active[data-v-42f27458],.game .v-leave-active[data-v-42f27458]{transition:all .5s ease}.game .long[data-v-42f27458]{width:100%;max-width:10.66667rem;height:7.46667rem;overflow-y:auto}.game .long.action[data-v-42f27458]{height:100vh;overflow-y:auto}.game .long[data-v-42f27458] .van-tab--active{position:relative}.game .long[data-v-42f27458] .van-tab--active:after{content:"";width:100%;transition-duration:.3s;position:absolute;bottom:0;left:0;z-index:1;height:.08rem;background-color:#ee0a24;border-radius:.08rem}.game .longlist[data-v-42f27458]{padding:.26667rem}.game .longlist .item[data-v-42f27458]{border-radius:.13333rem;background-color:#fff;margin-bottom:.26667rem}.game .longlist .item .logo[data-v-42f27458]{height:1.06667rem;width:1.06667rem;border-radius:1.06667rem;overflow:hidden}.game .longlist .item .logo .img[data-v-42f27458]{width:100%}.game .longlist .item .time[data-v-42f27458]{color:red}.game .longlist .item .tag[data-v-42f27458]{padding:.05333rem .13333rem;background-color:#c9c9c9;color:#fff;margin-right:.13333rem;display:inline-block;font-size:.32rem}.game .longlist .item .tag.bg-L[data-v-42f27458],.game .longlist .item .tag.bg-O[data-v-42f27458]{background-color:#ffc511!important;color:#fff}.game .longlist .item .tag.bg-E[data-v-42f27458],.game .longlist .item .tag.bg-red[data-v-42f27458]{background-color:#fb4e4e!important;color:#fff}.game .longlist .item .tag.bg-violet[data-v-42f27458]{background-color:#db5fd1!important;color:#fff}.game .longlist .item .tag.bg-green[data-v-42f27458],.game .longlist .item .tag.bg-H[data-v-42f27458],.game .longlist .item .tag.bg-small[data-v-42f27458]{background-color:#5cba47!important;color:#fff}.game .longlist .item .tag.issue[data-v-42f27458]{background-color:#dc3b40!important;color:#fff}.game .longlist .item .btn[data-v-42f27458]{height:.8rem;min-width:.8rem;max-width:1.6rem;overflow:hidden;border-radius:.10667rem;margin-left:.05333rem;background-color:#fff;border:.02667rem solid #ccc;color:#dc3b40;font-size:.32rem;padding:0 .13333rem}.game .longlist .item .btn.action[data-v-42f27458]{color:#fff;background-color:#dc3b40;border:.02667rem solid #dc3b40!important}.game .betting-mark .info[data-v-42f27458]{padding:.4rem}.game .betting-mark .info .item .amount-box .li[data-v-42f27458]{background-color:#f0f0f0}.game .betting-mark .info .item .amount-box .li.action[data-v-42f27458],.game .betting-mark .info .item .stepper-box .li.action[data-v-42f27458]{pointer-events: all;color: #ffffff;background: #ffffff;}.game .betting-mark .info .item .multiple-box .li.acion[data-v-42f27458]{background-color:#f4453e}.game .betting-mark.color1 .box[data-v-42f27458],.game .betting-mark.color3 .box[data-v-42f27458],.game .betting-mark.color7 .box[data-v-42f27458],.game .betting-mark.color9 .box[data-v-42f27458],.game .betting-mark.colorgreen .box[data-v-42f27458],.game .betting-mark.colorsmall .box[data-v-42f27458]{background:#26bd2f;background-image:linear-gradient(90deg,#26bd2f,#75c76b);background-size:100% 100%}.game .betting-mark.colorviolet .box[data-v-42f27458]{background-image:linear-gradient(90deg,#b354fd,#d483ff);background-size:100% 100%}.game .betting-mark.color2 .box[data-v-42f27458],.game .betting-mark.color4 .box[data-v-42f27458],.game .betting-mark.color6 .box[data-v-42f27458],.game .betting-mark.color8 .box[data-v-42f27458],.game .betting-mark.colorred .box[data-v-42f27458]{background:#fb4e4e;background-image:linear-gradient(90deg,#fb4e4e,#fe666e);background-size:100% 100%}.game .betting-mark.color0 .box[data-v-42f27458]{background-color:#fb4e4e;background-image:linear-gradient(to bottom right,#fb4e4e 50%,#fff 0)!important;background-size:100% 100%}.game .betting-mark.color5 .box[data-v-42f27458]{background:#5cba47;background-image:linear-gradient(to bottom right,#5cba47 50%,#fff 0)!important;background-size:100% 100%}.game .betting-mark.colorbig .box[data-v-42f27458]{background:#f5bb00;background-image:linear-gradient(90deg,#f5bb00,#fdd556);background-size:100% 100%}.slot-inner[data-v-42f27458]{display:inline-block;height: 3.09333rem;margin-top: 0.48rem;background: #B1835A;border-radius: 0.18667rem;position: relative;padding: 0.26667rem;}.slot-inner[data-v-42f27458]:before{border-radius: 0.13333rem 0 0 0.13333rem;left: -0.13333rem;}.slot-inner[data-v-42f27458]:after,.slot-inner[data-v-42f27458]:before{content: "";display: block;width: 0.13333rem;height: 0.69333rem;position: absolute;top: 50%;-webkit-transform: translateY(-50%);transform: translateY(-50%);background: #ffffff;z-index: 0;}.slot-inner[data-v-42f27458]:after{border-radius: 0 0.13333rem 0.13333rem 0;right: -0.13333rem;}.d5-slot-box[data-v-42f27458]{background: #ffffff;border-radius: 0.13333rem;height: 100%;width: 100%;position: relative;display: -webkit-box;display: -webkit-flex;display: flex;-webkit-box-pack: justify;-webkit-justify-content: space-between;justify-content: space-between;-webkit-box-align: center;-webkit-align-items: center;align-items: center;padding: 0.13333rem;}.d5-slot-box[data-v-42f27458]:before{left: 0;top: 50% !important;-webkit-transform: translateY(-50%);transform: translateY(-50%);border-right: 0.53333rem solid transparent;border-left: 0.53333rem solid #B1835A;}.d5-slot-box[data-v-42f27458]:after,.d5-slot-box[data-v-42f27458]:before{position: absolute;width: 0;height: 0;border-top: 0.18667rem solid transparent;border-bottom: 0.18667rem solid transparent;content: "";z-index: 3;}.d5-slot-box[data-v-42f27458]:after{right: 0;top: 50% !important;-webkit-transform: translateY(-50%);transform: translateY(-50%);border-left: 0.53333rem solid transparent;border-right: 0.53333rem solid #B1835A;}.slot-column[data-v-42f27458]{display:inline-block;width:1.54667rem;height:2.26667rem;border-radius:.10667rem;overflow:hidden;background:#333;margin-right:.10667rem;vertical-align:bottom;position:relative;text-align:center}.slot-column[data-v-42f27458]:before{-webkit-box-shadow:inset 0 -.18667rem .10667rem 0 rgba(0,0,0,.3),inset 0 .18667rem .10667rem 0 rgba(0,0,0,.3);box-shadow:inset 0 -.18667rem .10667rem 0 rgba(0,0,0,.3),inset 0 .18667rem .10667rem 0 rgba(0,0,0,.3);position:absolute;top:0;bottom:0;left:0;width:101%;height:101%;content:"";z-index:2}.slot-column .slot-transform[data-v-42f27458]{-webkit-transform:translateY(-2.88rem);transform:translateY(-2.88rem)}.slot-column .slot-transform.transform0 .slot-num[data-v-42f27458]{    background: -webkit-linear-gradient(top,#59b0ea 0%,#B1835A 100%);background: #17B15E !important;color: #ffffff;}.slot-column .slot-transform.slot-scroll[data-v-42f27458]{-webkit-animation:slotScroll-data-v-42f27458 3s cubic-bezier(.65,.02,.65,1.06);animation:slotScroll-data-v-42f27458 3s cubic-bezier(.65,.02,.65,1.06);-webkit-animation-fill-mode:forwards;animation-fill-mode:forwards}.slot-column .slot-transform.slot-scroll.transform1[data-v-42f27458]{-webkit-animation-delay:.12s;animation-delay:.12s}.slot-column .slot-transform.slot-scroll.transform2[data-v-42f27458]{-webkit-animation-delay:.24s;animation-delay:.24s}.slot-column .slot-transform.slot-scroll.transform3[data-v-42f27458]{-webkit-animation-delay:.36s;animation-delay:.36s}.slot-column .slot-transform.slot-scroll.transform4[data-v-42f27458]{-webkit-animation-delay:.48s;animation-delay:.48s}.slot-column[data-v-42f27458]:first-child{/*margin-left:.16rem*/}.slot-column[data-v-42f27458]:last-child{margin-right:.16rem}.slot-column .slot-num[data-v-42f27458]{width: 1.46667rem;height: 1.46667rem;line-height: 1.46667rem;background: #A6A9AE;border-radius: 50%;font-size: .8rem;color: #404040;font-weight: 700;margin: 0 auto 0.16667rem;}@-webkit-keyframes slotScroll-data-v-42f27458{0%{-webkit-transform:translateY(-2.88rem);transform:translateY(-2.88rem)}to{-webkit-transform:translateY(-60.74667rem);transform:translateY(-60.74667rem)}}@keyframes slotScroll-data-v-42f27458{0%{-webkit-transform:translateY(-2.88rem);transform:translateY(-2.88rem)}to{-webkit-transform:translateY(-60.74667rem);transform:translateY(-60.74667rem)}}.bet-box[data-v-42f27458]{margin-top:.53333rem;overflow:hidden;position:relative}.bet-box.minH[data-v-42f27458]{min-height:6.4rem}.bet-box .mark-box[data-v-42f27458]{height:100%;width:100%;background:rgba(0,0,0,.7);position:absolute;z-index:99;top:0;left:0;font-weight:600;color:#fff;font-size:4rem}.bet-box .bet-type-group[data-v-42f27458]{display:flex;justify-content:flex-start;border-bottom: 0.01333rem solid #22275b;margin-bottom:.26667rem;overflow:hidden}.bet-box .d5-bet-type[data-v-42f27458]{width: 1.06667rem;height: 1.06667rem;line-height: 1.06667rem;background: #6F6F6F;font-size: .42667rem;font-weight: 700;color: #fff;border-radius: 0.53333rem 0.53333rem 0 0;position: relative;margin-right: 0.26667rem;text-align: center;}.d5-bet-type[data-v-42f27458]:after,.d5-bet-type[data-v-42f27458]:before{content:"";width:.26667rem;height:.26667rem;position:absolute;bottom:0;z-index:9}.d5-bet-type[data-v-42f27458]:after{background:radial-gradient(circle at 100% 0,rgba(204,0,0,0) .26667rem,#6F6F6F .29333rem);right:-.26667rem}.d5-bet-type.active[data-v-42f27458]{background-color: #ffffff;color: #ffffff;}.d5-bet-type.active[data-v-42f27458]:before{background:radial-gradient(circle at 0 0,rgba(204,0,0,0) .26667rem,#ffffff .29333rem);left:-.26667rem;z-index:9}.d5-bet-type.active[data-v-42f27458]:after{background:radial-gradient(circle at 100% 0,rgba(204,0,0,0) .26667rem,#ffffff .29333rem);right:-.26667rem;z-index:9}.d5-bet-type[data-v-42f27458]{width:1.46667rem}.flex-row-around[data-v-42f27458],.flex-row-between[data-v-42f27458]{display:flex}.flex-row-between[data-v-42f27458]{justify-content:space-between}.bet-box .bet-type-btn[data-v-42f27458]{line-height: .93333rem;margin-bottom: 0.4rem;width: calc((100% - 1.36rem)/4);height: 100%;background: #171b3f;color: #a6a9ae;border-radius: 0.13333rem;padding: 0 0.16rem;display: -webkit-box;display: -webkit-flex;display: flex;-webkit-box-pack: justify;-webkit-justify-content: space-between;justify-content: space-between;}.bet-box .bet-type-btn.active1[data-v-42f27458]{background-color: #ffa82e;color: #fff;}.bet-box .bet-type-btn.active2[data-v-42f27458]{background-color: #6da7f4;color: #fff;}.bet-box .bet-type-btn.active3[data-v-42f27458]{background-color: #40ad72;color: #fff;}.bet-box .bet-type-btn.active4[data-v-42f27458]{background-color: #fd565c;color: #fff;}.bet-box .bet-num-line[data-v-42f27458]{display:flex;justify-content:space-between;width:20%;padding:0 0 .66667rem}.bet-box .bet-box-num[data-v-42f27458]{position: relative;width: 0.88rem;height: 0.88rem;border: 0.01333rem solid #A6A9AE;border-radius: 50%;color: #fff;font-size: .37333rem;text-align: center;line-height: .88rem;margin: auto;}.bet-box .bet-box-num.active[data-v-42f27458]{background: #ffffff;border: 0.01333rem solid #ffffff;color: #ffffff;}.bet-box .bet-box-num.active>div[data-v-42f27458]{color:#6b7581}.bet-box .bet-box-num>div[data-v-42f27458]{position: absolute;width: 0.85rem;left: 0;bottom: -0.4rem;text-align: center;font-weight: 400;font-size: .32rem;line-height: .32rem;color: #a6a9ae;}.game[data-v-42f27458]{background-color:#22275b}.game .activityBox[data-v-42f27458]{width:1.46667rem;height:1.46667rem;border-radius:1.46667rem;overflow:hidden;position:fixed;bottom:2.4rem;right:.26667rem;z-index:999;box-shadow:0 .02667rem .48rem 0 rgba(203,202,220,.56)}.game .activityBox .img[data-v-42f27458]{height:1.46667rem}.game-betting[data-v-42f27458]{margin-top:-1.46667rem}.game-betting .content[data-v-42f27458]{width: calc(100% - 0.57222rem);margin: 0.34667rem auto 0;background-color: #1e234d;padding: 0.42667rem 0.29333rem 0.45333rem;border-radius: 0.26667rem 0.26667rem 0.26667rem 0.26667rem;}.game-betting .content .page-box[data-v-42f27458]{width:100%;/*background:#fff;border-radius:1.06667rem 1.06667rem 0 0;*/position:relative}.game-betting .content .page-box .last-round[data-v-42f27458]{text-align:center;padding:0 0 .8rem;border-bottom:.02667rem solid #f1f3fb;margin-bottom:.34667rem;height:1.86667rem;display:flex;justify-content:space-between;align-items:center}.game-betting .content .page-box .last-round>span[data-v-42f27458]{font-size:.37333rem;font-weight:400;color:#8e8e93;max-width:2.4rem}.game-betting .content .page-box .last-round .round-num[data-v-42f27458]{position: relative;height: 0.93333rem;width: 0.93333rem;line-height: .93333rem;background: #A6A9AE;border: 0.01333rem solid #A6A9AE;font-size: .34667rem;color: #22275b;border-radius: 50%;text-align: center;}.game-betting .content .page-box .last-round .round-num.red[data-v-42f27458]{height: 0.93333rem;width: 0.93333rem;line-height: .93333rem;background: #ffffff;font-size: .34667rem;color: #ffffff;border-radius: 50%;text-align: center;-webkit-box-flex: 0;-webkit-flex: none;flex: none;}.game-betting .content .page-box .last-round .round-num .word-index[data-v-42f27458]{position:absolute;bottom:-.53333rem;left:.4rem;line-height:.42667rem;color:#9da7b3;font-size:.37333rem;font-weight:400}.game-betting .content .page-box .period-title[data-v-42f27458]{display:flex;justify-content:space-between;align-items:center;font-size:.37333rem;font-weight:400;color:#8e8e93;margin-bottom:.13333rem}.game-betting .content .page-box .period-span[data-v-42f27458]{display:flex;justify-content:space-between;align-items:center;font-size:.58667rem;font-weight:700}.game-betting .content .page-box .period-span>span[data-v-42f27458]{color: #fff;font-size:.58667rem}.game-betting .content .page-box .flex-row-end[data-v-42f27458]{display:flex}.game-betting .content .page-box .period-span .li-item[data-v-42f27458]{width: 0.53333rem;height: 0.8rem;line-height: .8rem;margin-left: 0.12rem;background: #22275b;border-radius: 0.05333rem;color: #ffffff;font-weight: 700;font-size: .48rem;text-align: center;padding: 0 0.13333rem;}.game-betting .content .page-box .period-span .li-symbol[data-v-42f27458]{line-height: .8rem;margin: 0 .26667rem;margin-right: 0.131rem;background-color: transparent;color: #a6a9ae;}.game-list[data-v-42f27458]{margin-top:.4rem;width:100%}.game-list .tab[data-v-42f27458]{padding:0 .26667rem;height:1.33333rem;line-height:1.33333rem}.game-list .tab .li[data-v-42f27458]{width:32%}.game-list .tab .li .txt[data-v-42f27458]{display: block;height: 1.06667rem;line-height: 1.06667rem;text-align: center;width: 100%;border-radius: 0.21333rem;overflow: hidden;background: #1e234d;color: #a6a9ae;}.game-list .tab .li .txt.action[data-v-42f27458]{background: -webkit-linear-gradient(rgb(34,39,91), rgb(30,35,77));;background: linear-gradient(rgb(34,39,91), rgb(30,35,77));;font-weight: 600;color: #ffffff;}.game-list .con-box[data-v-42f27458]{overflow:hidden}.game-list .con-box .bet-box[data-v-42f27458]{padding-bottom:0}.game-list .con-box .bet-box .bet-type-group[data-v-42f27458]{margin-bottom:0}.game-list .con-box .con-Missing[data-v-42f27458]{padding:.4rem .93333rem 0 .4rem}.game-list .con-box .con-Missing .item[data-v-42f27458]{height:.66667rem;line-height:.66667rem}.game-list .con-box .con-Missing .item .li[data-v-42f27458]{width:.4rem;height:.4rem;line-height:.4rem;margin-right:.13333rem;text-align:center;color:#9da7b3}.game-list .list .wrap[data-v-42f27458]{padding: 0.4rem;background-color: #6F6F6F;border-radius: 0.13333rem 0.13333rem 0 0;font-size: .34667rem;font-weight: 750;color: #fff;}.game-list .list .hb[data-v-42f27458]{background-color: #1e234d;border-bottom: 0.02667rem solid #171b3f;color: #414141;font-size: .37333rem;}.game-list .list .hb .item[data-v-42f27458]{padding:.31333rem;color:#fff;font-size:.37333rem}.game-list .list .hb .item .goItem[data-v-42f27458]{height:.42667rem}.game-list .list .hb .li[data-v-42f27458]{display:flex;justify-content:center;align-items:center;text-align:center;width:16px!important;height:16px;border:1px solid #bbb;border-radius:16px;margin-right:4px;color:#bbb}.game-list .list .hb .li.action[data-v-42f27458]{font-size:.32rem;border:none;color: #ffffff;background: #ffffff;position:relative;z-index:100}.game-list .list .hb .li.circle-black[data-v-42f27458]{/*border:.02667rem solid #000;color:#000;background:#f4f4f4*/}.game-list .list .hb .li.actionH[data-v-42f27458]{border:none;color:#fff;background-color:#5856d6}.game-list .list .hb .li.actionL[data-v-42f27458]{border:.02667rem solid #5856d6;color:#5856d6;background-color:#fff}.game-list .list .hb .li.actionO[data-v-42f27458]{border:none;color:#fff;background-color:#ff9500}.game-list .list .hb .li.actionE[data-v-42f27458]{border:.02667rem solid #ff9500;color:#ff9500;background-color:#fff}.game-list .list .hb .qiu[data-v-42f27458]{width:225px;position:relative}.game-list .list .hb .qiu .line-canvas[data-v-42f27458]{position:absolute!important;top:9px;left:0;height:55px;width:196px;z-index:99}.game-list .list .hb .red[data-v-42f27458]{color:#d0322d}.game-list .list .hb .green[data-v-42f27458]{color:#4eaf56}.game-list .list .hb .blue[data-v-42f27458]{color:#2572d5}.game-list .list .hb .box .li[data-v-42f27458]{display:block;height:.26667rem;width:.26667rem;border-radius:.26667rem;margin:0 .13333rem}.game-list .list .hb .item[data-v-42f27458]{padding:.53333rem .4rem}.game-list .list .hb .item .info[data-v-42f27458]{width:100%}.game-list .list .hb .item .info .issueName .state[data-v-42f27458]{background-color:#f3f1f1;padding:.10667rem .26667rem;margin-left:.26667rem;border-radius:.53333rem;font-size:.32rem}.game-list .list .hb .item .info .issueName .state.red[data-v-42f27458]{color:#fb4e4e}.game-list .list .hb .item .info .issueName .state.green[data-v-42f27458]{color:#5cba47}.game-list .list .hb .item .info .tiem[data-v-42f27458]{font-size:.32rem;color:#5f5f5f;margin-top:.13333rem}.game-list .list .hb .item .info .money[data-v-42f27458]{font-weight:600;font-size:.42667rem}.game-list .list .hb .item .info .money .fail[data-v-42f27458]{color:#fb4e4e}.game-list .list .hb .item .info .money .success[data-v-42f27458]{color:#5cba47}.game-list .list .hb .details[data-v-42f27458]{padding:.4rem;border-bottom:.02667rem solid #e2e2e2}.game-list .list .hb .details .tit[data-v-42f27458]{font-size:.53333rem;color:#000;margin-bottom:.26667rem}.game-list .list .hb .details .detailLi[data-v-42f27458]{height:.66667rem;line-height:.66667rem;padding:0 .26667rem;background-color:#f9f9f9;color:#969696;font-size:.37333rem;border-radius:.13333rem;margin-bottom:.21333rem}.game-list .list .hb .details .detailLi .red[data-v-42f27458]{color:#f2413b}.game-list .list-fooder[data-v-42f27458]{height:.53333rem;/*background-color:#fbedf3;*/border-bottom-right-radius:.53333rem;border-bottom-left-radius:.53333rem}.game .betting-mark[data-v-42f27458]{max-width:10.66667rem}.game .betting-mark .head .box[data-v-42f27458]{border-radius:.4rem .4rem 0 0;padding:.53333rem .4rem .8rem}.game .betting-mark .head .box .con[data-v-42f27458]{font-weight:600;text-align:center;color:#fff;font-size:.53333rem}.game .betting-mark .head .box .color[data-v-42f27458]{text-align:center;width:80%;background-color:#fff;height:.8rem;border-radius:.13333rem;line-height:.8rem;margin:.26667rem auto 0;font-size:.37333rem}.game .betting-mark .info[data-v-42f27458]{padding:0 .4rem .4rem}.game .betting-mark .info .item[data-v-42f27458]{height:.8rem;line-height:.8rem;margin-top:.4rem}.game .betting-mark .info .item .tit[data-v-42f27458]{font-size:.4rem;color:#fff}.game .betting-mark .info .item .amount-box .li[data-v-42f27458]{margin-left: 0.16rem;padding: 0 0.21333rem;background: #171b3f;color: #a6a9ae;border-radius: 0.13333rem;}.game .betting-mark .info .item .amount-box .li.action[data-v-42f27458]{pointer-events: all;color: #ffffff;background: #ffffff;}.game .betting-mark .info .item .stepper-box .digit-box[data-v-42f27458]{width: 2.10667rem;height: 0.8rem;padding: 0.02667rem 0.26667rem;margin: 0 0.16rem;}.game .betting-mark .info .item .stepper-box .digit-box[data-v-42f27458] .van-field__control{display: block;box-sizing: border-box;width: 100%;min-width: 0;margin: 0;padding: 0;line-height: inherit;background-color: transparent;border: 0;resize: none;text-align: center;font-size: .37333rem;color: #fff;}.game .betting-mark .info .item .stepper-box .li[data-v-42f27458]{width: 0.66667rem;height: 0.66667rem;border-radius: 50%;display: -webkit-box;display: -webkit-flex;display: flex;-webkit-box-pack: center;-webkit-justify-content: center;justify-content: center;-webkit-box-align: center;-webkit-align-items: center;align-items: center;pointer-events: none;text-align: center;font-size: .66667rem;padding: 0;color: #c8c9cc;-webkit-box-flex: 0;-webkit-flex: none;flex: none;background: #f0f0f0;}.game .betting-mark .info .item .stepper-box .li.minus[data-v-42f27458]{text-align:center;line-height:.66667rem}.game .betting-mark .info .item .stepper-box .li.action[data-v-42f27458]{pointer-events: all;color: #ffffff;background: #ffffff;}.game .betting-mark .info .item .multiple-box .li[data-v-42f27458]{text-align: center;margin-left: 0.16rem;padding: 0 0.21333rem;background: #171b3f;color: #a6a9ae;border-radius: 0.13333rem;}.game .betting-mark .info .item .multiple-box .li.action[data-v-42f27458]{pointer-events: all;color: #ffffff;background: #ffffff;}.game .betting-mark .info .item .txt[data-v-42f27458]{color:#ffffff !important}.game .betting-mark .foot[data-v-42f27458]{width:100%;height:1.06667rem;line-height:1.06667rem;text-align:center;font-size:.37333rem}.game .betting-mark .foot .left[data-v-42f27458]{line-height:1.06667rem;width:35%;-webkit-box-flex: 1;-webkit-flex: 1;flex: 1;background: #22275b;color: #a6a9ae;}.game .betting-mark .foot .right[data-v-42f27458]{line-height:1.06667rem;width:65%;-webkit-box-flex: 2;-webkit-flex: 2;flex: 2;background: #ffffff;color: #ffffff;}.game .betting-mark .box[data-v-42f27458]{position:relative}.game .betting-mark .box[data-v-42f27458]:after{content:"";position:absolute;width:50%;left:0;bottom:0;height:1.06667rem;background-image:linear-gradient(10deg,#fff 50%,transparent 0)}.game .betting-mark .box[data-v-42f27458]:before{content:"";position:absolute;right:0;bottom:0;width:50%;height:1.06667rem;background-image:linear-gradient(-10deg,#fff 50%,transparent 0)}
+
+
+.game-betting .content .page-box .last-round .round-num.red[data-v-42f27458] {
+    color: #000000 !important;
+}
+.d5-bet-type.active[data-v-42f27458] {
+    background-color: #ffffff;
+    color: #000000 !important;
+}
+
+.game-list .tab .li .txt.action[data-v-42f27458] {
+    
+    background: linear-gradient(rgb(8 11 37), rgb(6 9 30)) !important;
+    
+}
+
+.game-list .list .hb .li.action[data-v-42f27458] {
+    color: #000000 !important;
+    
+}
+
+
+.game-head .total-box[data-v-42f27458] {
+    
+    background: linear-gradient(153.24deg, #10132b 5.33%, #10132b 93.42%) !important;
+    
+}
+
+.game-betting .tab .box .item[data-v-42f27458] {
+        background: -webkit-linear-gradient(297deg, #F6F6F6 5.33%, #4675D2 93.42%) !important;
+        background: linear-gradient(153deg, #F6F6F6 5.33%, #4675D2 93.42%) !important;
+        box-shadow: 0 -.05333rem .16rem #92a7ff inset !important;
+        border-radius: .26667rem;
+    
+}.game[data-v-42f27458] {
+    background-color: #F7F8FF !important;
+}.game-head[data-v-42f27458] {
+    padding: .4rem .4rem 1.86667rem;
+    background: linear-gradient(90deg, #D9AD82 0%, #B1835A 100%) !important;
+    border-bottom-left-radius: 1.53333rem ;
+    border-bottom-right: 1.53333rem ;
+}.game-betting .content[data-v-42f27458] {
+    width: calc(100% - 0.57222rem);
+    margin: 0.34667rem auto 0;
+    background-color: #fff;
+    padding: 0.42667rem 0.29333rem 0.45333rem;
+    border-radius: 0.26667rem 0.26667rem 0.26667rem 0.26667rem;
+}.game-betting .content .page-box .period-span>span[data-v-42f27458] {
+    color: #1E2637 !important;
+    font-size: .58667rem;
+} .game-betting .tab[data-v-42f27458] {
+    margin: 0 0.4rem;
+    background-color: #1e234d;
+    border-radius: 0.26667rem;
+    background: #F6F6F6 !important;
+}.game-betting .content .page-box .period-span .li-item[data-v-42f27458] {
+    width: 0.53333rem;
+    height: 0.8rem;
+    line-height: .8rem;
+    margin-left: 0.12rem;
+    background: #F6F6F6 !important;
+    border-radius: 0.05333rem;
+    color: #B1835A !important;
+    font-weight: 700;
+    font-size: .48rem;
+    text-align: center;
+    padding: 0 0.13333rem;
+}.game-betting .content .page-box .last-round .round-num[data-v-42f27458] {
+    position: relative;
+    height: 0.93333rem;
+    width: 0.93333rem;
+    line-height: .93333rem;
+    background: #F6F6F6;
+    border: 0.01333rem solid #A6A9AE;
+    font-size: .34667rem;
+    color: #1E2637;
+    border-radius: 50%;
+    text-align: center;
+}.game-betting .content .page-box .last-round .round-num.red[data-v-42f27458] {
+    color: #fff !important;
+    background: #B1835A !important;
+}.slot-inner[data-v-42f27458] {
+    display: inline-block;
+    height: 3.09333rem;
+    margin-top: 0.48rem;
+    background: #00B977 !important;
+    border-radius: 0.18667rem;
+    position: relative;
+    padding: 0.26667rem;
+}.d5-slot-box[data-v-42f27458]:after {
+    right: 0;
+    top: 50% !important;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    border-left: 0.53333rem solid transparent;
+    border-right: 0.53333rem solid #00B977 !important;
+}.slot-inner[data-v-42f27458]:after, .slot-inner[data-v-42f27458]:before {
+    content: "";
+    display: block;
+    width: 0.13333rem;
+    height: 0.69333rem;
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    background: #008B59;
+    z-index: 0;
+}.d5-slot-box[data-v-42f27458]:before {
+    left: 0;
+    top: 50% !important;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    border-right: 0.53333rem solid transparent;
+    border-left: 0.53333rem solid #00B977 !important;
+}.game-list .tab .li .txt.action[data-v-42f27458] {
+    background: linear-gradient(90deg, #D9AD82 0%, #B1835A 100%) !important;
+}.game-list .tab .li .txt[data-v-42f27458] {
+    display: block;
+    height: 1.06667rem;
+    line-height: 1.06667rem;
+    text-align: center;
+    width: 100%;
+    border-radius: 0.21333rem;
+    overflow: hidden;
+    background: #fff !important;
+    color: #768096 !important;
+}.bet-box .d5-bet-type[data-v-42f27458] {
+    width: 1.06667rem;
+    height: 1.06667rem;
+    line-height: 1.06667rem;
+    background: linear-gradient(90deg, #CCCEDC 15.38%, #CDCFDD 98.73%);
+    font-size: .42667rem;
+    font-weight: 700;
+    color: #fff;
+    border-radius: 0.53333rem 0.53333rem 0 0;
+    position: relative;
+    margin-right: 0.26667rem;
+    text-align: center;
+}.d5-bet-type.active[data-v-42f27458] {
+    background-color: #B1835A !important;
+    color: #fff !important;
+    background: https://google.com;
+}.bet-box .bet-type-btn[data-v-42f27458] {
+    line-height: .93333rem;
+    margin-bottom: 0.4rem;
+    width: calc((100% - 1.36rem) / 4);
+    height: 100%;
+    background: linear-gradient(90deg, #CCCEDC 15.38%, #CDCFDD 98.73%);
+    color: #fff;
+    border-radius: 0.13333rem;
+    padding: 0 0.16rem;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+}.bet-box .bet-box-num[data-v-42f27458] {
+    position: relative;
+    width: 0.88rem;
+    height: 0.88rem;
+    border: 0.01333rem solid #A6A9AE;
+    border-radius: 50%;
+    color: #B6BCC8;
+    font-size: .37333rem;
+    text-align: center;
+    line-height: .88rem;
+    margin: auto;
+}.game-list .tab .li .txt.action[data-v-42f27458] {
+    background: -webkit-linear-gradient(rgb(34, 39, 91), rgb(30, 35, 77));
+    background: linear-gradient(rgb(34, 39, 91), rgb(30, 35, 77));
+    font-weight: 600;
+    color: #ffffff !important;
+}
+.d5-bet-type.active[data-v-42f27458] {
+    color: #fff !important;
+    background: #B1835A !important;
+}.bet-box .d5-bet-type[data-v-42f27458] {
+    width: 1.06667rem;
+    height: 1.06667rem;
+    line-height: 1.06667rem;
+    font-size: .42667rem;
+    font-weight: 700;
+    color: #fff;
+    border-radius: 0.53333rem 0.53333rem 0 0;
+    position: relative;
+    margin-right: 0.26667rem;
+    text-align: center;
+    background: linear-gradient(90deg, #CCCEDC 15.38%, #CDCFDD 98.73%) !important;
+}.d5-bet-type.active[data-v-42f27458] {
+    width: 1.06667rem;
+    height: 1.06667rem;
+    line-height: 1.06667rem;
+    font-size: .42667rem;
+    font-weight: 700;
+    color: #fff;
+    border-radius: 0.53333rem 0.53333rem 0 0;
+    position: relative;
+    margin-right: 0.26667rem;
+    text-align: center;
+    background: #B1835A !important;
+}
+.bet-box .mark-box .item[data-v-42f27458] {
+    display: inline-block;
+    border-radius: 0.4rem;
+    padding: 0 0.4rem;
+    font-size: 3.73333rem;
+    color: #B1835A;
+    background-color: #F6F6F6 !important;
+}.game-list .list .wrap[data-v-42f27458] {
+    padding: 0.4rem;
+    background-color: #B1835A;
+    border-radius: 0.13333rem 0.13333rem 0 0;
+    font-size: .34667rem;
+    font-weight: 750;
+    color: #fff;
+}.game-list .list .hb[data-v-42f27458] {
+    background-color: #fff;
+    border-bottom: 0.02667rem solid #171b3f;
+    color: #1E2637;
+    font-size: .37333rem;
+}.game-list .list .hb .item[data-v-42f27458] {
+   
+    
+    color: #1E2637;
+    font-size: .37333rem;
+}.game .page-nav .arr.action[data-v-42f27458] {
+    background-color: #B1835A !important;
+}.bet-box .bet-box-num.active[data-v-42f27458] {
+    background: #B1835A !important;
+    border: 0.01333rem solid #ffffff;
+    color: #ffffff;
+}.van-popup {
+    position: fixed;
+    max-height: 100%;
+    overflow-y: auto;
+    background-color: #FFF !important;
+    -webkit-transition: -webkit-transform .3s;
+    transition: -webkit-transform .3s;
+    transition: transform .3s;
+    transition: transform .3s, -webkit-transform .3s;
+    -webkit-overflow-scrolling: touch;
+}.game .betting-mark .info .item .tit[data-v-42f27458] {
+    font-size: .4rem;
+    color: #1E2637 !important;
+}.game .betting-mark .info .item .amount-box .li.action[data-v-42f27458] {
+    pointer-events: all;
+    color: #ffffff;
+    background: #B1835A !important;
+}.game .betting-mark .info .item .amount-box .li[data-v-42f27458] {
+    margin-left: 0.16rem;
+    padding: 0 0.21333rem;
+    background: #F6F6F6;
+    color: #768096;
+    border-radius: 0.13333rem;
+}.game .betting-mark .info .item .stepper-box .li.action[data-v-42f27458] {
+    pointer-events: all;
+    color: #ffffff;
+    background: #B1835A;
+}.game .betting-mark .info .item .stepper-box .digit-box[data-v-42f27458] .van-field__control {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+    line-height: inherit;
+    background-color: transparent;
+    border: 0;
+    resize: none;
+    text-align: center;
+    font-size: .37333rem;
+    color: #1E2637;
+}.game .betting-mark .info .item .multiple-box .li[data-v-42f27458] {
+    text-align: center;
+    margin-left: 0.16rem;
+    padding: 0 0.21333rem;
+    background: #B1835A;
+    color: #fff;
+    border-radius: 0.13333rem;
+}.game .betting-mark .foot .left[data-v-42f27458] {
+    line-height: 1.06667rem;
+    width: 35%;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    flex: 1;
+    background: #F6F6F6;
+    color: #768096;
+}.game .betting-mark .foot .right[data-v-42f27458] {
+    line-height: 1.06667rem;
+    width: 65%;
+    -webkit-box-flex: 2;
+    -webkit-flex: 2;
+    flex: 2;
+    background: #B1835A;
+    color: #fff;
+}.game-list .list .hb .li[data-v-42f27458] {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: .53333rem !important;
+    height: .53333rem !important;
+    border: .01333rem solid #768096;
+    border-radius: 16px;
+    margin-right: 4px;
+    color: #1E2637;
+}

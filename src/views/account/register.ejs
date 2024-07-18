@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en" translate="no" data-dpr="1" style="font-size: 39px;">
+
+<head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="shortcut icon" href="/images/bitbug_favicon.ico" type="image/x-icon">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="google" content="notranslate">
+    <meta name="robots" content="noindex,nofollow">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>BigMumbai</title>
+    <link rel="stylesheet" href="./index_files/index-96409872.css">
+    <link rel="stylesheet" href="./index_files/modules-96c1e775.css">
+    <link rel="stylesheet" href="./index_files/page-activity-d48e62db.css">
+    <link rel="stylesheet" href="./index_files/page-home-58543d87.css">
+    <link rel="stylesheet" href="./index_files/page-login-ef3d1f88.css">
+    <link rel="stylesheet" href="./index_files/page-main-ff2e7571.css">
+    <link rel="stylesheet" href="./index_files/index-98687087.css">
+
+ 
+    <style>
+        
+        .resgister__C .login_container-tab[data-v-7e82aefe] {
+            background: #F7F8FF;
+    
+
+}
+#app{
+ 
+ background-color:#f7f8ff !important;
+}
+        
+        </style>
+
+
+
+</head>
+
+<body style="font-size: 12px;">
+    <div id="app" data-v-app="" style="background: #22275b">
+        <div data-v-1690b988="" class="ar-loading-view"
+            style="display: none; --7688837a: &#39;Roboto&#39;, &#39;Inter&#39;, sans-serif;">
+            <div data-v-1690b988="" class="loading-wrapper">
+                <div data-v-1690b988="" class="loading-animat"><svg xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 200 200" width="200" height="200"
+                        preserveAspectRatio="xMidYMid meet"
+                        style="width: 100%; height: 100%; transform: translate3d(0px, 0px, 0px); content-visibility: visible;">
+                        <defs>
+                            <clippath id="__lottie_element_2">
+                                <rect width="200" height="200" x="0" y="0"></rect>
+                            </clippath>
+                            <image
+                                href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKgAAAAsBAMAAAADRO5JAAAAJHpUWHRDcmVhdG9yAAAImXNMyU9KVXBMK0ktUnBNS0tNLikGAEF6Bs5qehXFAAAACXBIWXMAAAABAAAAAQBPJcTWAAAAJFBMVEXzwwBHcEzzwgDzwwD0wwDzwwD0xADzwwDzwwDxwQDzwwD0wwDcY0swAAAADHRSTlP/AD+/In+jY9wQT49dhnwkAAADuUlEQVRIx+WXz08TQRTHh/4GLky7tAUutNaq4QKCJtxaKFh7ag2NopdWSJVwKYJoPLWxAY0XNiTG6EUuJN6oF/8934+Z2S22tCQ1MXEOzM7uzGfevPd9r4OQA7fT7KAzxaATZ0p3d/alPVTox0ih/TQvW8OEXmxUzsql2e3iwkDQG4t9W8kKHK/lWrcPlta/1lrRvvOXRF30bb7p3XZeri6/zJ4mnj3tv8AnVpJ9W0pOHb0Prm5vFUL3m7L/gsSAPn1gn21nUjs/CvZQJSW3X7Srw9apXN3Lnw0deo32r0Ffl8tljtvNcvkxd9Q2RbqG7QDqBer2wFkztXJ+5Gbkbn1QFeW8RN08SNI8haArGp0qLe/IDPXHGnkIA6+DnGvAWEEbHgNt4oMlekBDNkOFKhk0wYGu0jeGhkXAQAkf6wUVVQXllXnRAY25PsmIELaGjuNDtCfUo6E+dSA3tOiGZpQrEUr4k27Q0CLuqaEhWyr/Guik+xCyIsSogWI+1B1okHMf3gTxtAEABbZwXhtCgf2vcw2dxeG9VwzFUwQNdIF30VAf65SgYbAqg6/W6PzoQm9CWu8UFPfYlPKNrT3oNVC0WXSHTrGlPjqKX8bZXt0soWebGCY01C/ldA8omBZk6Ax+z/Ak6XLpnhnV9annldujLugY+pShOfjTZOgURrSuBKhapGOPhpYIQcHmCXEp+tJIKsFQXJO9EGJE7kPWsn1x1CNmcdVI1m+gbfm9J3RMKiiEMlFBaMWk9gRCMiopYQcv65OhozSxOzSgofMa+g12sjU0gNEKZFleniJtBzMb6KcG9t2P33Ydn8I4aRwbp3gITnlANU/IaHiCk3tBjqHin9DxJPzxMRRdxrpyoFE6LkNRXj/T9AmgczBah0gb6DjWUyUpAPgZmleeELYDjVE8GBoVJoMBmlLJXrxS/FYDYwYaEssOlBOTobpCgJSU97HCdYVanKaeQoVijDkSOnTEinF+ztCKhlYJyntku0I/s6XaBqUWA81ohdBJhJISQqPsii5Qb01wmhpdf+mExgw0Zi5MfoJS4Q3KzuiPGEm1NBQriTLI05HvCI071zB7XjkW/NULupdxDNW/SQY63VBQnP0omUzjAoLOUrHpAQ0qx3kTjHnbAZXrCqp+U7FuLRA0Qi+6Q4FF0E8JXUOfdEBlmqBhRlPvIWiYXlyG0nUzBUlu5XK5h66CB6/vuIYreE+16LYKBRL7w1oti/eUDbhe1HbxklHjVv0vLmhXQAf4R+K6zfdXoL8B/7cyv853sCEAAAAASUVORK5CYII=">
+                            </image>
+                            <image
+                                href="data:image/png;base64,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">
+                            </image>
+                        </defs>
+                        <g clip-path="url(#__lottie_element_2)">
+                            <g class="ai"
+                                transform="matrix(0.9995260834693909,-0.03078274428844452,0.03078274428844452,0.9995260834693909,-3.0308837890625,3.1256637573242188)"
+                                opacity="1" style="display: block;">
+                                <image width="200px" height="200px" preserveAspectRatio="xMidYMid slice"
+                                    href="data:image/png;base64,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">
+                                </image>
+                            </g>
+                            <g class="png"
+                                transform="matrix(0.8019599914550781,0,0,0.8019599914550781,32.63536071777344,82.35688018798828)"
+                                opacity="1" style="display: block;">
+                                <image width="168px" height="44px" preserveAspectRatio="xMidYMid slice"
+                                    href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKgAAAAsBAMAAAADRO5JAAAAJHpUWHRDcmVhdG9yAAAImXNMyU9KVXBMK0ktUnBNS0tNLikGAEF6Bs5qehXFAAAACXBIWXMAAAABAAAAAQBPJcTWAAAAJFBMVEXzwwBHcEzzwgDzwwD0wwDzwwD0xADzwwDzwwDxwQDzwwD0wwDcY0swAAAADHRSTlP/AD+/In+jY9wQT49dhnwkAAADuUlEQVRIx+WXz08TQRTHh/4GLky7tAUutNaq4QKCJtxaKFh7ag2NopdWSJVwKYJoPLWxAY0XNiTG6EUuJN6oF/8934+Z2S22tCQ1MXEOzM7uzGfevPd9r4OQA7fT7KAzxaATZ0p3d/alPVTox0ih/TQvW8OEXmxUzsql2e3iwkDQG4t9W8kKHK/lWrcPlta/1lrRvvOXRF30bb7p3XZeri6/zJ4mnj3tv8AnVpJ9W0pOHb0Prm5vFUL3m7L/gsSAPn1gn21nUjs/CvZQJSW3X7Srw9apXN3Lnw0deo32r0Ffl8tljtvNcvkxd9Q2RbqG7QDqBer2wFkztXJ+5Gbkbn1QFeW8RN08SNI8haArGp0qLe/IDPXHGnkIA6+DnGvAWEEbHgNt4oMlekBDNkOFKhk0wYGu0jeGhkXAQAkf6wUVVQXllXnRAY25PsmIELaGjuNDtCfUo6E+dSA3tOiGZpQrEUr4k27Q0CLuqaEhWyr/Guik+xCyIsSogWI+1B1okHMf3gTxtAEABbZwXhtCgf2vcw2dxeG9VwzFUwQNdIF30VAf65SgYbAqg6/W6PzoQm9CWu8UFPfYlPKNrT3oNVC0WXSHTrGlPjqKX8bZXt0soWebGCY01C/ldA8omBZk6Ax+z/Ak6XLpnhnV9annldujLugY+pShOfjTZOgURrSuBKhapGOPhpYIQcHmCXEp+tJIKsFQXJO9EGJE7kPWsn1x1CNmcdVI1m+gbfm9J3RMKiiEMlFBaMWk9gRCMiopYQcv65OhozSxOzSgofMa+g12sjU0gNEKZFleniJtBzMb6KcG9t2P33Ydn8I4aRwbp3gITnlANU/IaHiCk3tBjqHin9DxJPzxMRRdxrpyoFE6LkNRXj/T9AmgczBah0gb6DjWUyUpAPgZmleeELYDjVE8GBoVJoMBmlLJXrxS/FYDYwYaEssOlBOTobpCgJSU97HCdYVanKaeQoVijDkSOnTEinF+ztCKhlYJyntku0I/s6XaBqUWA81ohdBJhJISQqPsii5Qb01wmhpdf+mExgw0Zi5MfoJS4Q3KzuiPGEm1NBQriTLI05HvCI071zB7XjkW/NULupdxDNW/SQY63VBQnP0omUzjAoLOUrHpAQ0qx3kTjHnbAZXrCqp+U7FuLRA0Qi+6Q4FF0E8JXUOfdEBlmqBhRlPvIWiYXlyG0nUzBUlu5XK5h66CB6/vuIYreE+16LYKBRL7w1oti/eUDbhe1HbxklHjVv0vLmhXQAf4R+K6zfdXoL8B/7cyv853sCEAAAAASUVORK5CYII=">
+                                </image>
+                            </g>
+                        </g>
+                    </svg></div>
+                <div data-v-1690b988="" class="com__box" style="display: none;">
+                    <div class="loading" data-v-1690b988="">
+                        <div class="shape shape-1" data-v-1690b988=""></div>
+                        <div class="shape shape-2" data-v-1690b988=""></div>
+                        <div class="shape shape-3" data-v-1690b988=""></div>
+                        <div class="shape shape-4" data-v-1690b988=""></div>
+                    </div>
+                </div>
+            </div>
+            <div data-v-1690b988="" class="skeleton-wrapper" style="display: none;">
+                <div data-v-1690b988="" class="van-skeleton van-skeleton--animate">
+                    <div class="van-skeleton__content">
+                        <div class="van-skeleton-paragraph" style="width: 100%;"></div>
+                        <div class="van-skeleton-paragraph" style="width: 100%;"></div>
+                        <div class="van-skeleton-paragraph" style="width: 100%;"></div>
+                        <div class="van-skeleton-paragraph" style="width: 100%;"></div>
+                        <div class="van-skeleton-paragraph" style="width: 100%;"></div>
+                        <div class="van-skeleton-paragraph" style="width: 100%;"></div>
+                        <div class="van-skeleton-paragraph" style="width: 100%;"></div>
+                        <div class="van-skeleton-paragraph" style="width: 100%;"></div>
+                        <div class="van-skeleton-paragraph" style="width: 100%;"></div>
+                        <div class="van-skeleton-paragraph" style="width: 60%;"></div>
+                    </div>
+                </div>
+                <div data-v-1690b988="" class="van-skeleton van-skeleton--animate">
+                    <div class="van-skeleton-avatar van-skeleton-avatar--round"></div>
+                    <div class="van-skeleton__content">
+                        <h3 class="van-skeleton-title"></h3>
+                        <div class="van-skeleton-paragraph" style="width: 100%;"></div>
+                        <div class="van-skeleton-paragraph" style="width: 100%;"></div>
+                        <div class="van-skeleton-paragraph" style="width: 100%;"></div>
+                        <div class="van-skeleton-paragraph" style="width: 100%;"></div>
+                        <div class="van-skeleton-paragraph" style="width: 60%;"></div>
+                    </div>
+                </div>
+                <div data-v-1690b988="" class="van-skeleton van-skeleton--animate">
+                    <div class="van-skeleton__content">
+                        <h3 class="van-skeleton-title"></h3>
+                        <div class="van-skeleton-paragraph" style="width: 100%;"></div>
+                        <div class="van-skeleton-paragraph" style="width: 100%;"></div>
+                        <div class="van-skeleton-paragraph" style="width: 100%;"></div>
+                        <div class="van-skeleton-paragraph" style="width: 100%;"></div>
+                        <div class="van-skeleton-paragraph" style="width: 60%;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div data-v-7e82aefe="" class="resgister__C" style="--7688837a: &#39;Roboto&#39;, &#39;Inter&#39;, sans-serif;background-color: #F7F8FF !important;">
+            <div data-v-58c5e826="" data-v-7e82aefe="" class="navbar">
+                <div data-v-58c5e826="" class="navbar-fixed" style="background: linear-gradient(90deg, #D9AD82 0%, #B1835A 100%) !important;">
+                    <div data-v-58c5e826="" class="navbar__content">
+
+                        <div data-v-58c5e826="" class="navbar__content-left" onclick="location.href='/login'"><i
+                                data-v-58c5e826="" class="van-badge__wrapper van-icon van-icon-arrow-left"></i></div>
+
+                        <div data-v-58c5e826="" class="navbar__content-center">
+                            <div data-v-58c5e826="" class="headLogo"
+                                style="background-image: url(./index_files/h5setting_202401100608011fs2.png);"></div>
+                            <div data-v-58c5e826="" class="navbar__content-title"></div>
+                        </div>
+                        <div data-v-58c5e826="" class="navbar__content-right">
+                            <div data-v-187d09fa="" data-v-7e82aefe="">
+                                <div data-v-187d09fa="" class="right">
+                                    <div data-v-187d09fa="" class="img"></div><span data-v-187d09fa=""
+                                        class="lang-text"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div data-v-7e82aefe="" data-v-7ee4aaeb="" class="resgister__C-heading">
+                <h1 data-v-7e82aefe="" class="resgister__C-heading__title">Register</h1>
+                <div data-v-7e82aefe="" class="resgister__C-heading__subTitle"><span data-v-7e82aefe="">Please register
+                        by phone number or email</span></div>
+            </div>
+            <div data-v-7e82aefe="" class="login_container-tab">
+                <div data-v-7e82aefe="" class="tab active">
+                    <img data-v-93f53084="" src="./svg/phone.svg"
+                  class="phoneInput__container-label__icon">
+                    <div data-v-7e82aefe="" class="font30 phonefont30active" style="font-size: .4rem !important;">Register Your Phone</div>
+                </div>
+                <div data-v-7e82aefe="" class="tab">
+                    <img data-v-93f53084="" src="./svg/mail.svg"
+                  class="phoneInput__container-label__icon">
+                    <div data-v-7e82aefe="" class="font30 phonefont30active" style="font-size: .4rem !important;">Mail Registration</div>
+                </div>
+            </div>
+          
+            <div data-v-7e82aefe="" class="resgister__C-form" style="background-color: #F7F8FF !important;">
+                <div data-v-7e82aefe="" class="tab-content activecontent">
+                    <div data-v-23d378a6="" data-v-7e82aefe="" class="register__container">
+                        <div data-v-93f53084="" data-v-23d378a6="" class="phoneInput__container">
+                            <div data-v-93f53084="" class="phoneInput__container-label"><img data-v-93f53084=""
+                                    src="./svg/phone.svg" class="phoneInput__container-label__icon"><span data-v-93f53084="">Phone
+                                    number</span></div>
+                            <div data-v-93f53084="" class="phoneInput__container-input">
+                                <div data-v-6f85c91a="" data-v-93f53084="" class="dropdown">
+                                    <div data-v-6f85c91a="" class="dropdown__value"><span
+                                            data-v-6f85c91a="">+91</span><i data-v-6f85c91a=""
+                                            class="van-badge__wrapper van-icon van-icon-arrow-down"></i></div>
+                                    <div data-v-6f85c91a="" class="dropdown__list">
+                                        
+                                    </div>
+                                </div>
+
+                                <input data-v-93f53084="" type="text" name="username" id="username"
+                                    placeholder="Please enter the phone number"
+                                    required>
+
+                            </div>
+                        </div>
+
+
+                        
+
+
+                        <div data-v-23d378a6="" class="tip"></div>
+                        <div data-v-57d49070="" data-v-23d378a6="" class="passwordInput__container">
+                            <div data-v-57d49070="" class="passwordInput__container-label"><img data-v-57d49070="" class="passwordInput__container-label__icon" data-origin="https://www.bigdaddygame2.com/assets/png/password-b827c2b3.png"
+                                src="./png/password.png"><span data-v-57d49070="">Set
+                                    password</span></div>
+                            <div data-v-57d49070="" class="passwordInput__container-input">
+
+                                <input data-v-57d49070="" name="password" id="password"
+                                    οnkeyup="value=value.replace(/[^\w\.\/]/ig,'')" type="password"
+                                    placeholder="Set password" maxlength="32" autocomplete="new-password"
+                                    required><img data-v-57d49070="" id="eyeicon"
+                                    src="https://bigmumbai4.com/assets/png/eyeInvisible-821d9d16.png" class="eye" onclick="showPass()">
+
+                            </div>
+                        </div>
+                        <div data-v-57d49070="" data-v-23d378a6="" class="passwordInput__container">
+                            <div data-v-57d49070="" class="passwordInput__container-label"><img data-v-57d49070="" class="passwordInput__container-label__icon" data-origin="https://www.bigdaddygame2.com/assets/png/password-b827c2b3.png"
+                                src="./png/password.png"><span data-v-57d49070="">Confirm
+                                    password</span></div>
+                            <div data-v-57d49070="" class="passwordInput__container-input">
+
+                                <input data-v-57d49070="" name="password" id="password"
+                                    οnkeyup="value=value.replace(/[^\w\.\/]/ig,'')" type="password"
+                                    placeholder="Confirm password" maxlength="32" autocomplete="new-password"
+                                    required><img data-v-57d49070="" id="eyeicon"
+                                    src="https://bigmumbai4.com/assets/png/eyeInvisible-821d9d16.png" class="eye" onclick="showPass()">
+
+                            </div>
+                        </div>
+                        <div data-v-23d378a6="" class="register__container-tip" style="display: none;">
+                            <div data-v-23d378a6="" class="tipbg"></div><span data-v-23d378a6="">The password must be at
+                                least 8 digits and must contain letters + numbers</span>
+                        </div>
+                        <div data-v-23d378a6="" class="register__container-invitation">
+                            <div data-v-23d378a6="" class="register__container-invitation__label"><img data-v-57d49070="" class="passwordInput__container-label__icon" data-origin="https://www.bigdaddygame2.com/assets/png/password-b827c2b3.png"
+                                src="./png/invite.png"><span
+                                    data-v-23d378a6="">Invite code</span></div>
+                            <div data-v-23d378a6="" class="register__container-invitation__input">
+
+                                <input data-v-23d378a6="" name="invite" id="invite" type="text"
+                                    auto-complete="new-password" autocomplete="off" name="userNumber"
+                                    placeholder="Please enter the invitation code" maxlength="20" required>
+
+                            </div>
+                        </div>
+                        <div class="alert-toast" style="color:red"></div>
+                        <div data-v-23d378a6="" class="register__container-remember">
+                            <div data-v-23d378a6="" role="checkbox" class="van-checkbox" tabindex="0"
+                                aria-checked="true">
+                                <div class="van-checkbox__icon van-checkbox__icon--round van-checkbox__icon--checked"><i
+                                        class="van-badge__wrapper van-icon van-icon-success"
+                                        style="border-color: rgb(94 173 245); background-color: rgb(94 173 245);"></i>
+                                </div><span class="van-checkbox__label">I have read and agree <span
+                                        data-v-23d378a6="">【Privacy Agreement】</span></span>
+                            </div>
+                        </div>
+
+                        <div data-v-23d378a6="" class="register__container-button" type="submit">
+                            <div data-v-7ee4aaeb="" class="mian-btn m-t-40">
+                                <button data-v-23d378a6="" data-v-7ee4aaeb="" style="background: linear-gradient(90deg, #D9AD82 0%, #B1835A 100%); font-weight: 400;" id="submit"
+                                    type="submit">Register</button>
+                            </div>
+                            <button data-v-23d378a6="" class="login" id="logb" onclick="window.location='/login'">
+                                <div data-v-23d378a6="" class="account" onclick="window.location='/login'">I have an
+                                    account</div>
+                                <div data-v-23d378a6="" class="loginin" onclick="window.location='/login'">Login</div>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="customer" id="customerId"
+            style="--7688837a: &#39;Roboto&#39;, &#39;Inter&#39;, sans-serif; --17a7a9f6: bahnschrift; background-color: #F7F8FF !important;"
+            onclick="window.location='/keFuMenu'"><img class=""
+                data-origin="https://www.bigdaddygame2.com/assets/png/icon_sevice-1ca64bcf.png"
+                src="https://mumbaibig.com/assets/png/icon_sevice-af9dd176.png">
+        </div>
+        <div class="customer" 
+            style="--7688837a: &#39;Roboto&#39;, &#39;Inter&#39;, sans-serif; --17a7a9f6: bahnschrift; background-color: #F7F8FF !important;"
+            onclick="window.location='/keFuMenu'"><img class=""
+                data-origin="https://www.bigdaddygame2.com/assets/png/icon_sevice-1ca64bcf.png"
+                src="https://mumbaibig.com/assets/png/icon_sevice-af9dd176.png">
+        </div>
+    </div>
+    
+    <script>
+        $(document).ready(function () {
+            // Select the overlay element
+            $('.van-overlay').fadeIn(10);
+        });
+        $(window).on('load', function () {
+            // Select the overlay element
+            $('.van-overlay').fadeIn(10);
+            setTimeout(function () {
+                $('.van-overlay').fadeOut(300);
+            }, 600);
+        });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        let i = 1;
+        $('.van-checkbox').click(function (e) {
+            e.preventDefault();
+            if (i == 1) {
+                $('.van-checkbox__icon').removeClass('van-checkbox__icon--square van-checkbox__icon--checked');
+                document.querySelector('.van-checkbox__icon i').style = '';
+            } else {
+                i = 0;
+                $('.van-checkbox__icon').addClass('van-checkbox__icon--square van-checkbox__icon--checked');
+                document.querySelector('.van-checkbox__icon i').style = 'border-color: rgb(244, 69, 62); background-color: rgb(244, 69, 62);';
+            }
+            i++;
+        });
+
+        function setCookie(cname, cvalue, exdays) {
+            const d = new Date();
+            d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+            let expires = "expires=" + d.toUTCString();
+            document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+        }
+        function getCookie(cname) {
+            let name = cname + "=";
+            let decodedCookie = decodeURIComponent(document.cookie);
+            let ca = decodedCookie.split(';');
+            for (let i = 0; i < ca.length; i++) {
+                let c = ca[i];
+                while (c.charAt(0) == ' ') {
+                    c = c.substring(1);
+                }
+                if (c.indexOf(name) == 0) {
+                    return c.substring(name.length, c.length);
+                }
+            }
+            return "";
+        }
+
+        function unsetCookie() {
+            setCookie('token', '', 0);
+            setCookie('auth', '', 0);
+        }
+        // fetch('/api/webapi/GetUserInfo')
+        //     .then(response => response.json())
+        //     .then(data => {
+        //         if (data.status === false) {
+        //             unsetCookie();
+        //             return false;
+        //         };
+        //         location.href = "/";
+        //     });
+    </script>
+    <script>
+
+        function setCookie(cname, cvalue, exdays) {
+            const d = new Date();
+            d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+            let expires = "expires=" + d.toUTCString();
+            document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+        }
+
+        function alertMess(text) {
+            let length = $('.alert-toast .msg').length;
+            if (length == 0) {
+                $('.alert-toast').append(
+                    `
+                    <div data-v-1dcba851="" class="msg">
+                        <div data-v-1dcba851="" class="msg-content" style=""> ${text} </div>
+                    </div>
+                    `
+                );
+                setTimeout(() => {
+                    $('.msg').fadeOut();
+                    setTimeout(() => {
+                        $('.alert-toast .msg').remove();
+                    }, 100);
+                }, 1500);
+            }
+        }
+
+        function validateForm(username, password, invite, checkbox, text) {
+            if (!username || !invite || !checkbox || !password) {
+                alertMess(text);
+                return false;
+            } else {
+                return true;
+            }
+        }
+
+        $('#logb').click(async (e) => {
+            e.preventDefault();
+            {
+                $('.van-overlay').fadeIn(10);
+                if (response.status === true) {
+                    $('.van-overlay').fadeOut(300);
+                    $('.Loading').fadeIn(10);
+                    setTimeout(() => {
+                        $('.Loading').fadeOut(10);
+                        alertMess(response.message);
+                    }, 100);
+                    setTimeout(() => {
+                        location.href = '/login';
+                    }, 900);
+                } else {
+                    $('.van-overlay').fadeOut(300);
+                    alertMess(response.message);
+                }
+            }
+        });
+
+        $('#submit').click(async (e) => {
+            e.preventDefault();
+            let username = $('#username').val().trim();
+            // let otp = $('#otp').val().trim();
+            let password = $('#password').val().trim();
+            let invite = $('#invite').val().trim();
+            //let checkbox = $('.van-checkbox__icon').hasClass('van-checkbox__icon--checked');
+            let status = validateForm(username, password, invite, 'Please fill in the required section');
+            if (status) {
+                $('.van-overlay').fadeIn(10);
+                $.ajax({
+                    type: "POST",
+                    url: "/api/webapi/register",
+                    data: {
+                        username: username,
+                        pwd: password,
+                        invitecode: invite,
+                        // otp: otp,
+                    },
+                    dataType: "json",
+                    success: function (response) {
+                        if (response.status === true) {
+                            $('.van-overlay').fadeOut(300);
+                            $('.Loading').fadeIn(10);
+                            setTimeout(() => {
+                                $('.Loading').fadeOut(10);
+                                alertMess(response.message);
+                            }, 100);
+                            setTimeout(() => {
+                                location.href = '/login';
+                            }, 900);
+                        } else {
+                            $('.van-overlay').fadeOut(300);
+                            alertMess(response.message);
+                        }
+                    }
+                });
+            }
+
+        });
+
+        // $('.otp').click(function (e) { 
+        //     e.preventDefault();
+        //     let phone = $('input:eq(0)').val().trim();
+        //     $(this).addClass('block-click');
+        //     setTimeout(() => {
+        //         $(this).removeClass('block-click');
+        //     }, 1600);
+        //     if (phone) {
+        //         $.ajax({
+        //             type: "POST",
+        //             url: "/api/sent/otp/verify",
+        //             data: {
+        //                 phone: phone,
+        //             },
+        //             dataType: "json",
+        //             success: function (response) {
+        //                 alertMess(response.message);
+        //             }
+        //         });
+        //     } else {
+        //         alertMess('Please fill in the required section');
+        //     }
+        // });
+    </script>
+    <script>
+        let getWBody = $('.mian').width();
+
+        $('html').css('font-size', `${getWBody / 10}px`);
+        $('.van-tabbar .van-tabbar-item').css({
+            'transform': 'scale(0.9)',
+        });
+        $(window).resize(() => {
+            let getWBody = $('.mian').width();
+            $('html').css('font-size', `${getWBody / 10}px`);
+            $('.van-tabbar .van-tabbar-item').css({
+                'transform': 'scale(0.9)',
+            });
+        });
+        var url = new URL(window.location.href);
+        var c = url.searchParams.get("r_code");
+        if (c) {
+            $('#invite').val(c);
+        }
+        function showPass() {
+            var x = document.getElementById("password");
+            var y = document.getElementById("eyeicon");
+            if (x.type === "password") {
+                x.type = "text";
+                y.src = "./index_files/eyeVisible-7bc1c956.png";
+            } else {
+                x.type = "password";
+                y.src = "./index_files/eyeInvisible-2fa5c152.png";
+            }
+        }
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+    const phoneTab = document.querySelector('.tab.active');
+    const emailTab = document.querySelector('.tab:not(.active)'); // Select the non-active tab
+    const phoneLabel = document.querySelector('.phoneInput__container-label span');
+    const phoneInput = document.querySelector('.phoneInput__container-input input');
+    const dropdown = document.querySelector('.dropdown');
+
+    const phoneTabImage = phoneTab.querySelector('img'); // Select phone tab image
+    const emailTabImage = emailTab.querySelector('img'); // Select email tab image
+    const phoneInputIcon = document.querySelector('.phoneInput__container-label img'); // Select input field icon
+
+    function toggleTabClasses() {
+        phoneTab.classList.toggle('active');
+        emailTab.classList.toggle('active');
+
+        // Toggle font classes (assuming these classes exist in your CSS)
+        phoneTab.querySelector('.font30').classList.toggle('phonefont30active'); 
+        emailTab.querySelector('.font30').classList.toggle('phonefont30active');
+    
+        // Update label, input, dropdown visibility, and images
+        if (emailTab.classList.contains('active')) {
+            phoneLabel.textContent = 'Email'; // Change label
+            dropdown.style.display = 'none';
+            phoneInput.placeholder = 'Please enter the email';
+            phoneInput.style.width = '100%';
+            phoneInput.style.marginLeft = '0';
+
+            // Change image sources
+            phoneTabImage.src = './svg/phonelogin.svg';
+            emailTabImage.src = './svg/mailloginactive.svg';
+            phoneInputIcon.src = './svg/mailloginactive.svg';
+        } else { 
+            phoneLabel.textContent = 'Phone Number';
+            dropdown.style.display = 'block';
+            phoneInput.placeholder = 'Please enter the phone number';
+            phoneInput.style.width = 'calc(100% - 60px)'; // Adjust for dropdown's width
+            phoneInput.style.marginLeft = '2.66667rem';
+
+            // Change image sources
+            phoneTabImage.src = './svg/phone.svg';
+            emailTabImage.src = './svg/mail.svg';
+            phoneInputIcon.src = './svg/phone.svg';
+        }
+    }
+
+    // Event listeners for tabs
+    phoneTab.addEventListener('click', toggleTabClasses);
+    emailTab.addEventListener('click', toggleTabClasses);
+});
+
+    </script>
+</body>
+
+</html>

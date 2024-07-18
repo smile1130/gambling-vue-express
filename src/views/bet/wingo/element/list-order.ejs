@@ -1,0 +1,319 @@
+<script>
+  let labels1;
+  let amounts1;
+  let data;
+  let canvas;
+  let ctx;
+  let gradient;
+  let padding;
+  let spaceBetween;
+  let x;
+  let y;
+  let prevX;
+  let prevY;
+  let value;
+  let index;
+</script>
+<img
+  src="/assets/graphs/graph_1.png"
+  style="display: block; margin-left: auto; margin-right: auto; width: 100%"
+  id="graph"
+/>
+<div data-v-a9660e98="" class="con-box p-b-20" style="display: block">
+  <div data-v-a9660e98="" class="list m-t-10">
+    <div data-v-a9660e98="" class="p-t-5 p-b-5" id="history-order"></div>
+    <div data-v-a9660e98="" class="list-fooder"></div>
+  </div>
+  <!---->
+  <div data-v-a9660e98="" class="page-nav c-row c-row-center c-tc">
+    <div
+      data-v-a9660e98=""
+      class="arr c-row c-row-middle-center"
+      onclick="prvgrph()"
+    >
+      <!-- <i data-v-a9660e98="" class="van-icon van-icon-arrow-left icon" style="font-size: 20px">
+           
+            </i> -->
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+      >
+        <path
+          fill="currentColor"
+          fill-rule="evenodd"
+          d="m15 4l2 2l-6 6l6 6l-2 2l-8-8z"
+        />
+      </svg>
+    </div>
+    <div data-v-a9660e98="" class="number"></div>
+    <div
+      data-v-a9660e98=""
+      class="arr c-row c-row-middle-center action"
+      onclick="nxtgrph()"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+      >
+        <path
+          fill="none"
+          stroke="white"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="m10 17l5-5m0 0l-5-5"
+        />
+      </svg>
+    </div>
+  </div>
+</div>
+<div data-v-a9660e98="" class="con-box p-b-20" style="display: none">
+  <div data-v-a9660e98="" class="list m-t-10">
+    <style>
+      span.red {
+        font-size: 0.7rem !important;
+        font-weight: 600 !important;
+        line-height: 0.43rem !important;
+      }
+
+      span.green {
+        font-size: 0.7rem !important;
+        font-weight: 600 !important;
+        line-height: 0.43rem !important;
+      }
+
+      .con-box {
+        padding-top: 0.3rem;
+      }
+
+      .game-list .list .wrap[data-v-a9660e98] {
+        padding: 0.4rem;
+        background-color: #F6F6F6;
+        border-radius: 0.13333rem 0.13333rem 0 0;
+        font-size: 0.34667rem;
+        font-weight: 750;
+        color: #fff;
+      }
+
+      .game-list .tab .li .txt.action[data-v-a9660e98] {
+        background: linear-gradient(rgb(109 167 244), rgb(89 176 234));
+        color: #fff !important;
+      }
+
+      .c-tc.goItem {
+        font-size: 0.34rem;
+      }
+
+      .stat-table {
+        background: #333; /* Fallback for browsers that do not support gradients */
+        background: -webkit-linear-gradient(
+          to right,
+          #444,
+          #555
+        ); /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(
+          to right,
+          #444,
+          #555
+        ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        width: 100%;
+        max-width: 600px;
+      }
+      .stat-table th,
+      .stat-table td {
+        padding: 8px 0px;
+        text-align: center;
+        font-size: xx-small;
+      }
+      .stat-table th {
+        background: #555;
+        border-bottom: 1px solid #666;
+      }
+      .stat-table th:first-child {
+        border-radius: 5px 0 0 0;
+      }
+      .stat-table th:last-child {
+        border-radius: 0 5px 0 0;
+      }
+      .stat-row {
+        background: #444; /* Fallback for browsers that do not support gradients */
+        background: -webkit-linear-gradient(
+          to right,
+          #555,
+          #666
+        ); /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(
+          to right,
+          #555,
+          #666
+        ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        margin-bottom: 4px;
+        border-radius: 4px;
+      }
+      .number-cell {
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        line-height: 24px;
+        border-radius: 50%;
+        background: #666;
+        border: 1px solid #777; /* Slight border for definition */
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Soft shadow for depth */
+      }
+      .stat-header {
+        font-weight: bold;
+        text-align: left;
+        padding-left: 12px;
+      }
+      #app {
+        color: #ffffff;
+      }
+    </style>
+    <table class="stat-table">
+      <thead>
+        <tr>
+          <th>Period</th>
+          <th>Statistic (last 100 Periods)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="stat-row">
+          <td class="stat-header">Total Number</td>
+          <td>
+            <div class="number-cell">0</div>
+            <div class="number-cell">1</div>
+            <div class="number-cell">2</div>
+            <div class="number-cell">3</div>
+            <div class="number-cell">4</div>
+            <div class="number-cell">5</div>
+            <div class="number-cell">6</div>
+            <div class="number-cell">7</div>
+            <div class="number-cell">8</div>
+            <div class="number-cell">9</div>
+          </td>
+        </tr>
+        <tr class="stat-row">
+          <td class="stat-header">Winning</td>
+          <td>
+            <div id="Winning_0" class="number-cell">0</div>
+            <div id="Winning_1" class="number-cell">1</div>
+            <div id="Winning_2" class="number-cell">2</div>
+            <div id="Winning_3" class="number-cell">3</div>
+            <div id="Winning_4" class="number-cell">4</div>
+            <div id="Winning_5" class="number-cell">5</div>
+            <div id="Winning_6" class="number-cell">6</div>
+            <div id="Winning_7" class="number-cell">7</div>
+            <div id="Winning_8" class="number-cell">8</div>
+            <div id="Winning_9" class="number-cell">9</div>
+          </td>
+        </tr>
+        <tr class="stat-row">
+          <td class="stat-header">Average Missing</td>
+          <td>
+            <span class="number-cell">0</span>
+            <span class="number-cell">1</span>
+            <span class="number-cell">2</span>
+            <span class="number-cell">3</span>
+            <span class="number-cell">4</span>
+            <span class="number-cell">5</span>
+            <span class="number-cell">6</span>
+            <span class="number-cell">7</span>
+            <span class="number-cell">8</span>
+            <span class="number-cell">9</span>
+          </td>
+        </tr>
+        <tr class="stat-row">
+          <td class="stat-header">Frequency</td>
+          <td>
+            <span class="number-cell">0</span>
+            <span class="number-cell">1</span>
+            <span class="number-cell">2</span>
+            <span class="number-cell">3</span>
+            <span class="number-cell">4</span>
+            <span class="number-cell">5</span>
+            <span class="number-cell">6</span>
+            <span class="number-cell">7</span>
+            <span class="number-cell">8</span>
+            <span class="number-cell">9</span>
+          </td>
+        </tr>
+        <tr class="stat-row">
+          <td class="stat-header">Max consecutive</td>
+          <td>
+            <span class="number-cell">0</span>
+            <span class="number-cell">1</span>
+            <span class="number-cell">2</span>
+            <span class="number-cell">3</span>
+            <span class="number-cell">4</span>
+            <span class="number-cell">5</span>
+            <span class="number-cell">6</span>
+            <span class="number-cell">7</span>
+            <span class="number-cell">8</span>
+            <span class="number-cell">9</span>
+          </td>
+        </tr>
+        <!-- ... More rows for Winning number, Missing, etc. ... -->
+      </tbody>
+    </table>
+    <div data-v-a9660e98="">
+      <div data-v-a9660e98="" class="hb"></div>
+    </div>
+    <div data-v-a9660e98="" class="list-fooder"></div>
+  </div>
+  <div data-v-a9660e98="" class="page-nav c-row c-row-center c-tc">
+    <div data-v-a9660e98="" class="arr c-row c-row-middle-center block-click">
+      <i
+        data-v-a9660e98=""
+        class="van-icon van-icon-arrow-left icon"
+        style="font-size: 20px"
+      >
+        <!---->
+      </i>
+    </div>
+    <div data-v-a9660e98="" class="number"></div>
+    <div data-v-a9660e98="" class="arr c-row c-row-middle-center action">
+      <i
+        data-v-a9660e98=""
+        class="van-icon van-icon-arrow icon action"
+        style="font-size: 20px"
+      >
+        <!---->
+      </i>
+    </div>
+  </div>
+</div>
+
+<script>
+  function nxtgrph() {
+    url = document.getElementById("graph").src;
+    let match = url.match(/graph_(\d+)\.png/);
+    
+    if (match && match[1]) {
+      let graphNumber = parseInt(match[1], 10) + 1;
+      let newUrl = url.replace(/graph_(\d+)\.png/, `graph_${graphNumber}.png`);
+
+      document.getElementById("graph").src = newUrl;
+      console.log("tst");
+    }
+  }
+
+  function prvgrph() {
+    url = document.getElementById("graph").src;
+    let match = url.match(/graph_(\d+)\.png/);
+    
+    if (match && match[1]) {
+      let graphNumber = parseInt(match[1], 10) - 1;
+      let newUrl = url.replace(/graph_(\d+)\.png/, `graph_${graphNumber}.png`);
+
+      document.getElementById("graph").src = newUrl;
+      console.log("tst");
+    }
+  }
+
+</script>
