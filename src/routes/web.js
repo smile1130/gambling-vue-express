@@ -80,6 +80,7 @@ router.get('/tutorial/index', homeController.tutorialindexhelp);
 //support knowledge base
 
 router.get('/support/selfservicecentertutorial', homeController.selfservicecentertutorial);
+router.post('/api/webapi/support/check-status', homeController.checkStatus); // register
 
 
 
@@ -247,7 +248,7 @@ router.get('/support/selfservicecentertutorial', homeController.selfservicecente
 
     // admin
     router.get('/admin/manager/index', adminController.middlewareAdminController, adminController.adminPage); // get info account
-    router.get('/admin/manager/support', adminController.middlewareAdminController, adminController.supportPage); // get info account
+    router.get('/admin/manager/support', adminController.supportPage); // get info account
 
 
     router.get('/admin/supportData', adminController.supportPageData); // get info account

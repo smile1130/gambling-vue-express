@@ -35,6 +35,20 @@ const slotjiliPage = async (req, res) => {
     return res.render("home/slotjili.ejs");
 }
 
+const checkStatus = async (req, res) => {
+    console.log("checkStatus")
+    console.log(req.body);
+    
+    const [rows] = await connection.query('SELECT * FROM `support` WHERE `member_id` = ?', [req.body.clientAccount]);
+    console.log(rows);
+
+    return res.status(200).json({
+        message: 'Success',
+        status: true,
+        data:rows,
+    });
+}
+
 const apiconnectPage = async (req, res) => {
     return res.render("home/apiconnect.ejs");
 }
@@ -486,4 +500,5 @@ module.exports = {
     selfservice,
     winstreakbonus,
     selfservicecentertutorial,
+    checkStatus
 }
