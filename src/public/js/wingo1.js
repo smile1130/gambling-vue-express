@@ -101,97 +101,123 @@ socket.on("data-server", function (msg) {
     );
     var firstGame;
 
-$.ajax({
-    type: "POST",
-    url: "/api/webapi/GetMyEmerdList",
-    data: {
-        typeid: "1",
-        pageno: "0",
-        pageto: "10",
-        language: "vi",
-    },
-    dataType: "json",
-    success: function(response) {
-        let data = response.data.gameslist;
-        $(".game-list .con-box:eq(1) .page-nav .number").text(
-            "1/" + (response.page ? response.page : '1')
-        );
-
-        // Set the value of firstGame to the first game in the gameslist
-        firstGame = data[0];
-
-        var lastGame = data[data.length - 1];
-        console.log(firstGame);
-        showListOrder2(data, 1);
-
-        // Nested AJAX call
-        $.ajax({
-            type: "POST",
-            url: "/api/webapi/GetNoaverageEmerdList",
-            data: {
-                typeid: "1",
-                pageno: "0",
-                pageto: "10",
-                language: "vi",
-            },
-            dataType: "json",
-            success: function(response) {
-    let list_orders = response.data.gameslist;
-    $(".time-box .info .number").text(response.period);
-    $(".game-list .con-box:eq(0) .page-nav .number").text("1/" + response.page);
-
-    // Assuming firstGame is defined somewhere in your code
-    if (firstGame && firstGame.stage === list_orders[0].period) {
-      var modal = document.getElementById("myModal");
-      var modalImage = document.getElementById("modalImage");
-      modal.style.display = "block";
-      var myModalheader = document.getElementById("myModal_header");
-      var myModal_result = document.getElementById("myModal_result");
-      var lottery_result = document.getElementById("lottery_result");
-      var myModal_result_Period = document.getElementById("myModal_result_Period");
+    $.ajax({
+      type: "POST",
+      url: "/api/webapi/GetMyEmerdList",
+      data: {
+          typeid: "1",
+          pageno: "0",
+          pageto: "10",
+          language: "vi",
+      },
+      dataType: "json",
+      success: function(response) {
+          let data = response.data.gameslist;
+          $(".game-list .con-box:eq(1) .page-nav .number").text(
+              "1/" + (response.page ? response.page : '1')
+          );
   
-      if (firstGame.get == 0) {
-          myModalheader.innerHTML = "Sorry";
-          myModal_result.innerHTML = "Loss";
-          modalImage.src = "/images//missningLBg-2bcdb384.png";
-      } else {
-          myModalheader.innerHTML = "Congratulations";
-          myModal_result.innerHTML = "₹ " + firstGame.get;
-          modalImage.src = "/images//missningBg-9deda6ac.png";
-      }
-      myModal_result_Period.innerHTML = "Period : 1min " + firstGame.stage;
+          // Set the value of firstGame to the first game in the gameslist
+          firstGame = data[0];
   
-      let colorClass;
-      let typeClass;
+          var lastGame = data[data.length - 1];
+          console.log(firstGame);
+          showListOrder2(data, 1);
   
-      if (firstGame.result >= 0 && firstGame.result <= 4) {
-          typeClass = "small";
-      } else if (firstGame.result >= 5 && firstGame.result <= 9) {
-          typeClass = "big";
-      }
+          // Nested AJAX call
+          $.ajax({
+              type: "POST",
+              url: "/api/webapi/GetNoaverageEmerdList",
+              data: {
+                  typeid: "1",
+                  pageno: "0",
+                  pageto: "10",
+                  language: "vi",
+              },
+              dataType: "json",
+              success: function(response) {
+      let list_orders = response.data.gameslist;
+      $(".time-box .info .number").text(response.period);
+      $(".game-list .con-box:eq(0) .page-nav .number").text("1/" + response.page);
   
-      if (firstGame.result == 0) {
-          colorClass = "red violet";
-      } else if (firstGame.result == 5) {
-          colorClass = "green violet";
-      } else if (firstGame.result % 2 == 0) {
-          colorClass = "red";
-      } else {
-          colorClass = "green";
-      }
+      // Assuming firstGame is defined somewhere in your code
+      if (firstGame && firstGame.stage === list_orders[0].period) {
+        var modal = document.getElementById("myModal");
+        var modalImage = document.getElementById("modalImage");
+        modal.style.display = "block";
+        var myModalheader = document.getElementById("myModal_header");
+        var myModal_result = document.getElementById("myModal_result");
+        var lottery_result = document.getElementById("lottery_result");
+        var myModal_result_Period = document.getElementById("myModal_result_Period");
+    
+        if (firstGame.get == 0) {
+            myModalheader.innerHTML = "Sorry";
+            myModal_result.innerHTML = "Lose";
+            modalImage.src = "/images//missningLBg-2bcdb384.png";
+            myModalheader.style.color = "#6889B1";
+            myModalheader.style.marginTop = "20px";
+            myModalheader.style.marginLeft = "8px";
+            lottery_result.style.color = "#6889B1";
+            lottery_result.style.marginTop = "20px";
+            lottery_result.style.fontSize = "11px";
+            lottery_result.style.marginLeft = "30px";
+            myModal_result.style.color = "#6889B1";
+            myModal_result_Period.style.color = "#6889B1";
+            myModal_result.style.marginTop = "0px";
+            myModal_result_Period.style.marginTop = "0px";
+        } else {
+            myModalheader.innerHTML = "Congratulations";
+            myModal_result.innerHTML = "₹ " + firstGame.get;
+            modalImage.src = "/images//missningBg-9deda6ac.png";
+            myModalheader.style.marginTop = "10px";
+            lottery_result.style.marginTop = "20px";
+            lottery_result.style.fontSize = "11px";
+            lottery_result.style.marginLeft = "30px";
+            myModal_result.style.marginTop = "-25px";
+            myModal_result_Period.style.marginTop = "-25px";
+        }
+        myModal_result_Period.innerHTML = "Period : 1min " + firstGame.stage;
+    
+        let colorClass;
+        let typeClass;
+        let colorName;
+    
+        if (firstGame.result >= 0 && firstGame.result <= 4) {
+            typeClass = "small";
+        } else if (firstGame.result >= 5 && firstGame.result <= 9) {
+            typeClass = "big";
+        }
+    
+        if (firstGame.result == 0) {
+            colorClass = "red violet";
+            colorName = "Red";
+        } else if (firstGame.result == 5) {
+            colorClass = "green violet";
+            colorName = "Green";
+        } else if (firstGame.result % 2 == 0) {
+            colorClass = "red";
+            colorName = "Red";
+        } else {
+            colorClass = "green";
+            colorName = "Green";
+        }
   
-      lottery_result.innerHTML = `
-          Lottery Result:
-          <span class="btn-boox ${colorClass.split(' ')[0]}">${colorClass.split(' ')[0]}</span>
-          ${colorClass.includes(' ') ? `<span class="btn-boox ${colorClass.split(' ')[1]}">${colorClass.split(' ')[1]}</span>` : ''}
-          <span class="btn-boox">${firstGame.result}</span>
-          <span class="btn-boox ${typeClass}">${typeClass.charAt(0).toUpperCase() + typeClass.slice(1)}</span>
-      `;
-  }
-  
-    showListOrder(list_orders, 0);
-    showListOrder_t(list_orders, 2);
-},
+        if (firstGame.get == 0) {
+          colorClass = "";
+        }
+    
+        // ${colorClass.includes(' ') ? `<span class="btn-boox ${colorClass.split(' ')[1]}">${colorClass.split(' ')[1]}</span>` : ''}
+        lottery_result.innerHTML = `
+            Lottery Result:
+            <span class="btn-boox ${colorClass.split(' ')[0]}" style="border: solid 0.5px white">${colorName}</span>
+            <span class="btn-boox ${colorClass}" style="border-radius: 100% !important; border: solid 0.5px white; width: 24px;">${firstGame.result}</span>
+            <span class="btn-boox ${colorClass}" style="border: solid 0.5px white">${typeClass.charAt(0).toUpperCase() + typeClass.slice(1)}</span>
+        `;
+    }
+    
+      showListOrder(list_orders, 0);
+      showListOrder_t(list_orders, 2);
+  },
 
         });
     },

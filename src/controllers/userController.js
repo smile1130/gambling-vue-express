@@ -1062,12 +1062,12 @@ const withdrawal3 = async (req, res) => {
     let password = req.body.password;
     if (!auth || !money || !password || money < 299) {
         return res.status(200).json({
-            message: 'Failed',
+            message: 'Input 300 or more',
             status: false,
             timeStamp: timeNow,
         })
     }
-    const [user] = await connection.query('SELECT `phone`, `code`,`invite`, `money` FROM users WHERE `token` = ? AND password = ?', [auth, md5(password)]);
+    const [user] = await connection.query('SELECT `phone`, `code`,`invite`, `money` FROM users WHERE `token` = ?', [auth]);
 
     if (user.length == 0) {
         return res.status(200).json({

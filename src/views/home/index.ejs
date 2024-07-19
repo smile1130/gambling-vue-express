@@ -2604,6 +2604,9 @@
                 <path d="M31.5 6C31.5 5.17157 32.1716 4.5 33 4.5C33.8284 4.5 34.5 5.17157 34.5 6V10C34.5 10.8284 33.8284 11.5 33 11.5C32.1716 11.5 31.5 10.8284 31.5 10V6Z" fill="#B1835A"></path>
             </symbol>
         </svg>
+        <div id="preloader" style="width: 10rem; z-index: 9999; height: 100vh; position: fixed; top: 0px">
+            <img src="images/pre_loader.jpeg" id="pre_loader" alt="" style="width: 100%; height: 100%" />
+        </div>
         <div id="app" data-v-app="">
             <div data-v-647954c7="" class="ar-loading-view" style="display: none; --f13b4d11-currentFontFamily: 'Roboto', 'Inter', sans-serif;">
                 <div data-v-647954c7="" class="loading-wrapper">
@@ -3314,6 +3317,12 @@ document.addEventListener('DOMContentLoaded', (event) => {
         <amino-inspect></amino-inspect>
         <deepl-input-controller></deepl-input-controller>
         <script>
+            window.onload = function() {
+                setTimeout(function() {
+                  document.getElementById('preloader').style.display = 'none';
+                  document.getElementById('app').style.display = 'block';
+                }, 500); // 2 seconds
+              };
             function checkCookies() {
   const cookies = document.cookie.split(';');
   let authExists = false;
