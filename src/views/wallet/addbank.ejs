@@ -291,7 +291,7 @@ html{
                 <div data-v-7aa0f84a="" class="item">
                     <div data-v-7aa0f84a="" class="lab"><img data-v-c4c584b4="" src="/png/bankkey.png" class="icon"><span style="vertical-align: super;">IFSC Code</span></div>
                     <div data-v-7aa0f84a="" class="input">
-                        <input data-v-7aa0f84a="" type="text" placeholder="Please enter IFSC code" class="ipt" />
+                        <input data-v-7aa0f84a="" type="text" placeholder="Please enter IFSC code" class="ipt" name="ipfc_code" id="ipfc_code" />
                     </div>
                 </div>
                 
@@ -304,7 +304,7 @@ html{
                 </div>
 
                 <div data-v-7aa0f84a="" class="c-row c-row-center m-t-20 bank-btn">
-                    <button data-v-7aa0f84a=""
+                    <button data-v-7aa0f84a="" id="save_button"
                         class="btn van-button van-button--default van-button--normal van-button--block van-button--round">
                         <div data-v-7aa0f84a="" class="van-button__content">
                             <span data-v-7aa0f84a="" class="van-button__text">
@@ -358,7 +358,7 @@ html{
                 sic.removeClass('block-click');
             }, 1000);
         }
-        $('button').click(function (e) {
+        $('#save_button').click(function (e) {
             e.preventDefault();
             let name_bank = $('.ipt:eq(0)').val().trim();
             let name_user = $('.ipt:eq(1)').val().trim();
@@ -366,7 +366,7 @@ html{
             let email = $('.ipt:eq(3)').val().trim();
             let sdt = $('.ipt:eq(4)').val().trim();
            
-            let tinh = $('.ipt:eq(5)').val().trim();
+            let tinh = $('#ipfc_code').val().trim();
             if (name_bank && name_user && stk && email && sdt && tinh) {
                 $.ajax({
                     type: "POST",
@@ -377,7 +377,6 @@ html{
                         stk: stk,
                         email: email,
                         sdt: sdt,
-                       
                         tinh: tinh,
                     },
                     dataType: "json",
